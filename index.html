@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="deviant.css">
+    <script src="deviant.js"></script>
+    <title>Deviant</title>
+</head>
+<body>
+    <header>
+        <h1 id="pageTitle">Deviant</h1>
+        <h3 id="pageSubtitle">Times(x) Divide(÷) Us, but Together(+) we can Remove(-) the threat of unending inequality (!==)</h3>
+    </header>
+
+<!-- display backstory & mission -->
+<div id="backstory">
+    <!-- all a-tags on hover should show an image popup/preview of the listed vocabulary: ie: Phantom Wars= cities in destruction, Federate Domain: big brother, Rebels: coalition -->
+<p>Even since the <a href="#" >Phantom Wars</a> the <a href="#">Federate Domain</a> has occupied and controlled nations.<br/>   
+There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <a href="">packages</a>
+containing extremely classified and sensitive data between its rebel hubs<br/>
+Technology is monitored like never before, rebels can’t use it to communicate but they are trained to be skilled decoders.</p>
+
+<p>Rebels daily navigate the streets of a post-apocalyptic city flooded with evil-doers, spies, and <a href="">bot-cops</a> who are rigorously <b>verifying identities</b> to winnow out the deviant forces that plot against the Federate Domain.</p>
+
+<p>Every time a rebel (the user) comes across a police-bot they must do an identity check.<br/>
+Only the <a href="">“approved citizens”</a> are given the correct hourly code<a href="">(encryption)</a> sent to their identity transmitters.<br/>
+The rebels have been at work to crack these codes ever since they’ve been enforced. <br/>
+The bot-cops will link their <a href="">id-checker</a> to your <a href="">id-transmitter.</a> When they do, they don't know the difference between an "approved citizen's" trasmitter spewing out correct lines of code or if the code is simply just being typed out quickly.<br/>
+This is as some would say <a href="">'pulling the wool over the sheeps eyes'</a>, or the "rebel's" small window of opportunity to pass off as an "approved citizen".<br/>
+A field-rebel must be able to input the correct code at a speed comprable to the bot-cops id-checker, so quickly. <br/>
+The more codes someone can produce the more likely they have the real code and are an “approved citizen”</p>
+
+<p>First let's give you some training to ready you for the field.<br/>
+Can you decode the encrypted equation, and produce the code in time?
+</p>
+<!--h3's are buttons  --><!--these p's need to appear on click with a delay of what the function is  -->
+<h3 id="letsPlay">Yes</h3><p>Great let's go!</p> <!-- on click display identity check -->
+<h3 id="dontPlay">No</h3><p id="setUpProfileQ">Would you like to set up your profile?</p>   <!-- on click FIRST No => display p. (p is hidden) -->
+<p id="setUpProfile">Yes</p><p id="gif_at_array">No</p><p >Later</p>    <!--(all p's are hidden)  on click Yes => href to setUpProfile |  No=> on click ref a gif array to play  | Later => alert before exit to set up profile-->
+<h3 id="helpQ">Not Sure</h3><p id="goHelp">Would you like further clarification on how to play?</p> <!-- (p is hidden) scroll to bottom for 911 help icon rebel operator -->
+<!-- first time id-transmitter displays -->
+</div>
+
+<!-- take user input, choose character name and appearance -->
+<div id="rebel">
+    <article>
+        <img id="rebel__img" src="#"/>
+        <h3 id="rebel__name" placeholder="User Name"></h3>
+    </article>
+
+    <article id="rebel__data">
+        <!-- create array of different rebel status' -->
+        <h4 id="rebel__status">Rebel Status: Subvert 1</h4>    
+        <!-- set to 0 to be added to each round -->
+        <h5 id="rebel__complete__idchx">Completed Identity Checks:</h5>
+        <h5 id="rebel__complete__msh">Completed Missions:</h5>
+    </article>
+
+</div>
+<!-- display instruction for how to play & use identity transmitter -->
+
+<!-- create help button for 911 help to contact rebel base encrypted call for help in how to play -->
+<div>
+    <article class="help missions">
+        <h4>Deliver a classified package containing highly sensitive information on Deviant plans.</h4>
+        <h6> Travel on foot to another rebel hub across the city while maintaining an "approved citizen" status by passing all identity checks when encountering id-cop-bot </h3>
+    </article>
+    <article class="help">
+        <h4 class="help__transmitter">Use ID Transmitter:</h4>
+        <h6 clsas="help__transmitter__use">using <a href="">math functions</a>, press the <a href="">buttons on your transmitter</a> to fill in the missing code.</h6>
+        <p class="help__beginner">Beginner: uses only numbers</p>
+        <p class="help__novice">Novice: references variables from the problem as 'a'->'z'</p>
+        <p class="help__intermediate">Intermediate: references variables from the solution as 'z'->'a'</p>
+        <p class="help__advanced">Advanced: references previous answers as variables using greek alphabet</p>
+    </article>
+</div>
+
+<!--  -->
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

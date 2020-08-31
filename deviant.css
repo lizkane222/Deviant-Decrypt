@@ -1,0 +1,14 @@
+/*boiler plate css
+*/
+
+body {
+    background-color: rgba(20,20,20,1);
+    color: rgba(220,220,220,8);
+}
+
+footer {
+    margin-top: 800px;      /* put footer in HTML */
+}
+
+
+
