@@ -1,0 +1,88 @@
+/* :root {
+    
+} */
+/* icon colors & associated content */
+
+
+
+
+
+
+.transmitterBothDisplays {
+    background-color:rgb(29, 29, 53);
+    width: 800px;
+    height: 450px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.transmitter__user {
+    background-color: rgb(149, 227, 247);
+    width: 40%;
+    height: 40vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.transmitter__screen{
+    background-color: rgb(149, 227, 247);
+    width: 10%;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: row wrap;
+    align-content: flex-start
+    /* make sure to have new input <p's jquery .before() with class="newEQ"*/
+}
+
+.newEQ {
+    
+}
+
+
+.transmitter__buttonArea {
+    background-color: rgb(58, 75, 80);
+    /* use this to position buttons */
+    display: flex;
+}
+
+.numButt {
+    background-color: rgb(0, 255, 34);
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.symButt {
+    background-color: rgb(255, 217, 0);
+
+}
+
+.idchecker__bot-cop {
+    display: flex;
+    
+    background-color: rgba(240,240,240,.8)
+}
+
+.idchecker__bot-cop__screen {
+    background-color: rgba(200,230,240)
+}
+
+.idchecker__bot-cop__buttonArea {
+    /* use this for positioning */
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+}
+
+#deny {
+
+}
+
+#clear {
+
+}
