@@ -1,25 +1,52 @@
 // Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+let $modal = 
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+// let $encryption = $('#encryption')
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+
+// // Get the modal
+// let modal = document.getElementById("myModal");
+
+// // Get the image and insert it inside the modal - use its "alt" text as a caption
+// var img = document.getElementById("myImg");
+// var modalImg = document.getElementById("img01");
+// var captionText = document.getElementById("caption");
+
+// $(".trigger").on('click', function(){
+//     $('#myModal').css("display", "block");
+//     $("#img01").src = (this).src;
+//     $("#caption").text = (this).alt;
+// });
+
+$('.trigger').hover(function(){
+    $(".myModal").css("display", "block");
+    $("img01").src = (this).src;
+    $("#caption").text = (this).alt;
+    $(this).css("color", "#90e0ef");
+    $(this).css("background-color","gray");
+    
+    }, 
+    function(){
+    $(this).css("background-color", "#03045e");
+    $('.modal').css("display", "none");
+});
+
+
+
+
+
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// use this to close transmitter display
+// use if statement to only close when id-check is over
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+
+
+
+
