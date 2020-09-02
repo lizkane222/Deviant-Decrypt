@@ -11,17 +11,20 @@
 .transmitterBothDisplays {
     background-color:rgb(29, 29, 53);
     width: 800px;
-    height: 450px;
+    height: 70vh;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
+    margin: 20px auto;
 }
 
 .transmitter__user {
-    background-color: rgb(149, 227, 247);
+    background-color: rgb(179, 164, 32);
     width: 40%;
     height: 40vh;
+    margin: 15px;
+    margin-top: 25px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -30,45 +33,119 @@
 
 .transmitter__screen{
     background-color: rgb(149, 227, 247);
-    width: 10%;
+    margin: 10px;
+    width: 85%;
+    height: 23vh;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    /* make sure to have new input <p's jquery .before() with class="newEQ"*/
+}
+
+.problem-display {
+    color: navy;
+}
+
+.newEQ {
+    display: flex-box;
+    justify-content: flex-end;
+    flex-flow: column wrap;
+    text-align: right;
+    color:blueviolet;
+    width: 90%;
+    height: 20%;
+    overflow: auto; /* Enable scroll if needed */
+}
+
+
+.solution-display {
+    color: navy;
+    order: 3;
+    align-self: flex-end;
+}
+
+.transmitter__buttonArea {
+    background-color: rgb(58, 75, 80);
+    /* use this to position buttons */
+    /* max-width: 300px; */
+    width: 85%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    /* align-content: ; */
+}
+
+.numButt {
+    background-color: rgb(0, 255, 34);
+    flex-flow: column nowrap;
+    align-items: center;;
+    color: blue;
+    font-size: 1.5em;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 100%;
+    width: 30px;
+}
+
+.symButt_left {
+    background-color: rgb(255, 217, 0);
+    flex-flow: column nowrap;
+    align-items: center;
+    color: blue;
+    font-size: 1.5em;
+    padding-right: 5px;
+    padding-left: 5px;
+    /* border-radius: 60%;
+    width: 30px;
+    width: 0px; */
+}
+
+.probButt_left {
+
+}
+
+.equals {
+
+}
+
+soluButt_right {
+
+}
+
+.symButt_right {
+    background-color: rgb(255, 217, 0);
+    flex-flow: column nowrap;
+    align-items: center;
+    color: blue;
+    font-size: 1.5em;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 60%;
+    width: 30px;
+}
+
+.idchecker__bot-cop {
+    display: flex;
+    background-color: rgba(240,240,240,.8);
+    width: 40%;
+    height: 50vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.idchecker__bot-cop__screen {
+    background-color: rgba(200,230,240);
+    width: 95%;
     height: 10vh;
     display: flex;
     justify-content: flex-end;
     flex-flow: row wrap;
     align-content: flex-start
     /* make sure to have new input <p's jquery .before() with class="newEQ"*/
-}
-
-/* .newEQ {
-    
-} */
-
-
-.transmitter__buttonArea {
-    background-color: rgb(58, 75, 80);
-    /* use this to position buttons */
-    display: flex;
-}
-
-.numButt {
-    background-color: rgb(0, 255, 34);
-    flex-flow: column nowrap;
-    align-items: center;
-}
-
-.symButt {
-    background-color: rgb(255, 217, 0);
-
-}
-
-.idchecker__bot-cop {
-    display: flex;
-    
-    background-color: rgba(240,240,240,.8)
-}
-
-.idchecker__bot-cop__screen {
-    background-color: rgba(200,230,240)
 }
 
 .idchecker__bot-cop__buttonArea {

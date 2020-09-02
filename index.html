@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="./styles/id_transmitter.css">
     <script src="./script/deviant.js" defer></script>
     <script src="./script/id_transmitter.js" defer></script>
-
+    <i class=""></i>
     <script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    
     <title>Deviant</title>
 </head>
 <body>
@@ -16,34 +17,38 @@
         <h1 id="pageTitle">Deviant</h1>
         <h3 id="pageSubtitle">Times(x) Divide(÷) Us, but Together(+) we can Remove(-) the threat of unending inequality (!==)</h3>
     </header>
-
+<main>
 <!-- display backstory & mission -->
 <div id="backstory">
         <!-- all a-tags on hover should show an image popup/preview of the listed vocabulary: ie: Phantom Wars= cities in destruction, Federate Domain: big brother, Rebels: coalition -->
-    <p>Even since the <a id="phantomWars"  href="#" >Phantom Wars</a> the <a id="federateDomain"  href="#">Federate Domain</a> has occupied and controlled nations.<br/>   
+    <p>Even since the 
+        <a id="phantomWars" class="trigger">Phantom Wars</a>
+        <div class="modal myModal">
+            <img id="img00" class="modal-content" src="https://i.imgur.com/uSwz4dF.png" alt="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/WMD_world_map.svg/1200px-WMD_world_map.svg.png"><div id="caption00" class="caption"></div></div>
+        
+        
+        the <a id="federateDomain">Federate Domain </a>
+        
+        has occupied and controlled nations.<br/>   
     There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <a id=""  href="#">packages</a>
     containing extremely classified and sensitive data between its rebel hubs<br/>
-    Technology is monitored like never before, rebels can’t use it to communicate but they are trained to be skilled decoders.</p><br/><br/><br/>
-
+    Technology is monitored like never before, rebels can’t use it to communicate but they are trained to be skilled decoders.</p>
+    
 
     <!-- Trigger the Modal -->
-    <p class="trigger">TRIGGER MODAL BY HOVER?</p>
-    <!-- <img id="myImg" src="https://i.imgur.com/DoAdMPN.jpg" alt="Snow" style="width:100%;max-width:300px"> -->
+    <a id="firstTrigger" class="trigger">TRIGGER MODAL BY HOVER?</a>
 
     <!-- The Modal -->
     <div class="modal myModal">
 
-    <!-- The Close Button -->
-    <span class="close">&times;</span>
+        <!-- Modal Content (Image) -->
+        <img id="img01" class="modal-content" src="https://i.imgur.com/DoAdMPN.jpg" alt="lock icons PNG Designed By wangs from Pngtree.com">
 
-    <!-- Modal Content (The Image) -->
-    <img id="img01" class="modal-content" src="https://i.imgur.com/DoAdMPN.jpg" alt="lock icons PNG Designed By wangs from Pngtree.com" style="width:100%;max-width:300px">
-
-    <!-- Modal Caption (Image Text) -->
-    <div id="caption"></div>
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption01" class="caption"></div>
     </div>
 
-    <br/><br/><br/><br/><br/><br/><br/>
+    
     <p>Rebels daily navigate the streets of a post-apocalyptic city flooded with evil-doers, spies, and <a id="botCops"  href="#">Bot-Cops</a> who are rigorously <b>verifying identities</b> to winnow out the deviant forces that plot against the Federate Domain.</p>
 
     <p>Every time a rebel comes across a police-bot they must do an identity check.<br/>
@@ -66,18 +71,19 @@
 </div>
 
 <!-- take user input, choose character name and appearance -->
-<div id="rebel">
-    <article>
-        <img id="rebel__img" src="https://pngtree.com/freepng/cool-hacker-portrait-illustration_5390652.html"/>
-        <h3 id="rebel__name" placeholder="User Name"></h3>
+<div class="deviant">
+    <article class="deviant_user">
+        <a href='https://pngtree.com/so/hacker' alt="hacker png from pngtree.com"><img class="deviant__img" src="https://i.imgur.com/MiNTZgc.png"/></a>
+        <h3 class="deviant__name" placeholder="User Name">NAME</h3>
+        <!-- create input to add user name -->
     </article>
 
-    <article id="rebel__data">
-        <!-- create array of different rebel status' -->
-        <h4 id="rebel__status">Rebel Status: Subvert 1</h4>    
+    <article class="deviant__data">
+        <!-- create array of different deviant status' -->
+        <h4 class="deviant__status">Rebel Status: Subvert 1</h4>    
         <!-- set to 0 to be added to each round -->
-        <h5 id="rebel__complete__idchx">Completed Identity Checks:</h5>
-        <h5 id="rebel__complete__msh">Completed Missions:</h5>
+        <h5 class="deviant__complete__idchx">Completed Identity Checks:</h5>
+        <h5 class="deviant__complete__msh">Completed Missions:</h5>
     </article>
 
 </div>
@@ -103,46 +109,57 @@
 <div class="animation">
 
 </div>
+</main>
+<!-- top section ends here -->
+
 
 <!-- transmitter slide up -->
 
 <div class="transmitterBothDisplays">
-    <section class="trasnmitter__user">
+    <section class="transmitter__user">
         <article class="transmitter__screen" placeholder="use buttons to display equation here">
-            <p>problem display</p>
-            <input class=newEQ>
-            <p>solution display</p>
+            <p class="problem-display">problem display</p>
+            <i class="far fa-eye"></i><!--  -->
+            
+            <input class=newEQ placeholder="press buttons to display your equation here">
+            <p class="solution-display">solution display</p>
             <!-- <p class="newEQ">{equationDisplay: "2+9+(8)", solutionDisplay: 19}</p>
             <p class="EQ">{equationDisplay: "1+15+(1)", solutionDisplay: 17}</p>
             <p class="EQ">{equationDisplay: "7+10+(11)", solutionDisplay: 28}</p>
             <p class="EQ">{equationDisplay: "27+10+(30)", solutionDisplay: 67}</p> -->
         </article>
-        <article class="transmitter__buttonArea">
+        <article class="transmitter__buttonArea"> <!-- set background photo to wire connecting trasmitters, have idchecker slide  -->
             <row>
-                <square class="symButt">+</square>
+                <square class="symButt_left">+</square>
                 <square class="numButt">1</square>
                 <square class="numButt">2</square>
                 <square class="numButt">3</square>
-                <square class="symButt">-</square></row>
+                <square class="symButt_right">-</square></row>
             <row>
-                <square class="symButt">x</square>
+                <square class="symButt_left">x</square>
                 <square class="numButt">4</square>
                 <square class="numButt">5</square>
                 <square class="numButt">6</square>
-                <square class="symButt">÷</square></row>
+                <square class="symButt_right">÷</square></row>
             <row>
-                <square class="symButt">(</square>
+                <square class="symButt_left">(</square>
                 <square class="numButt">7</square>
                 <square class="numButt">8</square>
                 <square class="numButt">9</square>
-                <square class="symButt">)</square></row>
+                <square class="symButt_right">)</square></row>
             <row>
-                <p>entire<br />problem</p>
-                <square class="symButt">^</square>
-                <square class="symButt">.</square>
+                
+                <square class="symButt_left">^</square>
+                <square class="symButt_left">.</square>
                 <square>0</square>
-                <square class="symButt">-</square>
-                <square class="symButt">√</square></row>
+                <square class="symButt_right">-</square>
+                <square class="symButt_right">√</square></row>
+            <row>
+                <square class="probButt_left">entire<br />problem</square>
+                <square class="equals">=</square>
+                <square class="soluButt_right">entire<br/> solution</square>
+
+            </row>
         </article>
 
     </section>
