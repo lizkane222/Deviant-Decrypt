@@ -8,22 +8,35 @@ body {
 
 }
 
+h1 {
+    margin: 0;
+}
+
+h3 {
+    margin: 5;
+}
+
 main {
     display: flex;
     flex-flow: column wrap;
+    justify-content: flex-start;
+    height: 155vh;
+    align-content: flex-start;
+
 }
 
 #backstory {
-    background-color: purple;
-    display: inline-flex;
+    background-color: none;
+    display: inline-block;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    width: 30%;
+    width: 33%;
     overflow: auto; 
-    height: 30vh;
-    margin: 20px;
+    height: 35vh;
+    margin-top: 10px;
+    padding: 0 1%;
 }
 
 p {
@@ -35,7 +48,7 @@ p {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin: 20px;
+    margin: 3%;
     padding: 5px;
     height: 50vh;
     width: 200px;
@@ -66,21 +79,34 @@ p {
     text-align: center;
 }
 
-#help {
+.help__missions {
     background-color: yellow;
     color: black;
-    width: 30%;
+    width: 35%;
     line-height: .8em;
     font-size: 1em;
+    height: 15vh;
+    padding: 5px;
 }
 
-
-
+.help__transmitter {
+    background-color: orange;
+    color: black;
+    width: 35%;
+    line-height: .8em;
+    font-size: 1em;
+    height: 30vh;
+    padding: 5px;
+    margin-left: 5%;
+}
 
 .animation {
-    width: 60%;
-    height: 60vh;
+    width: 55%;
+    height: 70vh;
     background-color: pink;
+    margin-top: 3%;
+    margin-right: 20%;
+    margin-left: -10%;
 }
 
 

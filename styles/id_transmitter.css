@@ -22,18 +22,20 @@
 .transmitter__user {
     background-color: rgb(179, 164, 32);
     width: 40%;
-    height: 40vh;
+    height: 65vh;
     margin: 15px;
     margin-top: 25px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
+    align-items: stretch;
 }
 
 .transmitter__screen{
     background-color: rgb(149, 227, 247);
-    margin: 10px;
+    margin-top: 15px 5; 
+    align-items: center;
     width: 85%;
     height: 23vh;
     display: flex;
@@ -45,11 +47,14 @@
 
 .problem-display {
     color: navy;
+    z-index: 1;
+    align-self: flex-start;
+    margin:0 58% 0 0;
 }
 
 .newEQ {
     display: flex-box;
-    justify-content: flex-end;
+    justify-content: start;
     flex-flow: column wrap;
     text-align: right;
     color:blueviolet;
@@ -62,7 +67,10 @@
 .solution-display {
     color: navy;
     order: 3;
-    align-self: flex-end;
+    justify-content: flex-end;
+    align-items: flex-start;
+    display: block;
+    /* margin-bottom:%; */
 }
 
 .transmitter__buttonArea {
@@ -70,10 +78,12 @@
     /* use this to position buttons */
     /* max-width: 300px; */
     width: 85%;
+    height: 40vh;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
+
     /* align-content: ; */
 }
 
@@ -87,6 +97,7 @@
     padding-left: 5px;
     border-radius: 100%;
     width: 30px;
+    justify-content: space-around;
 }
 
 .symButt_left {
@@ -103,15 +114,17 @@
 }
 
 .probButt_left {
-
+    width: 30px;
+    border-radius: 20%;
 }
 
 .equals {
-
+    width: 40px;
 }
 
 soluButt_right {
-
+    width: 30px;
+    border-radius: 20%;
 }
 
 .symButt_right {
