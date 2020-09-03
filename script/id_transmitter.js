@@ -5,16 +5,14 @@
 
 const greekAlpha = ["Α","Β","Γ","Δ","Ε","Ζ","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω",]
 
+
 const EngAlpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",]
 
 const mathSymbols = ['+','-','*','/','^','√']
 
 
-
-
-
 /* EQUATIONS CONSIST OF
-numbers1n100 mathSymbols numbers1n100 solution
+numbers1n100 mathSymbols numbers1n100 mathSymbols numbers1n100 solution
 */
 
 const makeAdditionEquationAND = function(base=11, symI){

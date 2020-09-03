@@ -16,24 +16,31 @@
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    margin: 20px auto;
+    margin: 50px 0;
     position: absolute;
-    width: 62vw;
-    height: 70vh;
-    bottom: 11.25vh;
-    right: -100vh;
-}
-
-.transmitterBothDisplays:hover {
-    /* bottom: 20vh */
-    bottom: 11.25vh; /* perfect height with animation box */
-    right: 14.83vh;  /* perfect width w/ animation box */
+    width: 68vw;
+    height: 72vh;
+    /* bottom: 1.3vh;
+    right: -113vh; */
     
-}   
+    /* locked mode to edit transmitters */
+    bottom: 1.3vh;
+    right: 7vh;
+} 
+
+
+/* .transmitterBothDisplays:hover { */
+    /* bottom: 1.3vh; */
+    /* perfect height with animation box */
+    /* right: 5.83vh;   */
+    /* perfect width w/ animation box */
+    
+/* }    */
 
 .transmitter__user {
     background-color: rgb(179, 164, 32);
     height: 65vh;
+    width: 29vw;
     margin: 15px;
     margin-top: 25px;
     display: flex;
@@ -45,22 +52,30 @@
 
 .transmitter__screen{
     background-color: rgb(149, 227, 247);
-    margin-top: 15px 5; 
+    margin: 15px auto; 
     align-items: center;
-    width: 85%;
+    width: 26vw;
     height: 23vh;
     display: flex;
     justify-content: flex-start;
     flex-flow: column wrap;
     align-content: flex-start;
+    
     /* make sure to have new input <p's jquery .before() with class="newEQ"*/
 }
 
-.problem-display {
-    color: navy;
-    z-index: 1;
-    align-self: flex-start;
-    margin:0 58% 0 0;
+#displayEQ {
+    overflow: auto;
+    font-size: 23px;
+    color: blue;
+}
+
+/* displayEQ p {
+
+} */
+
+.far fa-eye {
+    width: 10px;
 }
 
 .newEQ {
@@ -69,11 +84,13 @@
     flex-flow: column wrap;
     text-align: right;
     color:blueviolet;
-    width: 90%;
-    height: 20%;
-    overflow: auto; /* Enable scroll if needed */
-}
+    width: 26vw;
+    height: 5vh;
+    overflow: auto;
+    margin-top: 0px;
+ /* Enable scroll if needed */
 
+}
 
 .solution-display {
     color: navy;
@@ -84,31 +101,65 @@
     /* margin-bottom:%; */
 }
 
+#alpha {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: flex-start;
+    margin-top: -10px;
+}
+
+.alpha{
+    width: 25px;
+    height: 18px;
+    font-size: 15px;
+    line-height: 27px;
+    background-color: rgba(130, 134, 130);
+    /* margin: -2px; */
+    margin: 1.5px;
+    text-align: center;
+    padding: 3px 5px;
+}
+
+/* .transmitter__buttonArea {
+    background-color: rgb(58, 75, 80);
+    margin: 15px auto; 
+    width: 85%;
+    height: 30vh;
+display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    align-items: stretch;
+} */
+
 .transmitter__buttonArea {
     background-color: rgb(58, 75, 80);
     /* use this to position buttons */
-    /* max-width: 300px; */
+    margin: 5px auto; 
     width: 85%;
-    height: 40vh;
+    height: 20vh;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-flow: row nowrap;
     align-items: center;
-
-    /* align-content: ; */
+    padding: 8px;
+    align-items: stretch;
 }
 
 .numButt {
     background-color: rgb(0, 255, 34);
-    flex-flow: column nowrap;
-    align-items: center;;
     color: blue;
     font-size: 1.5em;
-    padding-right: 5px;
-    padding-left: 5px;
-    border-radius: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 30%;
     width: 30px;
-    justify-content: space-around;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 10px;
 }
 
 .symButt_left {
@@ -117,25 +168,16 @@
     align-items: center;
     color: blue;
     font-size: 1.5em;
-    padding-right: 5px;
-    padding-left: 5px;
-    /* border-radius: 60%;
-    width: 30px;
-    width: 0px; */
-}
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 10px;
+    margin-bottom: 4px;
 
-.probButt_left {
+    border-radius: 40%;
     width: 30px;
-    border-radius: 20%;
-}
+    width: 0px;
+    align-items: stretch;
 
-.equals {
-    width: 40px;
-}
-
-soluButt_right {
-    width: 30px;
-    border-radius: 20%;
 }
 
 .symButt_right {
@@ -144,46 +186,127 @@ soluButt_right {
     align-items: center;
     color: blue;
     font-size: 1.5em;
-    padding-right: 5px;
-    padding-left: 5px;
-    border-radius: 60%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: 10px;
+    margin-top: 4px;
+
+    border-radius: 40%;
     width: 30px;
+    width: 0px;
+    align-items: stretch;
 }
 
-.idchecker__bot-cop {
+.bigButtons {
+    flex-flow: column wrap;
+    align-items: center;
+    background-color: grey;
+    font-size: 1em;
+    padding: 8px;
+    color: purple;
+}
+
+
+
+#greek {
     display: flex;
-    background-color: rgba(240,240,240,.8);
-    width: 40%;
-    height: 50vh;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: baseline;
+    align-content: flex-start;
+    margin-top: -10px;
+}
+
+.greek {
+    width: 25px;
+    height: 18px;
+    font-size: 15px;
+    line-height: 27px;
+    background-color: rgba(130, 134, 130);
+    /* margin: -2px; */
+    margin: 1.5px;
+    text-align: center;
+    padding: 2px 5px;
+}
+
+
+
+
+.idchecker__bot-cop {
+    background-color: rgb(179, 164, 32);
+    height: 65vh;
+    width: 29vw;
+    margin: 15px;
+    margin-top: 25px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-content: center;
+    align-items: stretch;
 }
 
 .idchecker__bot-cop__screen {
-    background-color: rgba(200,230,240);
-    width: 95%;
-    height: 10vh;
+    background-color: rgb(149, 227, 247);
+    margin: 15px auto; 
+    align-items: center;
+    width: 85%;
+    height: 30vh;
     display: flex;
-    justify-content: flex-end;
-    flex-flow: row wrap;
-    align-content: flex-start
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    overflow: auto;
+
     /* make sure to have new input <p's jquery .before() with class="newEQ"*/
 }
 
 .idchecker__bot-cop__buttonArea {
     /* use this for positioning */
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+    height: 80%;
+    width: 25vw;
+    background-color: blue;
+    margin: 10px auto;
+}
+
+#loadingBar {
+    width: 2vw;
+    height: 4vh;
+    background-color: rgba(240,240,240,.8);
+    margin: 5px;
+    align-self: flex-start;
+}
+
+.idcheck_buttons {
+    display: flex;
+    justify-content: space-evenly;
     flex-flow: row wrap;
     align-items: center;
-
+    align-content: space-around;
+    line-height: 1em;
+    font-size: 1em;
+    background-color: green;
 }
-/* 
-#deny {
 
+#deny {
+    background-color: red;
+    height: 60px;
+    width: 45px;
+    margin-top: 15px;
+    align-self: center;
+    /* border-bottom-left-radius: 45px;
+    border-top-left-radius: 90 */
 }
 
 #clear {
+    background-color: red;
+    height: 30px;
+    width: 45px;
+    margin-top: 15px;
+    align-self: center;
 
-} */
+}

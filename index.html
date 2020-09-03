@@ -106,71 +106,167 @@
 
 <div class="transmitterBothDisplays">
     <section class="transmitter__user">
-        <p class="problem-display">problem display</p>
+        <!-- <p class="problem-display">problem display</p> -->
         <article class="transmitter__screen" placeholder="use buttons- equation displays here">
-            <i class="far fa-eye"></i><!--  -->
-            <div displayEQ>
+            <i class="far fa-eye"></i>
+            <div id="displayEQ">
                 <input class=newEQ placeholder="press buttons to display your equation here">
-                <!-- <p class="newEQ">{equationDisplay: "2+9+(8)", solutionDisplay: 19}</p>
-                <p class="EQ">{equationDisplay: "1+15+(1)", solutionDisplay: 17}</p>
-                <p class="EQ">{equationDisplay: "7+10+(11)", solutionDisplay: 28}</p>
-                <p class="EQ">{equationDisplay: "27+10+(30)", solutionDisplay: 67}</p> --></div>
-                <p class="solution-display">solution display</p>
+                <p class="newEQ">{2+9+(8), 19}</p>
+                <p class="EQ">{1+15+(1), 17}</p>
+                <p class="EQ">{7+10+(11), 28}</p>
+                <p class="EQ">{27+10+(30), 67}</p>
+            </div>
+                <!-- <p class="solution-display">solution display</p> -->
             </article>
-            <article class="transmitter__buttonArea"> <!-- set background photo to wire connecting trasmitters, have idchecker slide  -->
-            <row>
-                <square class="symButt_left">+</square>
-                <square class="numButt">1</square>
-                <square class="numButt">2</square>
-                <square class="numButt">3</square>
-                <square class="symButt_right">-</square></row>
-            <row>
-                <square class="symButt_left">x</square>
-                <square class="numButt">4</square>
-                <square class="numButt">5</square>
-                <square class="numButt">6</square>
-                <square class="symButt_right">÷</square></row>
-            <row>
-                <square class="symButt_left">(</square>
-                <square class="numButt">7</square>
-                <square class="numButt">8</square>
-                <square class="numButt">9</square>
-                <square class="symButt_right">)</square></row>
-            <row>
-                
-                <square class="symButt_left">^</square>
-                <square class="symButt_left">.</square>
-                <square>0</square>
-                <square class="symButt_right">-</square>
-                <square class="symButt_right">√</square></row>
-            <row>
-                <square class="probButt_left">entire<br />problem</square>
-                <square class="equals">=</square>
-                <square class="soluButt_right">entire<br/> solution</square>
-
+            <section id="alpha">
+                <row>
+                <square class="alpha">a</square>
+                <square class="alpha">b</square>
+                <square class="alpha">c</square>
+                <square class="alpha">d</square>
+                <square class="alpha">e</square>
+                <square class="alpha">f</square>
+                <square class="alpha">g</square>
+                <square class="alpha">h</square>
+                <square class="alpha">i</square>
+                <square class="alpha">j</square>
+                <square class="alpha">k</square>
+                <square class="alpha">l</square>
+                <square class="alpha">m</square>
+            </row><row>
+                <square class="alpha">n</square>
+                <square class="alpha">o</square>
+                <square class="alpha">p</square>
+                <square class="alpha">q</square>
+                <square class="alpha">r</square>
+                <square class="alpha">s</square>
+                <square class="alpha">t</square>
+                <square class="alpha">u</square>
+                <square class="alpha">v</square>
+                <square class="alpha">w</square>
+                <square class="alpha">x</square>
+                <square class="alpha">y</square>
+                <square class="alpha">z</square>
             </row>
-        </article>
+            </section>    
+            <article class="transmitter__buttonArea"> <!-- set background photo to wire connecting trasmitters, have idchecker slide  -->
+                <!-- <section class="transmitter__screen__probButts"> -->
+                <column>
+                    <square class="symButt_left">+</square>
+                    <square class="symButt_left">x</square>
+                    <square class="symButt_left">(</square>
+                    <square class="symButt_left">^</square></column>
+                <column>
+                    <square class="numButt">1</square>
+                    <square class="numButt">4</square>
+                    <square class="numButt">7</square>
+                    <square class="symButt_left">.</square></column>
+                <column>
+                    <square class="numButt">2</square>
+                    <square class="numButt">5</square>
+                    <square class="numButt">8</square>
+                    <square class="numButt">0</square></column>
+                <column>
+                    <square class="numButt">3</square>
+                    <square class="numButt">6</square>
+                    <square class="numButt">9</square>
+                    <square class="symButt_right">-</square></column>
+                <column>
+                    <square class="symButt_right">-</square>
+                    <square class="symButt_right">÷</square>
+                    <square class="symButt_right">)</square>
+                    <square class="symButt_right">√</square>
+                </column>
+            </article>
+                <section class="bigButtons">
+                    <row>
+                        <square class="probButt_left">entire problem</square>
+                        <square class="equals">=</square>
+                        <square class="soluButt_right">entire solution</square>
+                    </row>
+                </section>
+
+                <section id="greek">
+                    <row>
+                        <square class="greek">Α</square>
+                        <square class="greek">Β</square>
+                        <square class="greek">Γ</square>
+                        <square class="greek">Δ</square>
+                        <square class="greek">Ε</square>
+                        <square class="greek">Ζ</square>
+                        <square class="greek">Η</square>
+                        <square class="greek">Θ</square>
+                        <square class="greek">Ι</square>
+                        <square class="greek">Κ</square>
+                        <square class="greek">Λ</square>
+                        <square class="greek">Μ</square>
+                    </row><row>
+                        <square class="greek">Ν</square>
+                        <square class="greek">Ξ</square>
+                        <square class="greek">Ο</square>
+                        <square class="greek">Π</square>
+                        <square class="greek">Ρ</square>
+                        <square class="greek">Σ</square>
+                        <square class="greek">Τ</square>
+                        <square class="greek">Υ</square>
+                        <square class="greek">Φ</square>
+                        <square class="greek">Χ</square>
+                        <square class="greek">Ψ</square>
+                        <square class="greek">Ω</square>
+                    </row>
+                </section>
 
     </section>
     <section class="idchecker__bot-cop">
         <article class="idchecker__bot-cop__screen">
-            <p></p>
+            <p>Α</p><br/>
+            <p>Β</p><br/>
+            <p>Γ</p><br/>
+            <p>Δ</p><br/>
+            <p>Ε</p><br/>
+            <p>Ζ</p><br/>
+            <p>Η</p><br/>
+            <p>Θ</p><br/>
+            <p>Ι</p><br/>
+            <p>Κ</p><br/>
+            <p>Λ</p><br/>
+            <p>Μ</p><br/>
+            <p>Ν</p><br/>
+            <p>Ξ</p><br/>
+            <p>Ο</p><br/>
+            <p>Π</p><br/>
+            <p>Ρ</p><br/>
+            <p>Σ</p><br/>
+            <p>Τ</p><br/>
+            <p>Υ</p><br/>
+            <p>Φ</p><br/>
+            <p>Χ</p><br/>
+            <p>Ψ</p><br/>
+            <p>Ω</p><br/>
             
         </article>
         <article class="idchecker__bot-cop__buttonArea">
-            <row>
-                <square id="deny">
-                    <p>DENY</p>
-                    <p>=</p>
-                    <p>DEVIANT</p>
-                </square>
-                <square id="clear">
-                    <p>CLEAR</p>
-                    <p>=</p>
-                    <p>APPROVED</p>
-                    <p>CITIZEN</p>
-                </square>
-            </row>
+            <div id="loadingBar">
+                <square class="loading"></square>
+                <square class="loading"></square>
+                <square class="loading"></square>
+                <square class="loading"></square>
+                <square class="loading"></square>
+                <square class="loading"></square>
+                <square class="loading"></square>
+                <square class="loading"></square>
+                <square class="loading"></square>
+                <square class="loading"></square>
+                %
+            </div>
+            <div class="idcheck_buttons">
+                <div id="deny">
+                    DENY = DEVIANT
+                </div>
+                <div id="clear">
+                    CLEAR = APPROVED CITIZEN
+                </div>
+            </section>
          
         </article>
 
