@@ -195,3 +195,7 @@ const start = function(){
 $('#start').on('click',start());
 $('#previewNext').on('click',nextStreet());
 $('#return').on('click',previousStreet());
+
+
+
+

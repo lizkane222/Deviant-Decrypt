@@ -107,21 +107,24 @@ const createNewEQ = () => {
     console.log(`let's make some button click event listeners`)
 }
 
-
-
-
-
 // $('.newEQ').before()
 // $('transmitter__screen').text('')
 
+// listen for click in transmitter  (target)
 
 
 
 
+// identify click in transmitter (current target)
 
 
 
-
+// display that element's innertext in my input bar
+// 
+// 
+// 
+// 
+// 
 
 
 

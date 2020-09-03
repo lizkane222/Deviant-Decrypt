@@ -57,6 +57,7 @@ h3 {
 
 header {
     height: 10vh;
+    height: fit-content;
 }
 
 main {
@@ -113,6 +114,45 @@ main {
 
 p {
     line-height: 1.2em;
+    width: fit-content;
+    max-width: 25vw;
+}
+
+.gameChoiceButtons {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: -15px;
+}
+
+.gameChoiceButtons h3{
+    border: 2px outset var(--background-dark2);
+    background-color: var(--background-darker);
+    width: 40px;
+    color: var(--background-sub);
+    margin:0;
+    font-size: 15px;
+    height: 20px;
+    text-align: center;
+}
+
+.gameChoiceButtons h5 {
+    color: var(--background-inverse3);
+    background-color: var(--background-inverse4);
+    margin:0;
+    line-height: 10px;
+    font-size: 10px;
+    height: 15px;
+}
+
+
+.gameChoiceButtons p {
+    color: var(--background-inverse3);
+    background-color: var(--background-inverse4);
+    margin:0;
+    line-height: 10px;
+    font-size: 10px;
+    height: 15px;
+
 }
 
 .hint--image:after {
