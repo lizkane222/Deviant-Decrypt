@@ -26,15 +26,15 @@
         <div id="backstory">
         <!-- all a-tags on hover should show an image popup/preview of the listed vocabulary: ie: Phantom Wars= cities in destruction, Federate Domain: big brother, Rebels: coalition -->
             <!-- <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">hover over me.</span> -->
-            <p>Ever since the <span class="hint--top hint--bounce hint--rounded hint--image phantomWars" aria-label="image" >Phantom Wars </span>the <span class="hint--top hint--bounce hint--rounded hint--image federateDomain" aria-label="image">Federate Domain </span>has occupied and controlled nations.<br/>
-            There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <span class="hint--top hint--bounce hint--rounded hint--image backpack" aria-label="image">packages</span> containing extremely classified and sensitive data between its rebel hubs<br/>
+            <p>Ever since the <span class="hint--bottom hint--bounce hint--rounded hint--image phantomWars" aria-label="image" >Phantom Wars </span>the <span class="hint--bottom hint--bounce hint--rounded hint--image federateDomain" aria-label="image">Federate Domain </span>has occupied and controlled nations.<br/>
+            There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <span class="hint--bottom hint--bounce hint--rounded hint--image backpack" aria-label="image">packages</span> containing extremely classified and sensitive data between its rebel hubs<br/>
             Technology is monitored like never before, rebels can’t use it to communicate but they are trained to be skilled decoders.</p>    
             <p>Rebels daily navigate the streets of a post-apocalyptic city flooded with evil-doers, spies, and <span class="hint--top hint--bounce hint--rounded hint--image botCops" aria-label="image">Bot-Cops</span> who are rigorously <b>verifying identities</b> to winnow out the deviant forces that plot against the Federate Domain.</p>
 
             <p>Every time a rebel comes across a police-bot they must do an identity check.<br/>
-            Only the <span class="hint--top hint--bounce hint--rounded hint--image approvedCitizens" aria-label="image">“approved citizens”</span> are given the correct hourly code<span class="hint--top hint--bounce hint--rounded hint--image encryption" aria-label="image">(encryption)</span> sent to their identity transmitters.<br/>
+            Only the <span class="hint--top hint--bounce hint--rounded hint--image approvedCitizens" aria-label="image">“approved citizens”</span> are given the correct hourly code<span class="hint--bottom hint--bounce hint--rounded hint--image encryption" aria-label="image">(encryption)</span> sent to their identity transmitters.<br/>
             The rebels have been at work to crack these codes ever since they’ve been enforced. <br/>
-            The bot-cops will link their <span class="hint--top hint--bounce hint--rounded hint--image idchecker" aria-label="image">id-checker</span> to your <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">
+            The bot-cops will link their <span class="hint--top hint--bounce hint--rounded hint-ide idcheckerpic" aria-label="image">id-checker</span> to your <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">
             
              id="idTransmitter"  href="#">id-transmitter.</span> When they do, they don't know the difference between an "approved citizen's" trasmitter spewing out correct lines of code or if the code is simply just being typed out quickly.<br/>
             This is as some would say 'pulling the wool over the sheeps eyes', or the "rebel's" small window of opportunity to pass off as an "approved citizen".<br/>
@@ -77,7 +77,7 @@
 <column class="right-side">
 <!-- create help button for 911 help to contact rebel base encrypted call for help in how to play -->
 <div id="help">
-
+    <i class="fas fa-shoe-prints"></i>
     <article class="help__missions">
         <h4>Deliver a classified package containing highly sensitive information on Deviant plans.</h4>
         <h6> Travel on foot to another rebel hub across the city while maintaining an "approved citizen" status by passing all identity checks when encountering id-cop-bot </h6>
@@ -95,6 +95,10 @@
 
 <!-- animated scroll screen, image placeholder until I learn how to use graphics -->
 <div class="dungeon" >
+    <div class="animationScroll">
+        <img class="aniScroll" src="https://i.imgur.com/dAIwZ6v.png"/>
+    </div>
+    
     <div class="abdaPrompt"></div>
     
     <!-- <img id="street" src="" alt=""/>
@@ -112,9 +116,9 @@
     
     
 </div>
+<i class="fas fa-map-signs"></i>
     <div id="mapDiv">
         <div class="street"></div>
-        
         <button id='start'>START</button>
         <button id='return'>RETURN</button>
         <button id='previewNext'>PREVIEW NEXT</button>
@@ -174,7 +178,7 @@
                 <square id="btn-z" class="alpha">z</square>
             </row>
             </section>    
-            <article class="transmitter__buttonArea"> <!-- set background photo to wire connecting trasmitters, have idchecker slide  -->
+            <article class="transmitter__buttonArea"> <!-- set background photo to wire connecting trasmitterside idchecker slide  -->
                 <!-- <section class="transmitter__screen__probButts"> -->
                 <column>
                     <square id="btn+" class="symButt_left">+</square>
@@ -245,7 +249,8 @@
     <div id="bubble">
         <h4>( a  +  b )  ( ? )   =   d</h4>
     </div>
-    <section class="idchecker">
+    <i class="fas fa-wave-square"></i>
+    <section id="idchecker">
         <div class="idchecker__screen">
             <p>Α</p><br/>
             <p>Β</p><br/>

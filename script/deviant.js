@@ -131,15 +131,15 @@ let currentStreet = 0,
 
 
 const generateStreets = function(){
-    $('.dungeon').empty();
+    $('#mapDiv').empty();
 
     for (let index=0; index < streets.length; index++){
         if(index === currentStreet){
-            $('.dungeon').append('<div class="street highlight"></div>');
+            $('#mapDiv').append('<div class="street highlight"></div>');
         }else if (streets[index].visited){
-            $('.dungeon').append('<div class="street visited"></div>');
+            $('#mapDiv').append('<div class="street visited"></div>');
         }else {
-            $('.dungeon').append('<div class="street"></div>')
+            $('#mapDiv').append('<div class="street"></div>')
         }
     }
 
@@ -151,7 +151,7 @@ const enterStreet = function(){
     if(street.visited){
         $('dungeon').append(`<div class="prompt'>We've already been down this street.</div>`)
     } else {
-        $('.dungeon').append(`<div class='prompt'>${street.abdaPrompt[0,1,2,3]}</div>`)
+        $('#mapDiv').append(`<div class='prompt'>${street.abdaPrompt[0,1,2,3]}</div>`)
         health = health-street.damage+street.heal;
 
         if (health <= 0) {
@@ -192,6 +192,6 @@ const start = function(){
 }
 
 
-$('#start').on('click',start);
-$('#previewNext').on('click',nextStreet);
-$('#return').on('click',previousStreet);
+$('#start').on('click',start());
+$('#previewNext').on('click',nextStreet());
+$('#return').on('click',previousStreet());
