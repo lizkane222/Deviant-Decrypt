@@ -14,7 +14,7 @@
     
     <title>Deviant</title>
 </head>
-<body>
+<body class="dark">
     <header>
         <h1 id="pageTitle">Deviant</h1>
         <h3 id="pageSubtitle">Times(x) Divide(÷) Us, but Together(+) we can Remove(-) the threat of unending inequality (!==)</h3>
@@ -25,18 +25,20 @@
     <!-- display backstory & mission -->
         <div id="backstory">
         <!-- all a-tags on hover should show an image popup/preview of the listed vocabulary: ie: Phantom Wars= cities in destruction, Federate Domain: big brother, Rebels: coalition -->
-            <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">hover over me.</span>
+            <!-- <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">hover over me.</span> -->
 
-            <p>Ever since the <span class="hint--top hint--bounce hint--rounded" aria-label=img src="https://i.imgur.com/uSwz4dF.png">Phantom Wars </span>the <span>Federate Domain </span>has occupied and controlled nations.<br/>
-            There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <span id=""  href="#">packages</span> containing extremely classified and sensitive data between its rebel hubs<br/>
+            <p>Ever since the <span class="hint--top hint--bounce hint--rounded hint--image phantomWars" aria-label="image" >Phantom Wars </span>the <span class="hint--top hint--bounce hint--rounded hint--image federateDomain" aria-label="image">Federate Domain </span>has occupied and controlled nations.<br/>
+            There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <span class="hint--top hint--bounce hint--rounded hint--image backpack" aria-label="image">packages</span> containing extremely classified and sensitive data between its rebel hubs<br/>
             Technology is monitored like never before, rebels can’t use it to communicate but they are trained to be skilled decoders.</p>    
-            <p>Rebels daily navigate the streets of a post-apocalyptic city flooded with evil-doers, spies, and <span id="botCops"  href="#">Bot-Cops</span> who are rigorously <b>verifying identities</b> to winnow out the deviant forces that plot against the Federate Domain.</p>
+            <p>Rebels daily navigate the streets of a post-apocalyptic city flooded with evil-doers, spies, and <span class="hint--top hint--bounce hint--rounded hint--image botCops" aria-label="image">Bot-Cops</span> who are rigorously <b>verifying identities</b> to winnow out the deviant forces that plot against the Federate Domain.</p>
 
             <p>Every time a rebel comes across a police-bot they must do an identity check.<br/>
-            Only the <span id="approvedCitizens"  href="#">“approved citizens”</span> are given the correct hourly code<span id="encryption" href="" alt="">(encryption)</span> sent to their identity transmitters.<br/>
+            Only the <span class="hint--top hint--bounce hint--rounded hint--image approvedCitizens" aria-label="image">“approved citizens”</span> are given the correct hourly code<span class="hint--top hint--bounce hint--rounded hint--image encryption" aria-label="image">(encryption)</span> sent to their identity transmitters.<br/>
             The rebels have been at work to crack these codes ever since they’ve been enforced. <br/>
-            The bot-cops will link their <span id="idChecker"  href="#">id-checker</span> to your <span id="idTransmitter"  href="#">id-transmitter.</span> When they do, they don't know the difference between an "approved citizen's" trasmitter spewing out correct lines of code or if the code is simply just being typed out quickly.<br/>
-            This is as some would say <span id="sheepEyes"  href="#">'pulling the wool over the sheeps eyes'</span>, or the "rebel's" small window of opportunity to pass off as an "approved citizen".<br/>
+            The bot-cops will link their <span class="hint--top hint--bounce hint--rounded hint--image idchecker" aria-label="image">id-checker</span> to your <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">
+            
+             id="idTransmitter"  href="#">id-transmitter.</span> When they do, they don't know the difference between an "approved citizen's" trasmitter spewing out correct lines of code or if the code is simply just being typed out quickly.<br/>
+            This is as some would say 'pulling the wool over the sheeps eyes', or the "rebel's" small window of opportunity to pass off as an "approved citizen".<br/>
             A field-rebel must be able to input the correct code at a speed comprable to the bot-cops id-checker, so quickly. <br/>
             The more codes someone can produce the more likely they have the real code and are an “approved citizen”</p>
 
@@ -54,7 +56,7 @@
 <!-- take user input, choose character name and appearance -->
     <div class="deviant">
         <article class="deviant_user">
-            <a href='https://pngtree.com/so/hacker' alt="hacker png from pngtree.com"><img class="deviant__img" src="https://i.imgur.com/MiNTZgc.png"/></a>
+            <img class="deviant__img" src="styles/Images/anonymous_user.png"/></a>
             <h3 class="deviant__name" placeholder="User Name">NAME</h3>
             <!-- create input to add user name -->
         </article>
@@ -111,10 +113,10 @@
             <i class="far fa-eye"></i>
             <div id="displayEQ">
                 <input class=newEQ placeholder="press buttons to display your equation here">
-                <p class="newEQ">{2+9+(8), 19}</p>
-                <p class="EQ">{1+15+(1), 17}</p>
-                <p class="EQ">{7+10+(11), 28}</p>
-                <p class="EQ">{27+10+(30), 67}</p>
+                <p class="newEQ">W{2+9+(8), 19}</p>
+                <p class="EQ">W{1+15+(1), 17}</p>
+                <p class="EQ">W{7+10+(11), 28}</p>
+                <p class="EQ">W{27+10+(30), 67}</p>
             </div>
                 <!-- <p class="solution-display">solution display</p> -->
             </article>
@@ -217,8 +219,11 @@
                 </section>
 
     </section>
+    <div id="bubble">
+        <h4>( a  +  b )  ( ? )   =   d</h4>
+    </div>
     <section class="idchecker">
-        <article class="idchecker__screen">
+        <div class="idchecker__screen">
             <p>Α</p><br/>
             <p>Β</p><br/>
             <p>Γ</p><br/>
@@ -244,7 +249,7 @@
             <p>Ψ</p><br/>
             <p>Ω</p><br/>
             
-        </article>
+        </div>
         <article class="idchecker__buttonArea">
             <div id="loadingBar">
                 <square class="loading"></square>
@@ -263,22 +268,35 @@
             <div class="idcheck_buttons">
 
                 <div id="deny">
-                    DENY
+                    <h3>DENY</h3>
+                    <h3>=</h3>
+                    <h3>DEVIANT</h3>
                     <!-- DENY = DEVIANT -->
                 </div>
 
                 <div id="clear">
-                    CLEAR
+                    <h3>CLEAR</h3>
+                    <h3>=</h3>
+                    <h3>CITIZEN</h3>
                     <!-- CLEAR = APPROVED CITIZEN -->
                 </div>
 
+
+                <!-- <div id="deny" class="idcheck_buttons">
+                    DENY
+                </div>
+    
+                <div id="clear">
+                    CLEAR
+                </div> -->
+             
             </section>
          
         </article>
 
     </section>
 
-
+    
 
 </div>
 

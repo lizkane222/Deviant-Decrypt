@@ -81,9 +81,9 @@ const makeAdditionEquationAND = function(base=11, symI){
 
 
 const basic1add = makeAdditionEquationAND(11, 0)
-const basic1sub = makeAdditionEquationAND(11, 1)
-const basic1mult = makeAdditionEquationAND(11, 2)
-const basic1div = makeAdditionEquationAND(11, 3)
+// const basic1sub = makeAdditionEquationAND(11, 1)
+// const basic1mult = makeAdditionEquationAND(11, 2)
+// const basic1div = makeAdditionEquationAND(11, 3)
 
 
 // $('input .newEQ')
@@ -104,15 +104,15 @@ const basic1div = makeAdditionEquationAND(11, 3)
 
 
 const createNewEQ = () => {
-    console.log
+    console.log(`let's make some button click event listeners`)
 }
 
 
 
 
 
-$('.newEQ').before()
-$('transmitter__screen').text('')
+// $('.newEQ').before()
+// $('transmitter__screen').text('')
 
 
 

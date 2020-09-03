@@ -3,10 +3,39 @@
 * {
 box-sizing: border-box;
 }
+/* root element to contain global variables */
+:root {
+    /* Fonts  */
+  --base-font: "montserrat", sans-serif;
+  
+}
+
+body.dark {
+    /* colors   */
+  --background: #72efdd;
+  --background-sub: #56cfe1;
+  --background-inverse: #48bfe3;
+  --background-sub2: #031926;
+  --background-inverse2: #;
+  --background-sub3: #6930c3;
+  --background-inverse3: #7400b8;
+  --background-dark: #073b4c;
+  --background-dark-inverse: #ff99c8;
+  --background-sub4: #affc41;
+  --background-inverse4: #b2ff9e;
+  --background-dark2: #3c1642;
+  --background-dark3: #0b132b;
+  --background-dark4: #042a2b;
+  --background-darker: #0e1428;
+  /* text colors */
+  --text: var(--background);
+  --text-inverse: var(--background-inverse);
+}
+
 
 body {
-    background-color: rgba(20,20,20,1);
-    color: rgba(220,220,220,8);
+    background-color: var(--background-dark3);
+    color: var(--background-sub);
     height: 100vh;
     width: 100vw;
     /* overflow: hidden; */
@@ -26,10 +55,11 @@ h3 {
 main {
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-content: flex-start;
     padding: 15px;
     width: 80vw;
+    margin-top: -30px;
     /* margin: 50px 0;; */
 }
 
@@ -37,14 +67,14 @@ main {
     flex:1;
     max-width: 30vw;
     min-width: 20px;
-    margin: -50px 5px 50px 5px;
+    margin: -50px 5px 110px 5px;
     padding: 5px;
     height: 80vh;
 }
 
 .right-side {
-    flex: 2;
-    margin: 15px;
+    flex: 2.5;
+    margin: 15px 15px 15px 140px;
     max-width: 70vw;
     min-width: 200px;
     height: 80vh;
@@ -63,6 +93,8 @@ main {
     overflow: auto; 
     height: 35vh;
     padding: 100px 30px;
+    margin:10px 5px 50px 5px;
+    max-width: 
 
     /* margin-top: 10px; */
     /* padding: 0 1%; */
@@ -83,11 +115,56 @@ p {
 
 }
 
+.phantomWars :after {
+    background-image: url("phantomWars.png");
+    height: 40px;
+    width: 100px;
+}
+
+.federateDomain:after {
+    background-image: url("https://i.imgur.com/K6SEvJa.png?1");
+    height: 40px;
+    width: 100px;
+}
+
+.backpack:after {
+    background-image: url("https://i.imgur.com/5gSctma.png?1");
+    height: 40px;
+    width: 100px;
+}
+
+.botCops:after {
+    background-image: url("https://i.imgur.com/7fXGjQm.png?1");
+    height: 40px;
+    width: 100px;
+}
+
+.approvedCitizens:after {
+    background-image: url("phantomWars.png");
+    height: 40px;
+    width: 100px;
+}
+
+
+.encryption:after {
+    background-image: url("https://i.imgur.com/DoAdMPN.jpg");
+    height: 40px;
+    width: 100px;
+}
+
 .custom_class:after {
     background-image: url("phantomWars.png");
     height: 40px;
     width: 100px;
 }
+
+.custom_class:after {
+    background-image: url("phantomWars.png");
+    height: 40px;
+    width: 100px;
+} 
+
+
 
 .deviant {
     flex: 1;
@@ -96,7 +173,7 @@ p {
     flex-flow: column nowrap;
     align-items: center;
     height: 30vh;
-    margin-top: 60px;
+    margin-top: 30px;
     /* padding: 5px; */
     /* width: 200px; */
 }
@@ -104,11 +181,8 @@ p {
 .deviant__img {
     max-width: 250px;
     min-width: 100px;
-    border: 8px inset rgba(52,82,98,.7);
+    border: 8px inset var(--background-dark);
     border-radius: 100%;
-    /* margin: 5px ; */
-    /* padding: 5px; */
-    
 }
 
 .deviant__name {
@@ -130,26 +204,27 @@ p {
 
 #help {
     display: flex;
-    background-color: green;
+    background-color: var(--background-inverse2);
     justify-content: center;
     align-content: space-around;
     align-items: flex-start;
     overflow: hidden;
     height: 30px;
     padding: 5px;
-    margin: 0 8%;
+    margin: 5 8%;
     max-width: 920px;
 
 
 }
 
 .help__missions {
-    background-color: yellow;
+    background-color: var(--background-sub2);
     color: #000000;
     width: 600px;
     line-height: .8em;
     font-size: 1em;
-    /* margin: 0 8%; */
+    margin: 5 8%;
+
     /* height: 15vh; */
     /* padding: 5px; */
     /* align-self: center; */
@@ -157,7 +232,7 @@ p {
 }
 
 .help__transmitter {
-    background-color: orange;
+    background-color: var(--background-inverse3);
     color: black;
     width: 40%;
     line-height: .8em;
@@ -171,9 +246,9 @@ p {
 
 .animation {
     flex: 2.5;
-    width: 65vw;
+    width: 63vw;
     height: 70vh;
-    background-color: pink;
+    background-color: var(--background-sub2);
     margin-top: 3%;
     
     /* margin-right: 20%; */
