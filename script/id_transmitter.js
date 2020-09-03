@@ -86,6 +86,41 @@ const basic1mult = makeAdditionEquationAND(11, 2)
 const basic1div = makeAdditionEquationAND(11, 3)
 
 
+// $('input .newEQ')
+
+// class ButtonEQ{
+//     constructor(btnID, btnClass, btnValue,){
+//         this.btnID = btnID 
+//         this.btnClass = btnClass 
+//         this.btnValue = btnValue
+//     }
+
+//     getBtnValue(){
+//         $('this.btnID').click(function(e){
+//             $('input .newEQ').attr('this.value')
+//             console.log(`print ${btnValue}`)
+//         }
+
+
+
+const createNewEQ = () => {
+    console.log
+}
+
+
+
+
+
+$('.newEQ').before()
+$('transmitter__screen').text('')
+
+
+
+
+
+
+
+
 
 //     }
 //     if (symI === add){

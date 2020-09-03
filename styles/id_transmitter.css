@@ -138,14 +138,14 @@ display: flex;
 .transmitter__buttonArea {
     background-color: rgb(58, 75, 80);
     /* use this to position buttons */
-    margin: 5px auto; 
+    margin: 3px auto; 
     width: 85%;
     height: 20vh;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-flow: row nowrap;
     align-items: center;
-    padding: 8px;
+    padding: 0px;
     align-items: stretch;
 }
 
@@ -198,14 +198,54 @@ display: flex;
 }
 
 .bigButtons {
-    flex-flow: column wrap;
-    align-items: center;
-    background-color: grey;
+    flex-direction: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: white;
     font-size: 1em;
-    padding: 8px;
+    color: purple;
+    margin: -8px 0 18px 0;
+    text-align: center;
+}
+
+#bigBtnProb {
+    margin: 5px;
+    background-color: orange;
+    text-align: center;
+    order: 1;    
+    padding: 5px;
+    width: 30px;
+    height: 20px;
+    font-size: 16;
+    line-height: 18px;
     color: purple;
 }
 
+#btnEquals {
+    order: 2;
+    margin: 15px;
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    width: 40px;
+    height: 30px;
+    font-size: 45;
+    color: purple;
+    line-height: 18px;
+}
+
+#bigBtnSolu {
+    order: 3;
+    margin: 5px;
+    background-color: orange;
+    text-align: center;
+    padding: 5px;
+    width: 40px;
+    height: 20px;
+    font-size: 16;
+    color: purple;
+    line-height: 18px;
+}
 
 
 #greek {
@@ -215,6 +255,7 @@ display: flex;
     align-items: baseline;
     align-content: flex-start;
     margin-top: -10px;
+    color: rgba(100,100,100,1);
 }
 
 .greek {
@@ -265,7 +306,7 @@ display: flex;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     height: 80%;
     width: 25vw;
@@ -292,15 +333,17 @@ display: flex;
     background-color: green;
 }
 
+
+/* 
 #deny {
     background-color: red;
     height: 60px;
     width: 45px;
     margin-top: 15px;
     align-self: center;
-    /* border-bottom-left-radius: 45px;
-    border-top-left-radius: 90 */
-}
+    border-top-left-radius: 90 
+} */
+/* border-bottom-left-radius: 45px;
 
 #clear {
     background-color: red;
