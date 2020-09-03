@@ -122,6 +122,10 @@ const createNewEQ = () => {
 
 
 
+
+
+
+
 //     }
 //     if (symI === add){
 //         addition()

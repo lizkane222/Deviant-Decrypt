@@ -27,6 +27,8 @@ body.dark {
   --background-dark3: #0b132b;
   --background-dark4: #042a2b;
   --background-darker: #0e1428;
+  --background-linear-gradient0: linear-gradient(black,white);
+  --background-radial-gradient0: radial-gradient(black,white);
   /* text colors */
   --text: var(--background);
   --text-inverse: var(--background-inverse);
@@ -52,14 +54,19 @@ h3 {
     margin: 0;
 }
 
+header {
+    height: 10vh;
+}
+
 main {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-content: flex-start;
-    padding: 15px;
+    padding: 1vh;
     width: 80vw;
-    margin-top: -30px;
+    height: 90vh;
+    /* margin-top: -30px; */
     /* margin: 50px 0;; */
 }
 
@@ -67,20 +74,23 @@ main {
     flex:1;
     max-width: 30vw;
     min-width: 20px;
-    margin: -50px 5px 110px 5px;
+    margin: 1vh 1vw 5vh -1vw;
     padding: 5px;
-    height: 80vh;
+    height: 90vh;
 }
 
 .right-side {
     flex: 2.5;
-    margin: 15px 15px 15px 140px;
+    margin: 2vh 2vw 2vh 5vw;
     max-width: 70vw;
     min-width: 200px;
-    height: 80vh;
+    height: 90vh;
     /* margin-top: 100px; */
 
 }
+
+/* ///////////// LEFT COLUMN /////////////// */
+
 
 #backstory {
     flex: 1;
@@ -92,9 +102,9 @@ main {
     align-content: flex-start;
     overflow: auto; 
     height: 35vh;
+    width: 25vw;
     padding: 100px 30px;
     margin:10px 5px 50px 5px;
-    max-width: 
 
     /* margin-top: 10px; */
     /* padding: 0 1%; */
@@ -115,7 +125,7 @@ p {
 
 }
 
-.phantomWars :after {
+/* .phantomWars :after {
     background-image: url("phantomWars.png");
     height: 40px;
     width: 100px;
@@ -137,22 +147,22 @@ p {
     background-image: url("https://i.imgur.com/7fXGjQm.png?1");
     height: 40px;
     width: 100px;
-}
+} */
 
-.approvedCitizens:after {
+/* .approvedCitizens:after {
     background-image: url("phantomWars.png");
     height: 40px;
     width: 100px;
-}
+} */
 
-
+/* 
 .encryption:after {
     background-image: url("https://i.imgur.com/DoAdMPN.jpg");
     height: 40px;
     width: 100px;
-}
+} */
 
-.custom_class:after {
+/* .custom_class:after {
     background-image: url("phantomWars.png");
     height: 40px;
     width: 100px;
@@ -162,7 +172,7 @@ p {
     background-image: url("phantomWars.png");
     height: 40px;
     width: 100px;
-} 
+}  */
 
 
 
@@ -202,6 +212,8 @@ p {
     text-align: center;
 }
 
+/* ///////////// RIGHT COLUMN /////////////// */
+
 #help {
     display: flex;
     background-color: var(--background-inverse2);
@@ -209,12 +221,10 @@ p {
     align-content: space-around;
     align-items: flex-start;
     overflow: hidden;
-    height: 30px;
+    height: 5vh;
     padding: 5px;
     margin: 5 8%;
     max-width: 920px;
-
-
 }
 
 .help__missions {
@@ -224,11 +234,9 @@ p {
     line-height: .8em;
     font-size: 1em;
     margin: 5 8%;
-
     /* height: 15vh; */
     /* padding: 5px; */
     /* align-self: center; */
-    
 }
 
 .help__transmitter {
@@ -237,27 +245,71 @@ p {
     width: 40%;
     line-height: .8em;
     font-size: 1em;
-    height: 40vh;
     /* margin: 0 8%; */
     /* padding: 5px; */
     /* margin-left: 5%; */
     /* align-self: right; */
 }
+/* ///////////// STREETS & GAME /////////////// */
 
-.animation {
+.dungeon {
     flex: 2.5;
     width: 63vw;
     height: 70vh;
-    background-color: var(--background-sub2);
-    margin-top: 3%;
-    
+    background-color: var(--background-linear-gradient0);
+    margin-top: 1vh;
+    background: 
+        url("https://i.imgur.com/dAIwZ6v.png") bottom center repeat;
+        /* url("") */
+    background-size: 63vw 70vh;
+    overflow: hidden;
     /* margin-right: 20%; */
     /* margin-left: 10%; */
 }
 
 
 
+.dungeon img {
+    /* width: 63vw;
+    height: 70vh; */
+    width: 100%;
+    position: cover;
+    /* top: -5px; */
+    height: 110%;
+}
 
+#mapDiv {
+    background-image: url("https://i.imgur.com/3Ml5Mdy.jpg");
+    height: 6vh;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+
+}
+
+button {
+    margin-top: 0;
+    width: 10vw;
+    height: 5vh;
+    
+}
+
+.street {
+    width: 80px;
+    height: 80px;
+    background: var(--sub-dark);
+    border: 2px dashed cyan;
+}
+
+.street.highlight {
+    background: var(--sub);
+    /*   border: 5px solid var(--sub-dark); */
+}
+
+.street.visited {
+    background: teal;
+}
 
 
 
@@ -278,7 +330,8 @@ p {
 
 
 footer {
-    margin-top: 30px;      /* put footer in HTML */
+    margin-top: 0px;
+    color: gray;      /* put footer in HTML */
 }
 
 

@@ -22,6 +22,8 @@ body.dark {
   --background-dark2: #3c1642;
   --background-dark3: #0b132b;
   --background-dark4: #042a2b;
+  --background-linear-gradient0: linear-gradient(black,white);
+  --background-radial-gradient0: radial-gradient(black,white);
   /* text colors */
   --text: var(--background);
   --text-inverse: var(--background-inverse);
@@ -30,7 +32,7 @@ body.dark {
 
 
 .transmitterBothDisplays {
-    background-color: var(--background-dark3);
+    /* background-color: var(--background-dark3); */
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -39,10 +41,8 @@ body.dark {
     position: absolute;
     width: 68vw;
     height: 72vh;
-
     bottom: 7.9vh;
     right: -113vh;
-    
     /* locked mode to edit transmitters */
     /* bottom: 1.3vh;
     right: 7vh; */
@@ -59,7 +59,7 @@ body.dark {
 }   
 
 .transmitter__user {
-    background-color: var(--background-dark4);
+    background-color: var(--background-dark3);
     height: 65vh;
     width: 29vw;
     margin: 15px;
@@ -71,6 +71,11 @@ body.dark {
     justify-content: center;
     align-content: center;
     align-items: stretch;
+}
+
+.fa-eye {
+    margin-top: -25px;
+    color: yellow;
 }
 
 .transmitter__screen{
