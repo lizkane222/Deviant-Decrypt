@@ -50,17 +50,14 @@ span {
     cursor: context-menu;
 }
 
-h1 {
-    margin-top: 0px;
-}
-
-h3 {
-    margin: 0;
-}
-
 header {
     height: 10vh;
     height: fit-content;
+    margin-top: 0px;
+    display: inline-block;
+}
+header h3 {
+    padding-bottom: 10px;
 }
 
 main {
@@ -86,7 +83,7 @@ main {
 
 .right-side {
     flex: 2.5;
-    margin: -1.7vh 2vw 2vh 5vw;
+    margin: -1.7vh 2vw 2vh 3vw;
     max-width: 70vw;
     min-width: 200px;
     height: 90vh;
@@ -99,62 +96,67 @@ main {
 
 #backstory {
     flex: 1;
-    background-color: none;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 3px 30px 3px;
     display: inline-block;
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
     overflow: auto; 
-    height: 35vh;
-    width: 25vw;
-    padding: 10px 30px;
-    margin:0px 5px 50px 5px;
+    height: 30vh;
+    max-width: 70vw;
+    padding: 10px 20px;
+    margin:-50px 5px 10px 5px;
     text-align: center;
-    margin-top: -10px;
     cursor: s-resize;
-    /* padding: 0 1%; */
-}
-
-p {
     line-height: 1.2em;
     width: fit-content;
-    max-width: 25vw;
+    font-size: 14px;
 }
 
 .gameChoiceButtons {
     display: flex;
     align-items: center;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     /* margin-top: -135 0 z-20px 30px; */
     cursor: pointer;
     align-content: flex-start;
-    width: 25vw;
 }
 
 .gameChoiceButtons section {
-    margin-top: -135 0 -20px 30px;
+    margin-top: 5px 0 10px 10px;
 }
 
-#challenge {
-    /* text-aligsn: center; */
-    margin: -5px 20px;
-    font-size: 15px;
-    height: 16px;
-    width: 80px;
+#challenge,#askQs {
     text-align: center;
+    margin: -5px 20px 20px 20px;
+    font-size: 10px;
+    max-width: 240px;
+    max-height: 140px;
+    text-align: center;
+    display: block;
+    color: var(--background-inverse4);
 }
 
-.gameChoiceButtons h3{
+#askPlay{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row nowrap;
+    margin: -15px 0 -20px 0;
+}
+
+.letsPlay,#dontPlay{
     align-self: center;
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
+    margin-left:3px;
+    padding: 15px;
+    display: block;
     border: 2px outset var(--background-dark2);
     background-color: var(--background-darker);
-    width: 4vw;
     color: var(--background-sub);
-    margin:10px;
-    padding: 10px;
-    font-size: 15px;
-    height: 20px;
     text-align: center;
     cursor: pointer;
 }
@@ -163,23 +165,22 @@ p {
     color: var(--background-inverse3);
     background-color: var(--background-inverse4);
     margin:0;
-    line-height: 10px;
     font-size: 10px;
     height: 15px;
     cursor: pointer;
 }
 
-.gameChoiceButtons p {
+ /* {
     color: var(--background-inverse3);
     background-color: var(--background-inverse4);
     margin:10 0 0 30px;;
-    line-height: 10px;
+    line-height: 0px;
     font-size: 10px;
     height: 15px;
     cursor: pointer;
+} */
 
-}
-
+/* ////// TOOL TIP SECTION ///// */
 .hint--image:after {
     content: '' !important;
     height: 100px;
@@ -276,21 +277,24 @@ p {
 } 
  */
 
-
+/* ///////// DEVIANT USER INFO /////////// */
 #deviant {
     flex: 1;
     background-color: none;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    height: 30vh;
-    margin-top: 30px;
+    align-content: space-around;
+    height: 45vh;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 10%;
     /* padding: 5px; */
     /* width: 200px; */
 }
 
 #deviant__img {
-    max-width: 250px;
+    max-width: 230px;
     min-width: 100px;
     border: 8px inset var(--background-dark);
     border-radius: 100%;
@@ -362,27 +366,19 @@ p {
 /* /////////  ON HOVER expand with transition  ////////// */
 
 .grow12 {
-    transition: all 200ms ease-in-out;
-}
-
+    transition: all 200ms ease-in-out;}
 .grow12:hover {
-    transform: scale(1.2);
-}
+    transform: scale(1.2);}
 
 .grow14{
-    transition: all 150ms ease-in-out;
-}
+    transition: all 150ms ease-in-out;}
 .grow14:hover{
-    transform: scale(1.4);
-}
+    transform: scale(1.4);}
 
 .grow16{
-    transition: all 200ms ease-in-out;
-}
-
+    transition: all 200ms ease-in-out;}
 .grow16{
-    transform: scale(1.4);
-}
+    transform: scale(1.4);}
 
 /* ///// ICONS  /////// */
 

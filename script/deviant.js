@@ -1,8 +1,7 @@
-// Get the modal
 
 
 
-// let $encryption = $('#encryption')
+
 
 $('#backstory span').hover(function(){
     $(this).css("color", "#90e0ef");

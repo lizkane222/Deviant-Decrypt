@@ -30,37 +30,47 @@ body.dark {
 }
 
 
-#startBar {
-    background-color: var(--background-dark2)
-}
-
-
 .transmitterBothDisplays {
-    /* background-color: var(--background-dark3); */
+    background-color: rgba(0,0,0,.5);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
     margin: 50px 0;
     position: absolute;
-    width: 68vw;
-    height: 72vh;
-    bottom: 7.9vh;
+    width: 63vw;
+    height: 70vh;
+    bottom: 4.7vh;
     right: -113vh;
+    border-top-left-radius: 90px;
+    border-bottom-left-radius: 90px;
+    border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px;
     /* locked mode to edit transmitters */
     /* bottom: 1.3vh;
     right: 7vh; */
 } 
 
+#startBar {
+    background-color: var(--background-dark4);
+    opacity: .5;
+    height: 80%;
+    width: 10px;
+    position: absolute;
+    border-top-left-radius: 110px;
+    border-bottom-left-radius: 110px;
+    margin-left: 1px;
+    /* border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px; */
+}
 
 .transmitterBothDisplays:hover { 
-    bottom: 7.9vh;
+    bottom: 4.7vh;
     /* perfect height with animation box  */
-    right: 5.83vh;   
+    right: 23vh;   
     /* perfect width w/ animation box*/
-    transition: 450ms;
+    transition: 850ms;
     cursor: crosshair;
-    
 }   
 
 .transmitter__user {
@@ -76,7 +86,8 @@ body.dark {
     justify-content: center;
     align-content: center;
     align-items: stretch;
-    
+    border-radius: 10%;
+
 }
 
 .fa-eye {
@@ -84,12 +95,6 @@ body.dark {
     color: yellow;
     outline-color: blue;
     width: 25px;
-
-}
-
-.parent:hover .fa-eye {
-    color: greenyellow;
-    outline-color: indigo;
 }
 
 .transmitter__screen{
@@ -102,19 +107,15 @@ body.dark {
     justify-content: flex-start;
     flex-flow: column wrap;
     align-content: flex-start;
-    
-    /* make sure to have new input <p's jquery .before() with class="newEQ"*/
+    border-radius: 10%;
+
 }
 
-#displayEQ {
+.newEQul {
     overflow: auto;
     font-size: 23px;
     color: var(--background-inverse2);
 }
-
-/* displayEQ p {
-
-} */
 
 .far fa-eye {
     width: 10px;
@@ -135,20 +136,11 @@ body.dark {
     overflow: auto;
     margin-top: 0px;
     margin-right: 8px;
-    font-size: 18px;
-
- /* Enable scroll if needed */
+    font-size: 23px;
+    border-radius: 10%;
 
 }
 
-.solution-display {
-    color: var(--background-inverse2);
-    order: 3;
-    justify-content: flex-end;
-    align-items: flex-start;
-    display: block;
-    /* margin-bottom:%; */
-}
 
 #alpha {
     display: flex;
@@ -185,6 +177,8 @@ body.dark {
     align-items: center;
     padding: 0px;
     align-items: stretch;
+    border-radius: 10%;
+
 }
 
 .numButt {
@@ -317,18 +311,19 @@ body.dark {
     align-self: flex-start;
     border-radius: 50%;
     width: 300px;
+    height: 150px;
     background-color: var(--background-inverse4);
     color: var(--background-dark4);
-    padding: 40px;
+    padding: 5px;
     font-size: 25px;
     text-align: center;
     flex-flow: row nowrap;
     z-index: 1;
     /* position: fixed; */
-    margin: -10vh;
+    margin: -15vh;
 }
 
-.idchecker {
+#idchecker {
     background-color: var(--background-dark2);
     height: 65vh;
     width: 29vw;
@@ -340,24 +335,32 @@ body.dark {
     align-content: center;
     align-items: stretch;
     cursor: not-allowed;
+    border-radius: 10%;
+    /* border-top-left-radius: 90px;
+    border-bottom-left-radius: 90px;
+    border-top-right-radius: 90px;
+    border-bottom-right-radius: 90px; */
 }
 
-.idchecker__screen {
+#idchecker__screen {
     background-color: var(--background-dark4);
     margin: 15px auto; 
     align-items: center;
     width: 85%;
     height: 30vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    font-size: 25px;
     flex-flow: row wrap;
     align-content: flex-start;
     overflow: auto;
     color: var(--background-inverse);
+    border-radius: 10%;
+
     /* make sure to have new input <p's jquery .before() with class="newEQ"*/
 }
 
-.idchecker__buttonArea {
+#idchecker__buttonArea {
     /* use this for positioning */
     display: flex;
     justify-content: space-between;
@@ -368,6 +371,8 @@ body.dark {
     width: 25vw;
     background-color: var(--background-inverse2);
     margin: 10px auto;
+    border-radius: 10%;
+
 }
 
 
@@ -385,7 +390,7 @@ body.dark {
     text-align: right;
 }
 
-.idcheck_buttons {
+#idcheck_buttons {
     display: flex;
     justify-content: space-between;
     flex-flow: row nowrap;
