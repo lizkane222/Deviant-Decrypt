@@ -43,8 +43,10 @@ body {
     overflow: hidden;
     /* overflow: hidden; */
     /* height: 100vh; */
+}
 
-
+span {
+    text-decoration: underline solid white;
 }
 
 h1 {
@@ -107,6 +109,7 @@ main {
     width: 25vw;
     padding: 10px 30px;
     margin:0px 5px 50px 5px;
+    text-align: center;
 
     /* margin-top: 10px; */
     /* padding: 0 1%; */
@@ -166,7 +169,7 @@ p {
 }
 
 .phantomWars :after {
-    background-image: url("phantomWars.png");
+    background-image: url("https://i.imgur.com/uSwz4dF.png");
     height: 40px;
     width: 100px;
     opacity: 0.7;
@@ -200,7 +203,6 @@ p {
     opacity: 0.7;
 }
 
-
 .encryption:after {
     background-image: url("https://i.imgur.com/DoAdMPN.jpg");
     height: 40px;
@@ -214,6 +216,22 @@ p {
     width: 100px;
     opacity: 0.7;
 }
+
+.idTransmitterPic:after {
+    background-image: url("phantomWars.png");
+    height: 40px;
+    width: 100px;
+    opacity: 0.7;
+} 
+
+.deviantForces:after {
+    background-image: url("phantomWars.png");
+    height: 40px;
+    width: 100px;
+    opacity: 0.7;
+} 
+
+
 /* 
 .custom_class:after {
     background-image: url("phantomWars.png");
@@ -224,7 +242,7 @@ p {
  */
 
 
-.deviant {
+#deviant {
     flex: 1;
     background-color: none;
     display: flex;
@@ -236,14 +254,14 @@ p {
     /* width: 200px; */
 }
 
-.deviant__img {
+#deviant__img {
     max-width: 250px;
     min-width: 100px;
     border: 8px inset var(--background-dark);
     border-radius: 100%;
 }
 
-.deviant__name {
+#deviant__name {
     flex: flex-grow;
     text-align: center;
     justify-content: center;
@@ -251,7 +269,7 @@ p {
     /* margin: 0 auto; */
 }
 
-.deviant__data {
+#deviant__data {
     line-height: .8em;
     font-size: 1.2em;
     margin-bottom: 60px;
@@ -409,7 +427,7 @@ button {
 
 
 footer {
-    margin-top: 10px;
+    margin-top: 0px;
     color: gray;      /* put footer in HTML */
 }
 

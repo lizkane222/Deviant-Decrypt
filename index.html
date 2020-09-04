@@ -29,22 +29,18 @@
     <!-- display backstory & mission -->
         <div id="backstory">
  <!-- <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">hover over me.</span> -->
-            <p>Ever since the <span class="hint--bottom hint--bounce hint--rounded hint--image phantomWars" aria-label="image" >Phantom Wars </span>the <span class="hint--bottom hint--bounce hint--rounded hint--image federateDomain" aria-label="image">Federate Domain </span>has occupied and controlled nations.<br/>
-            There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <span class="hint--bottom hint--bounce hint--rounded hint--image backpack" aria-label="image">packages</span> containing extremely classified and sensitive data between its rebel hubs<br/>
-            Technology is monitored like never before, rebels can’t use it to communicate but they are trained to be skilled decoders.</p>    
-            <p>Rebels daily navigate the streets of a post-apocalyptic city flooded with evil-doers, spies, and <span class="hint--top hint--bounce hint--rounded hint--image botCops" aria-label="image">Bot-Cops</span> who are rigorously <b>verifying identities</b> to winnow out the deviant forces that plot against the Federate Domain.</p>
-
-            <p>Every time a rebel comes across a police-bot they must do an identity check.<br/>
-            Only the <span class="hint--top hint--bounce hint--rounded hint--image approvedCitizens" aria-label="image">“approved citizens”</span> are given the correct hourly code<span class="hint--bottom hint--bounce hint--rounded hint--image encryption" aria-label="image">(encryption)</span> sent to their identity transmitters.<br/>
-            The rebels have been at work to crack these codes ever since they’ve been enforced. <br/>
-            The bot-cops will link their <span class="hint--top hint--bounce hint--rounded hint-ide idcheckerpic" aria-label="image">id-checker</span> to your <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">
-            
-             id="idTransmitter"  href="#">id-transmitter.</span> When they do, they don't know the difference between an "approved citizen's" trasmitter spewing out correct lines of code or if the code is simply just being typed out quickly.<br/>
-            This is as some would say 'pulling the wool over the sheeps eyes', or the "rebel's" small window of opportunity to pass off as an "approved citizen".<br/>
-            A field-rebel must be able to input the correct code at a speed comprable to the bot-cops id-checker, so quickly. <br/>
-            The more codes someone can produce the more likely they have the real code and are an “approved citizen”</p>
-
-            <p>First let's give you some training to ready you for the field.<br/>
+            <p>Ever since the <span class="hint--bottom hint--bounce hint--rounded hint--image phantomWars" aria-label="image" >Phantom Wars </span>the <span class="hint--bottom hint--bounce hint--rounded hint--image federateDomain" aria-label="image">Federate Domain </span>has occupied and controlled nations.<br/><br/>
+            There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <span class="hint--bottom hint--bounce hint--rounded hint--image backpack" aria-label="image">packages</span> containing extremely classified and sensitive data between its rebel hubs<br/><br/>
+            Technology is monitored like never before, rebels can’t use it to communicate but they are trained to be skilled decoders.<br/><br/>   
+            Rebels daily navigate the streets of a post-apocalyptic city flooded with evil-doers, spies, and <span class="hint--top hint--bounce hint--rounded hint--image botCops" aria-label="image">Bot-Cops</span> who are rigorously <b>verifying identities</b> to winnow out the <span class="hint--top hint--bounce hint--rounded hint--image deviantForces" aria-label="image"></span>"deviant" forces that plot against the Federate Domain.
+            Every time a rebel comes across a police-bot they must do an identity check.<br/><br/>
+            Only the <span class="hint--top hint--bounce hint--rounded hint--image approvedCitizens" aria-label="image">“approved citizens”</span> are given the correct hourly code<span class="hint--bottom hint--bounce hint--rounded hint--image encryption" aria-label="image">(encryption)</span> sent to their identity transmitters.<br/><br/>
+            The rebels have been at work to crack these codes ever since they’ve been enforced. <br/><br/>
+            The bot-cops will link their <span class="hint--top hint--bounce hint--rounded hint-ide idcheckerpic" aria-label="image">id-checker</span> to your <span class="hint--top hint--bounce hint--rounded hint--image idTransmitterPic" aria-label="image">identity-transmitter.</span> When they do, they don't know the difference between an "approved citizen's" trasmitter spewing out correct lines of code or if the code is simply just being typed out quickly.<br/><br/>
+            This is as some would say 'pulling the wool over the sheeps eyes', or the "rebel's" small window of opportunity to pass off as an "approved citizen".<br/><br/>
+            A field-rebel must be able to input the correct code at a speed comprable to the bot-cops id-checker, so quickly. <br/><br/>
+            The more codes someone can produce the more likely they have the real code and are an “approved citizen”
+            <br/><br/>First let's give you some training to ready you for the field.<br/><br/>
             Can you decode the encrypted equation, and produce the code in time?
             </p>
         </div>
@@ -68,11 +64,11 @@
 <!-- first time id-transmitter displays -->
 
 <!-- take user input, choose character name and appearance -->
-    <div class="deviant">
-        <article class="deviant_user">
-            <img class="deviant__img" src="styles/Images/anonymous_user.png"/></a>
+    <div id="deviant">
+        <article id="deviant_user">
+            <img id="deviant__img" src="styles/Images/anonymous_user.png"/></a>
             <form onsubmit="myFunction()">
-                <input type="text" placeholder="Deviant Name" class="deviant__name"><input type="submit">
+                <input type="text" placeholder="Deviant Name" id="deviant__name"><input type="submit">
             </form>
             
 
@@ -81,12 +77,12 @@
             <!-- create input to add user name -->
         </article>
 
-        <article class="deviant__data">
+        <article id="deviant__data">
             <!-- create array of different deviant status' -->
-            <h4 class="deviant__status">Rebel Status: Subvert 1</h4>    
+            <h4 id="deviant__status">Rebel Status: Subvert 1</h4>    
             <!-- set to 0 to be added to each round -->
-            <h5 class="deviant__complete__idchx">Completed Identity Checks:</h5>
-            <h5 class="deviant__complete__msh">Completed Missions:</h5>
+            <h5 id="deviant__complete__idchx">Completed Identity Checks:</h5>
+            <h5 id="deviant__complete__msh">Completed Missions:</h5>
         </article>
 
     </div>

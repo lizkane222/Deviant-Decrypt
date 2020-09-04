@@ -11,14 +11,19 @@ const EngAlpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p
 const mathSymbols = ['+','-','*','/','^','√']
 
 
-/* EQUATIONS CONSIST OF
-numbers1n100 mathSymbols numbers1n100 mathSymbols numbers1n100 solution
-*/
+//  EQUATIONS CONSIST OF
+// numbers1n100 mathSymbols numbers1n100 mathSymbols numbers1n100 solution
+
+
+const a = 0
+const b = 0
+const c = 0
+const d = 0
 
 const makeAdditionEquationAND = function(base=11, symI){
-    let a = 0;
-    let b = 0;
-    let c = 0;
+    let aVar = 0;
+    let bVar = 0;
+    let cVar = 0;
     
     let add = mathSymbols[0];
     // let sub = mathSymbols[1];
@@ -28,84 +33,88 @@ const makeAdditionEquationAND = function(base=11, symI){
     let cFloor = Math.fround()
     
     for (let i=1; i<base; i++){
-        a = Math.floor(Math.random()*base);
-        b = Math.floor(Math.random()*base);
-        c = Math.floor(Math.random()*base); 
-        /* modify base for C to change second  */
+        aVar = Math.floor(Math.random()*base);
+        bVar = Math.floor(Math.random()*base);
+        cVar = Math.floor(Math.random()*base); 
     }
 
     if (symI === 0){
-        let eQNoC = `${a}${add}${b}`
-        let eQDisplay = `(${a}${add}${b})${cSym}(${c})`;
-        let cSolu = a + b +c;
+        let eQNoC = `${aVar}${add}${bVar}`
+        let eQDisplay = `(${aVar}${add}${bVar})${cSym}(${cVar})`;
+        let cSolu = aVar + bVar +cVar;
         console.log(`Bubble: ${eQNoC} = ${cSolu}`)
         console.log(`Can you find the missing code?`)
         console.log(`1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code.`)
         console.log(`Once you've figured it out, how many equations can you write that equal that number?`)
         console.log(`Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
         console.log({eQDisplay, cSolu})
+        $('bubble').append(`<p .bubEQ>${eQNoC} = ${cSolu}</p>`);
+
     }else if (symI === 1){
-        let eQNoC = `${a}${add}${b}`
-        let eQDisplay = `(${a}${add}${b})${cSym}(${c})`;
-        let cSolu = a + b - c;
+        let eQNoC = `${aVar}${add}${bVar}`
+        let eQDisplay = `(${aVar}${add}${bVar})${cSym}(${cVar})`;
+        let cSolu = aVar + bVar - cVar;
         console.log(`Bubble: ${eQNoC} = ${cSolu}`)
         console.log(`Can you find the missing code?`)
         console.log(`1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code.`)
         console.log(`Once you've figured it out, how many equations can you write that equal that number?`)
         console.log(`Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
-        console.log({eQDisplay, cSolu})
+        console.log({eQDisplay, cSolu});
+        $('bubble').append(`<p .bubEQ>${eQNoC} = ${cSolu}</p>`);
+
     }else if (symI === 2){
-        let eQNoC = `${a}${add}${b}`
-        let eQDisplay = `(${a}${add}${b})${cSym}(${c})`;
-        let cSolu = a + b
-        let answer = cSolu * c;
+        let eQNoC = `${aVar}${add}${bVar}`
+        let eQDisplay = `(${aVar}${add}${bVar})${cSym}(${cVar})`;
+        let cSolu = aVar + bVar
+        let answer = cSolu * cVar;
         console.log(`Bubble: ${eQNoC} = ${answer}`)
         console.log(`Can you find the missing code?`)
         console.log(`1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code.`)
         console.log(`Once you've figured it out, how many equations can you write that equal that number?`)
         console.log(`Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
         console.log({eQDisplay, answer})
+        $('bubble').append(`<p .bubEQ>${eQNoC} = ${cSolu}</p>`);
+
 
     }else if(symI === 3){
-        let eQNoC = `${a}${add}${b}`
-        let eQDisplay = `(${a}${add}${b})${cSym}(${c})`;
-        let cSolu = a + b / c;
+        let eQNoC = `${aVar}${add}${bVar}`
+        let eQDisplay = `(${aVar}${add}${bVar})${cSym}(${cVar})`;
+        let cSolu = aVar + bVar / cVar;
         console.log(`Bubble: ${eQNoC} = ${cSolu}`)
         console.log(`Can you find the missing code?`)
         console.log(`1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code.`)
         console.log(`Once you've figured it out, how many equations can you write that equal that number?`)
         console.log(`Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
         console.log({eQDisplay, cSolu})
+        $('bubble').append(`<p .bubEQ>${eQNoC} = ${cSolu}</p>`);
+
     }  
 }
-
-
-const basic1add = makeAdditionEquationAND(11, 0)
-// const basic1sub = makeAdditionEquationAND(11, 1)
-// const basic1mult = makeAdditionEquationAND(11, 2)
-// const basic1div = makeAdditionEquationAND(11, 3)
-
-
-// $('input .newEQ')
-
-// class ButtonEQ{
-//     constructor(btnID, btnClass, btnValue,){
-//         this.btnID = btnID 
-//         this.btnClass = btnClass 
-//         this.btnValue = btnValue
-//     }
-
-//     getBtnValue(){
-//         $('this.btnID').click(function(e){
-//             $('input .newEQ').attr('this.value')
-//             console.log(`print ${btnValue}`)
-//         }
+const basic1add = makeAdditionEquationAND(11, 0)        //if deviant__complete__msh ===0 then run this function;
 
 
 
-const createNewEQ = () => {
-    console.log(`let's make some button click event listeners`)
-}
+
+let compMissions = 0;
+
+// let $checkCompMissions = $('#deviant__complete__msh').val(compMissions);
+
+//find button for YES I want to play
+$('#letsPlay').click(function(event){
+    alert( event.currentTarget === this ); // true
+    // link this to the start button in the left column
+    if ($('compMissions')===0){
+        const basic1add = makeAdditionEquationAND(11, 0)        //if deviant__complete__msh ===0 then run this function;
+    } else if ($('compMissions')===1){
+        const basic1sub = makeAdditionEquationAND(11, 1)     //ifcheckCompMissions ===1 then run this function;
+    } else if ($('compMissions')===2){
+        const basic1mult = makeAdditionEquationAND(11, 2)    //ifcheckCompMissions ===2 then run this function;
+    }else if ($('compMissions')===3){
+        const basic1div = makeAdditionEquationAND(11, 3)     //if deviant__complete__msh ===3 then run this function;
+    }
+});
+
+
 
 // $('.newEQ').before()
 // $('transmitter__screen').text('')
@@ -113,7 +122,7 @@ const createNewEQ = () => {
 
 // $('input .newEQ') = []
 
-// listen for click in transmitter  (target)
+// THIS LISTENS FOR A CLICK ON THE TRANSMITTER- DISPLAYS IT FIRST IN THE INPUT THEN ON THE LINE BELOW THE INPUT WHEN = IS CLICKED
 $( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).click(function( event ) {
     console.log("my number buttons and symbol buttons work");
 
@@ -127,9 +136,10 @@ $( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).
         const $newEQs = $('input.newEQ').val()
             console.log($newEQs);
         const $newPEQ = $('ul').prepend(`<li>${$newEQs}</li>`);
-        // $('ul').append($newPEQ)
             console.log($newPEQ);
             console.log('trying to put eq on line')
+            $('input.newEQ').val(``);
+            // $($newEQs).val='';
         
     }
     // alert( event.currentTarget === this ); // true
@@ -138,10 +148,6 @@ $( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).
 
 
 
-
-$("ul").on('click',"li", function(event){
-    $("ul").append($(event.target));            //in place of append use use for pokemon game to move cards clicked to away
-})
 
 
 
