@@ -9,10 +9,10 @@
 
     <script src="./script/deviant.js" defer></script>
     <script src="./script/id_transmitter.js" defer></script>
+    <script src="./script/clickEs.js"></script>
 
-
-    <script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/4634847c36.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/4634847c36.js" defer></script>
     
     <title>Deviant</title>
 </head>
@@ -41,27 +41,34 @@
             A field-rebel must be able to input the correct code at a speed comprable to the bot-cops id-checker, so quickly. <br/><br/>
             The more codes someone can produce the more likely they have the real code and are an “approved citizen”
             <br/><br/>First let's give you some training to ready you for the field.<br/><br/>
-            Can you decode the encrypted equation, and produce the code in time?
             </p>
         </div>
+
         <div class="gameChoiceButtons">
-<!--h3's are buttons  --><!--these p's need to appear on click with a delay of what the function is  -->
-            <h3 id="letsPlay">Let's Play</h3>
-            <p>Great let's go!</p> 
-<!-- on click display identity check -->
-            <h3 id="dontPlay">Not yet</h3>
-            <p id="setUpProfileQ">Would you like to set up your profile?</p>   
-<!-- on click FIRST No => display p. (p is hidden) -->
-            <h3 id="setUpProfile">Yes</h3>
-            <h3 id="gif_at_array">No</h3>
-            <h3 >Later</h3>    
-<!--(all p's are hidden)  on click Yes => id=""  href to setUpProfile |  No=> on click ref a gif array to play  | Later => alert before exit to set up profile-->
-            <h5 id="helpQ">Not Sure</h3>
-                <!-- highlight -->
-            <h5 id="goHelp">I'd like further clarification on <u>how to play?</u></p>
+        <!--h3's are buttons  --><!--these p's need to appear on click with a delay of what the function is  -->
+
+            <div id='challenge'>Can you decode the encrypted equation, and produce the code in time?
+            <section id="askPlay">
+                <h3 id="start" class="letsPlay grow14">Play</h3>
+                <!-- on click display identity check -->
+                <span class="hint--top hint--bounce hint--rounded hint--image gif1" aria-label="image"></span><h3 id="gif1" class="grow"><h3 id="dontPlay" class="grow14">Not yet</h3></span>
+            </section></div>
+
+            <!-- on click FIRST No => display p. (p is hidden) -->
+            <section id="askProfile">
+                <h3 id="setUpProfile" class="grow">Yes</h3>
+                <span class="hint--top hint--bounce hint--rounded hint--image gif2" aria-label="image"></span><h3 id="gif2" class="grow">No</h3></span>
+            </section>
+
+            <section id="askMore">
+                <h3 id="later">Later</h3>    
+                <h5 id="helpQ" class="grow">Not Sure</h5>
+                    <!-- highlight -->
+                <h5 id="goHelp" class="grow">+ Info</h5>
+            </section>
+
         </div>
-<!-- (p is hidden) scroll to bottom for 911 help icon rebel operator -->
-<!-- first time id-transmitter displays -->
+<!--(all p's are hidden)  on click Yes => id=""  href to setUpProfile |  No=> on click ref a gif array to play  | Later => alert before exit to set up profile-->
 
 <!-- take user input, choose character name and appearance -->
     <div id="deviant">
@@ -93,13 +100,13 @@
 <!-- display instruction for how to play & use identity transmitter -->
 <column class="right-side">
     <div id="help">
-        <i class="fas fa-shoe-prints highlightHelp"></i>
+        <i class="fas fa-shoe-prints highlightHelpI"></i>
         <article class="help__missions">
             <h4>Deliver a classified package containing highly sensitive information on Deviant plans.</h4>
             <h6> Travel on foot to another rebel hub across the city while maintaining an "approved citizen" status by passing all identity checks when encountering id-cop-bot </h6>
             </article>
-        <i class="far fa-question-circle"></i>
-        <article class="help__transmitter highlightHelp">
+        <i class="far fa-question-circle highlightHelpI"></i>
+        <article class="help__transmitter ">
             <h4 class="help__transmitter__use">Use ID Transmitter:</h4>
             <h6 class="help__transmitter__use__how">using <a id=""  href="#">math functions</a>, press the <a href="#">buttons on your transmitter</a> to fill in the missing code.</h6>
             <p class="help__beginner">Beginner: uses only numbers</p>
@@ -132,13 +139,14 @@
     
     
 </div>
-<i class="fas fa-map-signs"></i>
+<div id="mapBiggerDiv">
+    <i class="fas fa-map-marked-alt mapIcon fa-4x"></i>
     <div id="mapDiv">
+        </div>
+    <!-- <button id='start' class="walk grow12">START</button> -->
+    <button id='return' class="walk grow12">RETURN</button>
+    <button id='previewNext' class="walk grow12">PREVIEW NEXT</button>
     </div>
-    <button id='start'>START</button>
-    <button id='return'>RETURN</button>
-    <button id='previewNext'>PREVIEW NEXT</button>
-
 </column>
 
 
@@ -149,6 +157,7 @@
 <!-- transmitter slide up -->
 
 <div class="transmitterBothDisplays">
+    <div id="startBar" class="startBar"></div>
     <section class="transmitter__user">
         <!-- <p class="problem-display">problem display</p> -->
         <article class="transmitter__screen">
@@ -169,99 +178,99 @@
             </article>
             <section id="alpha">
                 <row>
-                <square id="btn-a" class="alpha">a</square>
-                <square id="btn-b" class="alpha">b</square>
-                <square id="btn-c" class="alpha">c</square>
-                <square id="btn-d" class="alpha">d</square>
-                <square id="btn-e" class="alpha">e</square>
-                <square id="btn-f" class="alpha">f</square>
-                <square id="btn-g" class="alpha">g</square>
-                <square id="btn-h" class="alpha">h</square>
-                <square id="btn-i" class="alpha">i</square>
-                <square id="btn-j" class="alpha">j</square>
-                <square id="btn-k" class="alpha">k</square>
-                <square id="btn-l" class="alpha">l</square>
-                <square id="btn-m" class="alpha">m</square>
+                <square id="btn-a" class="alpha grow12">a</square>
+                <square id="btn-b" class="alpha grow12">b</square>
+                <square id="btn-c" class="alpha grow12">c</square>
+                <square id="btn-d" class="alpha grow12">d</square>
+                <square id="btn-e" class="alpha grow12">e</square>
+                <square id="btn-f" class="alpha grow12">f</square>
+                <square id="btn-g" class="alpha grow12">g</square>
+                <square id="btn-h" class="alpha grow12">h</square>
+                <square id="btn-i" class="alpha grow12">i</square>
+                <square id="btn-j" class="alpha grow12">j</square>
+                <square id="btn-k" class="alpha grow12">k</square>
+                <square id="btn-l" class="alpha grow12">l</square>
+                <square id="btn-m" class="alpha grow12">m</square>
             </row><row>
-                <square id="btn-n" class="alpha">n</square>
-                <square id="btn-o" class="alpha">o</square>
-                <square id="btn-p" class="alpha">p</square>
-                <square id="btn-q" class="alpha">q</square>
-                <square id="btn-r" class="alpha">r</square>
-                <square id="btn-s" class="alpha">s</square>
-                <square id="btn-t" class="alpha">t</square>
-                <square id="btn-u" class="alpha">u</square>
-                <square id="btn-v" class="alpha">v</square>
-                <square id="btn-w" class="alpha">w</square>
-                <square id="btn-x" class="alpha">x</square>
-                <square id="btn-y" class="alpha">y</square>
-                <square id="btn-z" class="alpha">z</square>
+                <square id="btn-n" class="alpha grow12">n</square>
+                <square id="btn-o" class="alpha grow12">o</square>
+                <square id="btn-p" class="alpha grow12">p</square>
+                <square id="btn-q" class="alpha grow12">q</square>
+                <square id="btn-r" class="alpha grow12">r</square>
+                <square id="btn-s" class="alpha grow12">s</square>
+                <square id="btn-t" class="alpha grow12">t</square>
+                <square id="btn-u" class="alpha grow12">u</square>
+                <square id="btn-v" class="alpha grow12">v</square>
+                <square id="btn-w" class="alpha grow12">w</square>
+                <square id="btn-x" class="alpha grow12">x</square>
+                <square id="btn-y" class="alpha grow12">y</square>
+                <square id="btn-z" class="alpha grow12">z</square>
             </row>
             </section>    
             <article class="transmitter__buttonArea"> <!-- set background photo to wire connecting trasmitterside idchecker slide  -->
                 <!-- <section class="transmitter__screen__probButts"> -->
                 <column>
-                    <square id="btn+" class="symButt_left">+</square>
-                    <square id="btnx" class="symButt_left">x</square>
-                    <square id="btnLparen" class="symButt_left">(</square>
-                    <square id="btn^" class="symButt_left">^</square></column>
+                    <square id="btn+" class="grow12 symButt_left">+</square>
+                    <square id="btnx" class="grow12 symButt_left">x</square>
+                    <square id="btnLparen" class="grow12 symButt_left">(</square>
+                    <square id="btn^" class="grow12 symButt_left">^</square></column>
                 <column>
-                    <square id="btn1" class="numButt">1</square>
-                    <square id="btn4" class="numButt">4</square>
-                    <square id="btn7" class="numButt">7</square>
-                    <square id="btn." class="symButt_left">.</square></column>
+                    <square id="btn1" class="grow12 numButt">1</square>
+                    <square id="btn4" class="grow12 numButt">4</square>
+                    <square id="btn7" class="grow12 numButt">7</square>
+                    <square id="btn." class="grow12 symButt_left">.</square></column>
                 <column>
-                    <square id="btn2" class="numButt">2</square>
-                    <square id="btn5" class="numButt">5</square>
-                    <square id="btn8" class="numButt">8</square>
-                    <square id="btn0" class="numButt">0</square></column>
+                    <square id="btn2" class="grow12 numButt">2</square>
+                    <square id="btn5" class="grow12 numButt">5</square>
+                    <square id="btn8" class="grow12 numButt">8</square>
+                    <square id="btn0" class="grow12 numButt">0</square></column>
                 <column>
-                    <square id="btn3" class="numButt">3</square>
-                    <square id="btn6" class="numButt">6</square>
-                    <square id="btn9" class="numButt">9</square>
-                    <square id="btn-" class="symButt_right">-</square></column>
+                    <square id="btn3" class="grow12 numButt">3</square>
+                    <square id="btn6" class="grow12 numButt">6</square>
+                    <square id="btn9" class="grow12 numButt">9</square>
+                    <square id="btn-" class="grow12 symButt_right">-</square></column>
                 <column>
-                    <square id="btn-" class="symButt_right">-</square>
-                    <square id="btn÷" class="symButt_right">÷</square>
-                    <square id="btnRparen" class="symButt_right">)</square>
-                    <square id="btn√" class="symButt_right">√</square>
+                    <square id="btn-" class="grow12 symButt_right">-</square>
+                    <square id="btn÷" class="grow12 symButt_right">÷</square>
+                    <square id="btnRparen" class="grow12 symButt_right">)</square>
+                    <square id="btn√" class="grow12 symButt_right">√</square>
                 </column>
             </article>
                 <section class="bigButtons">
                     <row>
-                        <square id="bigBtnProb" class="bigBtnProb">entire problem</square>
-                        <square id="btnEquals" class="equals">=</square>
-                        <square id="bigBtnSolu" class="bigBtnSolu">entire solution</square>
+                        <square id="bigBtnProb" class="bigBtnProb grow12">entire problem</square>
+                        <square id="btnEquals" class="equals grow12">=</square>
+                        <square id="bigBtnSolu" class="bigBtnSolu grow12">entire solution</square>
                     </row>
                 </section>
 
                 <section id="greek">
                     <row>
-                        <square id="btnΑ" class="greek">Α</square>
-                        <square id="btnΒ" class="greek">Β</square>
-                        <square id="btnΓ" class="greek">Γ</square>
-                        <square id="btnΔ" class="greek">Δ</square>
-                        <square id="btnΕ" class="greek">Ε</square>
-                        <square id="btnΖ" class="greek">Ζ</square>
-                        <square id="btnΗ" class="greek">Η</square>
-                        <square id="btnΘ" class="greek">Θ</square>
-                        <square id="btnΙ" class="greek">Ι</square>
-                        <square id="btnΚ" class="greek">Κ</square>
-                        <square id="btnΛ" class="greek">Λ</square>
-                        <square id="btnΜ" class="greek">Μ</square>
+                        <square id="btnΑ" class="greek grow12">Α</square>
+                        <square id="btnΒ" class="greek grow12">Β</square>
+                        <square id="btnΓ" class="greek grow12">Γ</square>
+                        <square id="btnΔ" class="greek grow12">Δ</square>
+                        <square id="btnΕ" class="greek grow12">Ε</square>
+                        <square id="btnΖ" class="greek grow12">Ζ</square>
+                        <square id="btnΗ" class="greek grow12">Η</square>
+                        <square id="btnΘ" class="greek grow12">Θ</square>
+                        <square id="btnΙ" class="greek grow12">Ι</square>
+                        <square id="btnΚ" class="greek grow12">Κ</square>
+                        <square id="btnΛ" class="greek grow12">Λ</square>
+                        <square id="btnΜ" class="greek grow12">Μ</square>
                     </row><row>
-                        <square id="btnΝ" class="greek">Ν</square>
-                        <square id="btnΞ" class="greek">Ξ</square>
-                        <square id="btnΟ" class="greek">Ο</square>
-                        <square id="btnΠ" class="greek">Π</square>
-                        <square id="btnΡ" class="greek">Ρ</square>
-                        <square id="btnΣ" class="greek">Σ</square>
-                        <square id="btnΤ" class="greek">Τ</square>
-                        <square id="btnΥ" class="greek">Υ</square>
-                        <square id="btnΦ" class="greek">Φ</square>
-                        <square id="btnΧ" class="greek">Χ</square>
-                        <square id="btnΨ" class="greek">Ψ</square>
-                        <square id="btnΩ" class="greek">Ω</square>
+                        <square id="btnΝ" class="greek grow12">Ν</square>
+                        <square id="btnΞ" class="greek grow12">Ξ</square>
+                        <square id="btnΟ" class="greek grow12">Ο</square>
+                        <square id="btnΠ" class="greek grow12">Π</square>
+                        <square id="btnΡ" class="greek grow12">Ρ</square>
+                        <square id="btnΣ" class="greek grow12">Σ</square>
+                        <square id="btnΤ" class="greek grow12">Τ</square>
+                        <square id="btnΥ" class="greek grow12">Υ</square>
+                        <square id="btnΦ" class="greek grow12">Φ</square>
+                        <square id="btnΧ" class="greek grow12">Χ</square>
+                        <square id="btnΨ" class="greek grow12">Ψ</square>
+                        <square id="btnΩ" class="greek grow12">Ω</square>
                     </row>
                 </section>
 

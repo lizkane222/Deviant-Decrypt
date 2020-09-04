@@ -1,19 +1,13 @@
 /* .transmitter_screen */
-/*  */
-
-
 
 const greekAlpha = ["Α","Β","Γ","Δ","Ε","Ζ","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω",]
-
 
 const EngAlpha = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",]
 
 const mathSymbols = ['+','-','*','/','^','√']
 
-
 //  EQUATIONS CONSIST OF
 // numbers1n100 mathSymbols numbers1n100 mathSymbols numbers1n100 solution
-
 
 const a = 0
 const b = 0
@@ -100,18 +94,21 @@ let compMissions = 0;
 // let $checkCompMissions = $('#deviant__complete__msh').val(compMissions);
 
 //find button for YES I want to play
-$('#letsPlay').click(function(event){
+$('#start').click(function(event){
     alert( event.currentTarget === this ); // true
     // link this to the start button in the left column
+    // create bar on transmitter & change color on click
+    $('#startBar').css("background-color","var(--backgr)")
     if ($('compMissions')===0){
-        const basic1add = makeAdditionEquationAND(11, 0)        //if deviant__complete__msh ===0 then run this function;
+        const basic1add = makeAdditionEquationAND(11, 0)     //if compMissions ===0 =>()
     } else if ($('compMissions')===1){
-        const basic1sub = makeAdditionEquationAND(11, 1)     //ifcheckCompMissions ===1 then run this function;
+        const basic1sub = makeAdditionEquationAND(11, 1)     //if compMissions ===1 =>()
     } else if ($('compMissions')===2){
-        const basic1mult = makeAdditionEquationAND(11, 2)    //ifcheckCompMissions ===2 then run this function;
+        const basic1mult = makeAdditionEquationAND(11, 2)    //if compMissions ===2 =>()
     }else if ($('compMissions')===3){
-        const basic1div = makeAdditionEquationAND(11, 3)     //if deviant__complete__msh ===3 then run this function;
+        const basic1div = makeAdditionEquationAND(11, 3)     //if compMissions ===3 =>()
     }
+
 });
 
 
@@ -164,6 +161,20 @@ $( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).
 // 
 // 
 // 
+
+
+//     start button display  id="start"
+
+
+
+
+
+
+// I'd like further clarification on <u>how to play?</u></p>
+// 
+// make alert after 5 minutes to set up user name
+// 
+// player clicks Yes- to 'Do you want to play?'
 
 
 

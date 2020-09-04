@@ -38,7 +38,7 @@ body.dark {
 body {
     background-color: var(--background-dark3);
     color: var(--background-sub);
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     overflow: hidden;
     /* overflow: hidden; */
@@ -47,6 +47,7 @@ body {
 
 span {
     text-decoration: underline solid white;
+    cursor: context-menu;
 }
 
 h1 {
@@ -85,7 +86,7 @@ main {
 
 .right-side {
     flex: 2.5;
-    margin: 2vh 2vw 2vh 5vw;
+    margin: -1.7vh 2vw 2vh 5vw;
     max-width: 70vw;
     min-width: 200px;
     height: 90vh;
@@ -110,8 +111,8 @@ main {
     padding: 10px 30px;
     margin:0px 5px 50px 5px;
     text-align: center;
-
-    /* margin-top: 10px; */
+    margin-top: -10px;
+    cursor: s-resize;
     /* padding: 0 1%; */
 }
 
@@ -123,38 +124,59 @@ p {
 
 .gameChoiceButtons {
     display: flex;
-    flex-flow: row wrap;
-    margin-top: -15px;
+    align-items: center;
+    flex-flow: column wrap;
+    /* margin-top: -135 0 z-20px 30px; */
+    cursor: pointer;
+    align-content: flex-start;
+    width: 25vw;
 }
 
-.gameChoiceButtons h3{
-    border: 2px outset var(--background-dark2);
-    background-color: var(--background-darker);
-    width: 40px;
-    color: var(--background-sub);
-    margin:0;
+.gameChoiceButtons section {
+    margin-top: -135 0 -20px 30px;
+}
+
+#challenge {
+    /* text-aligsn: center; */
+    margin: -5px 20px;
     font-size: 15px;
-    height: 20px;
+    height: 16px;
+    width: 80px;
     text-align: center;
 }
 
-.gameChoiceButtons h5 {
+.gameChoiceButtons h3{
+    align-self: center;
+    border: 2px outset var(--background-dark2);
+    background-color: var(--background-darker);
+    width: 4vw;
+    color: var(--background-sub);
+    margin:10px;
+    padding: 10px;
+    font-size: 15px;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#helpQ,#goHelp {
     color: var(--background-inverse3);
     background-color: var(--background-inverse4);
     margin:0;
     line-height: 10px;
     font-size: 10px;
     height: 15px;
+    cursor: pointer;
 }
-
 
 .gameChoiceButtons p {
     color: var(--background-inverse3);
     background-color: var(--background-inverse4);
-    margin:0;
+    margin:10 0 0 30px;;
     line-height: 10px;
     font-size: 10px;
     height: 15px;
+    cursor: pointer;
 
 }
 
@@ -197,7 +219,7 @@ p {
 }
 
 .approvedCitizens:after {
-    background-image: url("phantomWars.png");
+    background-image: url("#");
     height: 40px;
     width: 100px;
     opacity: 0.7;
@@ -218,19 +240,32 @@ p {
 }
 
 .idTransmitterPic:after {
-    background-image: url("phantomWars.png");
+    background-image: url("#");
     height: 40px;
     width: 100px;
     opacity: 0.7;
 } 
 
 .deviantForces:after {
-    background-image: url("phantomWars.png");
+    background-image: url("#");
     height: 40px;
     width: 100px;
     opacity: 0.7;
 } 
 
+#gif1:after {
+    background-image: url("#");
+    height: 40px;
+    width: 100px;
+    opacity: 0.7;
+}
+
+#gif2:after {
+    background-image: url("#");
+    height: 40px;
+    width: 100px;
+    opacity: 0.7;
+}
 
 /* 
 .custom_class:after {
@@ -272,7 +307,7 @@ p {
 #deviant__data {
     line-height: .8em;
     font-size: 1.2em;
-    margin-bottom: 60px;
+    margin-bottom: 0px;
     border: 0 ;
     /* padding: -5px; */
     text-align: center;
@@ -289,8 +324,9 @@ p {
     overflow: scroll;
     height: 5vh;
     padding: 5px;
-    margin: 5 8%;
+    margin:  2px;;
     width: 63vw;
+    cursor: alias;
 }
 
 .help__missions {
@@ -301,6 +337,7 @@ p {
     font-size: 1em;
     margin: 5 8%;
     overflow: inherit;
+    cursor: help;
 
     /* height: 15vh; */
     /* padding: 5px; */
@@ -314,6 +351,7 @@ p {
     line-height: .8em;
     font-size: 1em;
     overflow: inherit;
+    cursor: help;
 
     /* margin: 0 8%; */
     /* padding: 5px; */
@@ -321,13 +359,43 @@ p {
     /* align-self: right; */
 }
 
+/* /////////  ON HOVER expand with transition  ////////// */
 
+.grow12 {
+    transition: all 200ms ease-in-out;
+}
+
+.grow12:hover {
+    transform: scale(1.2);
+}
+
+.grow14{
+    transition: all 150ms ease-in-out;
+}
+.grow14:hover{
+    transform: scale(1.4);
+}
+
+.grow16{
+    transition: all 200ms ease-in-out;
+}
+
+.grow16{
+    transform: scale(1.4);
+}
+
+/* ///// ICONS  /////// */
+
+
+
+
+.mapIcon {
+    color: green;
+
+}
 
 
 /* ///////////// STREETS & GAME /////////////// */
-
-
-
 
 .dungeon {
     flex: 2.5;
@@ -336,7 +404,6 @@ p {
     height: 70vh;
     background-color: var(--background-linear-gradient0);
     margin-top: 1vh;
-    
         /* url("") */
     /* background-size: 63vw 70vh; */
     overflow: scroll;
@@ -352,29 +419,30 @@ p {
 }
 
 .animationScroll {
+    width:  140vw;
+    height: 160vh;
     /* background:  */
         /* url("https://i.imgur.com/dAIwZ6v.png") bottom right no-repeat ; */
-    width:  140vw;
     /* transform: scale(); */
     /* width:  150vw;  */
-    height: 160vh;
-
 }
 
 .aniScroll {
     width: 100%;
     height: 100%;
+    cursor: all-scroll;
 
 }
 
-/* .dungeon img { */
-    /* width: 63vw;
-    height: 70vh; */
-    /* width: 100%;
-    position: cover; */
-    /* top: -5px; */
-    /* height: 110%;
-} */
+
+
+#mapBiggerDiv {
+    display:flex;
+    flex-flow: row nowrap;
+    margin-top: 5px 30px 0 20px;
+    justify-content: space-evenly;
+    width: 63vw;
+}
 
 #mapDiv {
     background-image: url("https://i.imgur.com/3Ml5Mdy.jpg") bottom center repeat;
@@ -382,19 +450,14 @@ p {
     padding: 0;
     display: flex;
     position: relative;
-
+    margin-top: 20px;
 }
 
-button {
-    margin-top: 0;
-    width: 10vw;
-    height: 5vh;
 
-}
 
 .street {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 60px;
     background: var(--background-sub4);
     border: 2px dashed cyan;
 }
@@ -404,16 +467,32 @@ button {
     /*   border: 5px solid var(--sub-dark); */
 }
 
-.street.visited {
+/* .street.visited {
     background: teal;
+} */
+
+
+
+.walk {
+    --button-width: 80px;
+    --button-height: 65px;
+    --button-radius: 10px;
+    
+    width: var(--button-width);
+    height: var(--button-height);
+    background: var(--background-dark4);
+    border-radius: var(--button-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: transform .3s ease-in;
+    /* overflow: hidden; */
+    margin-top: 17px;
+    margin-left: -10px;
+    font-size: 16px;
 }
-
-
-
-
-
-
-
 
 
 
@@ -427,7 +506,7 @@ button {
 
 
 footer {
-    margin-top: 0px;
+    margin: 0px 0 0 0px;
     color: gray;      /* put footer in HTML */
 }
 
