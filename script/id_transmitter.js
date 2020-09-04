@@ -1,7 +1,7 @@
 /* .transmitter_screen */
 $('#askProfile').hide()
 $('#askMore').hide()
-$("#start").show()
+$("#goBtn").show()
 $('#showBar').hide()
 
 
@@ -104,12 +104,12 @@ let compIdChecks = 0;
 let compMissions = 0
 
 //find button for YES I want to play
-$('#start').click(function(event){
+$('#playbtn').click(function(event){
     // alert( event.currentTarget === this ); // true
     // link this to the start button in the left column
     // create bar on transmitter & change color on click
     
-    // MAYBE CREATE LISTENER FOR LIRE CONNECTION?
+    // MAYBE CREATE LISTENER FOR WIRE CONNECTION?
     
     $('#startBar').css("background-color","var(--backgr)")
     if ($('compIdChecks')===0){
@@ -119,23 +119,37 @@ $('#start').click(function(event){
     } else if ($('compIdChecks')===2){
         const basic1mult = makeAdditionEquationAND(15, 2)    //if compIdChecks ===2 =>()
     }else if ($('compIdChecks')===3){
-        const basic1div = makeAdditionEquationAND(15, 3)     //if compIdChecks ===3 =>()
+        // const basic1div = makeAdditionEquationAND(15, 3)     //if compIdChecks ===3 =>()
+        const basic1add = makeAdditionEquationAND(20, 0)
+    }else if ($('compIdChecks')===4){
+        const basic1sub = makeAdditionEquationAND(20, 1)
+    }else if ($('compIdChecks')===5){
+        const basic1mult = makeAdditionEquationAND(20, 2)
+    }else if ($('compIdChecks')===6){
+        // const basic1div = makeAdditionEquationAND(15, 3)     //if compIdChecks ===3 =>()
+        const basic1add = makeAdditionEquationAND(25, 0)
+    }else if ($('compIdChecks')===7){
+        const basic1sub = makeAdditionEquationAND(25, 1)
+    }else if ($('compIdChecks')===8){
+        const basic1sub = makeAdditionEquationAND(25, 1)
+        const basic1mult = makeAdditionEquationAND(25, 2)
+        const basic1add = makeAdditionEquationAND(25, 0)
     }
-    
-
+    // $('.fa-wave-square').slideToggle();
 });
 
 
 
 
 
-const $newEQs = ``
-const $newPEQ = ``
-const $displayPEQ = ``
+let $newEQs = ``
+let $newPEQ = ``
+let $displayPEQ = ``
+let evalEq= []
 
 // THIS LISTENS FOR A CLICK ON THE TRANSMITTER- DISPLAYS IT FIRST IN THE INPUT THEN ON THE LINE BELOW THE INPUT WHEN = IS CLICKED
 $( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).click(function( event ) {
-    console.log("my number buttons and symbol buttons work");
+    console.log("number & symbol buttons work");
 
     if ($(this).attr('id') !== 'btnEquals'){
         const inputvalue = $('input.newEQ').first().val()
@@ -143,20 +157,23 @@ $( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).
         console.log($('input.newEQ'));
     }
     else {    
-        console.log('equals button works')
+            console.log('equals button works')
         $newEQs = $('input.newEQ').val()      // grab value of input
         $newPEQ = $('#newEQul').prepend(`<li>${$newEQs}</li>`)        // add the new li to user screen
-        console.log($newPEQ);
-        console.log('trying to put eq on line')
+            console.log($newPEQ);
+            // console.log('trying to put eq on line')
         $('input.newEQ').val(``);                                       // reset the input to clear
-        // formula to check cVar
-            $displayPEQ = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`)   // add the new li to idchk screen
-            console.log($displayPEQ);
-            console.log($newEQs)
+            // formula to check cVar
+        $displayPEQ = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`)   // add the new li to idchk screen
+            // console.log($displayPEQ);
+            // console.log($newEQs)
+        evalEq.push($newEQs)
+        console.log(`evalEq is:  ${evalEq}`)
         }
 });
     
-console.log($newEQs);
+console.log(`This is $newEQs.$newEQs`);
+// console.log(`This is $newEQs.join():`, $newEQs.join());
 
 //check if c is equal to input
 
@@ -165,7 +182,6 @@ console.log($newEQs);
 // display color change approve/deny
 // add points to both spots on deviant
 // 
-
 
 
 
@@ -405,8 +421,8 @@ console.log($newEQs);
 /* These are grouped click events */
 
 // player clicks Yes- to 'Do you want to play?'
-$('#start').click(function(){
-    $('#start').hide(); 
+$('#goBtn').click(function(){
+    $('#goBtn').hide(); 
     $('#startBar').show();
     $('#dontPlay').hide();
     $('#askProfile').show(); // show buttons to set up profile
@@ -444,20 +460,20 @@ $('#later').click(function(){
     $('#askPlay').append(`<h4 #askQs>Would you like to set up your profile?</h4>`)
 })
 // player clicks Not Sure and is prompted & foot print icon highlights
-$('helpQ').click(function(){
-    setInterval(function(){$('highlightHelpI').css('border','3px groove cyan')}, 3000)
-    clearInterval(setInterval(function(){$('highlightHelpI').css('border','none')}, 3000));
+$('#helpQ').click(function(){
+    setInterval(function(){$('.highlightHelpI').css('border','3px groove cyan')}, 3000)
+    clearInterval(setInterval(function(){$('.highlightHelpI').css('border','none')}, 3000));
     $('#askPlay').append(`<h4 #askQs>Look for the footprints for help.</h4>`)
 })
 // + Info was clicked, h5 is appended to clarify
-$('goHelp').click(function(){
+$('#goHelp').click(function(){
     $('#askMore').append(`<h5 #moreInfo .askQs>I'd like further clarification on <u>how to play?</u></h5>`);
     
 })
 // Player clicks new prompt and ? icon highlights
 $('#moreInfo').click(function(){
-    setInterval(function(){$('highlightHelpI').css('border','3px groove cyan')}, 3000)
-    clearInterval(setInterval(function(){$('highlightHelpI').css('border','none')}, 3000));
+    setInterval(function(){$('.highlightHelpI').css('border','3px groove cyan')}, 3000)
+    clearInterval(setInterval(function(){$('.highlightHelpI').css('border','none')}, 3000));
     $('#gameChoiceButtons').hide()
     $('#askPlay').append(`<h4 #askQs>Look for the ? for more info.</h4>`)
 })

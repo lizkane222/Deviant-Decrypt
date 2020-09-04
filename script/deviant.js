@@ -31,7 +31,7 @@ const streets = [
         eachEQvalue : 0,
         accuracy : 0,
         damage : 0,
-        abdaPrompt : [`You've arrived, great! My name is Abda, I'm a tracker and decrypter.`,`Put this earpiece on so you can hear me throughout training and your mission.`,`check, check, okay let's do this thing.`,`Our transmitters are updated daily but there is still a portion of the code we have to manually input to pass identity checks in the street. Don't worry I'll show you how.`],
+        abdaPrompt : [`You've arrived, great! My name is Abda, I'm a tracker and decrypter.Put this earpiece on so you can hear me throughout training and your mission... check, check, okay let's do this thing. Our transmitters are updated daily but there is still a portion of the code we have to manually input to pass identity checks in the street. Don't worry I'll show you how.`],
         visited : false,
         heal : 50,
 
@@ -132,7 +132,7 @@ let currentStreet = 0;
 const generateStreets = function(){
     $('#mapDiv').empty();
 
-    for (let index=0; index < streets.length; index++){
+    for (let index=0; index < streets.length-1; index++){
         if(index === currentStreet){
             $('#mapDiv').append('<div class="street highlight"></div>');
         }else if (streets[index].visited){
@@ -141,25 +141,30 @@ const generateStreets = function(){
             $('#mapDiv').append('<div class="street"></div>')
         }
     }
-
 }
 
+//// this is where to add prompts and other contexts from the room
 const enterStreet = function(){
     const street = streets[currentStreet];
 
     if(street.visited){
-        $('dungeon').append(`<div class="prompt'>We've already been down this street.</div>`)
+        $('.dungeon').append(`<div class="prompt'>We've already been down this street.</div>`)
     } else {
-        $('#mapDiv').append(`<div class='prompt'>${street.abdaPrompt[0,1,2,3]}</div>`)
-        health = health-street.damage+street.heal;
+        let $abdaPromptTObar = $(`<li .adbaPrompt>${street.abdaPrompt[0]}</li>`)
+        $('#abdaPromptBar').append(`<li>${$abdaPromptTObar}</li>`)
+        health = health-streets.damage+streets.heal;
+        streets++
 
         if (health <= 0) {
             console.log('Game Over!');
         }
+        
         if(currentStreet === streets.length-1 && health>0){
             console.log("You win!!")
         }
         streets[currentStreet].visited = true;
+    
+    
     }
 }
 
@@ -173,27 +178,26 @@ const nextStreet = function(){
 }
 
 const previousStreet = function(){
-    if (currentStreet > 0)
-    currentStreet--;
+    if (currentStreet > 0) currentStreet--;
     generateStreets();
     enterStreet();
     console.log(currentStreet)
 }
 
-const start = function(){
-    health=0;
+const play = function(){
+    health=50;
     currentStreet = 0;
-    $('#start').hide();
+    $('#play').hide();
     $('#return').show();
-    $('#previewNext').show();
+    $('#preview').show();
     generateStreets();
     enterStreet();
 }
 
 
-$('#start').on('click',start());
-$('#previewNext').on('click',nextStreet());
-$('#return').on('click',previousStreet());
+$('#play').on('click',play);
+$('#preview').on('click',nextStreet);
+$('#return').on('click',previousStreet);
 
 
 

@@ -50,7 +50,7 @@
             <div id='challenge'>
                 <h3 id="challengeQs">Can you decode the encrypted equation, and produce the code in time?</h3>
                 <section id="askPlay">
-                    <h3 id="start" class="letsPlay grow14">Play</h3>
+                    <h3 id="goBtn" class="letsPlay grow14">GO</h3>
                     <!-- on click highligh deviant div -->
                     <span class="hint--top hint--bounce hint--rounded hint--image gif1" aria-label="image"></span><h3 id="gif1" class="grow"><h3 id="dontPlay" class="grow14">Not yet</h3></span>
                 </section>
@@ -120,13 +120,20 @@
     </div>
 
 <!-- animated scroll screen, image placeholder until I learn how to use graphics -->
+
+<div dungeonANDoverflow>
+    <div id="robotPromptContainer">
+        <ul id="robotPrompt"></ul>
+    </div>
+    <div id="promptAbdaContainer">
+        <ul id="abdaPromptBar"></ul>
+        <img id="abdaImg" src="https://i.imgur.com/z091gik.png" alt="computer hacker">
+    </div>
 <div class="dungeon" >
     <div class="animationScroll">
         <img class="aniScroll" src="https://i.imgur.com/dAIwZ6v.png"/>
     </div>
-    
-    <div class="abdaPrompt"></div>
-    
+        
     <!-- <img id="street" src="" alt=""/>
         <img id="street" src="" alt=""/>
         <img id="street" src="" alt=""/>
@@ -147,9 +154,12 @@
     <div id="mapDiv">
         </div>
     
+    <button id='playbtn' class="walk grow12">PLAY</button>
     <button id='return' class="walk grow12">RETURN</button>
-    <button id='previewNext' class="walk grow12">PREVIEW NEXT</button>
+    <button id='preview' class="walk grow12">PREVIEW</button>
     </div>
+
+</div>
 </column>
 
 
@@ -164,7 +174,7 @@
     <section class="transmitter__user">
         <!-- <p class="problem-display">problem display</p> -->
         <article class="transmitter__screen">
-            <i class="far fa-eye"></i>
+            <i class="far fa-eye fa-3x"></i>
             <div id="displayEQ">
                 <input class="newEQ" placeholder="press buttons to display your equation here">
                 <ul id="newEQul" class="newEQul"></ul>
@@ -273,8 +283,7 @@
     <!-- <div id="bubble">
         <h4>( a  +  b )  ( ? )   =   d</h4>
     </div> -->
-    <i class="fas fa-wave-square"></i>
-    
+    <i class="fas fa-wave-square fa-9x"></i>
     <section id="idchecker">
         <div id="idchecker__screen">
             <ul id="idchecker__screen__ul" class="newEQul"></ul>

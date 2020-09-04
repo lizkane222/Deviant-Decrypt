@@ -58,6 +58,9 @@ header {
 }
 header h3 {
     padding-bottom: 10px;
+    margin-top: -5px;
+    margin-bottom: 10px;
+    font-size: 13px;
 }
 
 main {
@@ -328,7 +331,7 @@ main {
     overflow: scroll;
     height: 5vh;
     padding: 5px;
-    margin:  2px;;
+    margin:  -90px 0 20px 30px;
     width: 63vw;
     cursor: alias;
 }
@@ -391,6 +394,38 @@ main {
 }
 
 
+/* ///////////// prompt divs /////////////// */
+
+#robotPromptContainer {
+    z-index: 5;
+    background-color: rgba(0,0,0,.4);
+    width: 35vw;
+    margin-top: -100px;
+}
+
+#promptAbdaContainer {
+    z-index: 5;
+    background-color: rgba(0,0,0,.4);
+    width: 35vw;
+    display:flex;
+    justify-content: flex-end;
+    margin-top: -100px;
+    margin-right: -100px;
+    
+
+}
+
+#abdaImg {
+    width: 200px;
+    border-radius: 100%;
+
+}
+
+
+
+
+
+
 /* ///////////// STREETS & GAME /////////////// */
 
 .dungeon {
@@ -409,6 +444,7 @@ main {
     border-bottom-left-radius: 90px;
     border-top-right-radius: 90px;
     border-bottom-right-radius: 90px;
+    z-index: 1;
 
     /* margin-right: 20%; */
     /* margin-left: 10%; */
@@ -463,11 +499,9 @@ main {
     /*   border: 5px solid var(--sub-dark); */
 }
 
-/* .street.visited {
+.street.visited {
     background: teal;
-} */
-
-
+}
 
 .walk {
     --button-width: 80px;
@@ -485,10 +519,38 @@ main {
     cursor: pointer;
     transition: transform .3s ease-in;
     /* overflow: hidden; */
-    margin-top: 17px;
+    /* margin-top: 17px;
     margin-left: -10px;
-    font-size: 16px;
-}
+    font-size: 16px;  */
+} 
+
+
+  
+  button:hover {
+    filter: brightness(120%);
+  }
+  
+  #play {
+    display: block;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    width: 40%;
+    height: 30%;
+  }
+  
+  .prompt {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    bottom: 30px;
+  }
+
+
+
+
+
+
 
 
 
