@@ -121,6 +121,7 @@ body.dark {
     overflow: auto;
     margin-top: 0px;
     margin-right: 8px;
+    font-size: 18px;
 
  /* Enable scroll if needed */
 
@@ -171,7 +172,7 @@ body.dark {
 }
 
 .numButt {
-    background-color: var(--background-sub2);
+    background-color: var(--background-dark-inverse);
     color: var(--background-dark3);
     font-size: 1.5em;
     padding-right: 10px;

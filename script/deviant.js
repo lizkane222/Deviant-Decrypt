@@ -26,20 +26,20 @@ $('#backstory span').hover(function(){
 
 const streets = [
     {
-        streetType: base,
+        streetType: "base",
         streetNumber : 0,
         numEQReq : 0,
         eachEQvalue : 0,
         accuracy : 0,
         damage : 0,
         abdaPrompt : [`You've arrived, great! My name is Abda, I'm a tracker and decrypter.`,`Put this earpiece on so you can hear me throughout training and your mission.`,`check, check, okay let's do this thing.`,`Our transmitters are updated daily but there is still a portion of the code we have to manually input to pass identity checks in the street. Don't worry I'll show you how.`],
-        visited : true,
+        visited : false,
         heal : 50,
 
     },
     
     {
-        streetType: quiz,
+        streetType: "quiz",
         streetNumber : 1,
         numEQReq : 3,
         eachEQvalue : 20,
@@ -126,7 +126,7 @@ const streets = [
 
 let health = 0;
 
-let currentStreet = 0,
+let currentStreet = 0;
 
 
 

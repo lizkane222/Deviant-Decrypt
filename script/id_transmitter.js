@@ -110,12 +110,45 @@ const createNewEQ = () => {
 // $('.newEQ').before()
 // $('transmitter__screen').text('')
 
-// listen for click in transmitter  (target)
 
+// $('input .newEQ') = []
+
+// listen for click in transmitter  (target)
+$( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).click(function( event ) {
+    console.log("my number buttons and symbol buttons work");
+
+    if ($(this).attr('id') !== 'btnEquals'){
+        const inputvalue = $('input.newEQ').first().val()
+        $('input.newEQ').first().val(inputvalue + $(this).text())
+        console.log($('input.newEQ'));
+    }
+    else {    
+        console.log('equals button works')
+        const $newEQs = $('input.newEQ').val()
+            console.log($newEQs);
+        const $newPEQ = $('ul').prepend(`<li>${$newEQs}</li>`);
+        // $('ul').append($newPEQ)
+            console.log($newPEQ);
+            console.log('trying to put eq on line')
+        
+    }
+    // alert( event.currentTarget === this ); // true
+    
+});
+
+
+
+
+$("ul").on('click',"li", function(event){
+    $("ul").append($(event.target));            //in place of append use use for pokemon game to move cards clicked to away
+})
 
 
 
 // identify click in transmitter (current target)
+
+
+
 
 
 
