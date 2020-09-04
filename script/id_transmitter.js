@@ -3,7 +3,7 @@ $('#askProfile').hide()
 $('#askMore').hide()
 $("#goBtn").show()
 $('#showBar').hide()
-
+$('#mapBiggerDiv').show()
 
 
 const greekAlpha = ["Α","Β","Γ","Δ","Ε","Ζ","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω",]
@@ -15,10 +15,10 @@ const mathSymbols = ['+','-','*','/','^','√']
 //  EQUATIONS CONSIST OF
 // numbers1n100 mathSymbols numbers1n100 mathSymbols numbers1n100 solution
 
-const a = 0
-const b = 0
-const c = 0
-const d = 0
+let a = 0
+let b = 0
+let c = 0
+let d = 0
 
 const makeAdditionEquationAND = function(base=11, symI){
     let aVar = 0;
@@ -39,23 +39,22 @@ const makeAdditionEquationAND = function(base=11, symI){
         cVar = Math.floor(Math.random()*base); 
     }
 
+
+    console.log(`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
+
     if (symI === 0){
         let eQNoC = `${aVar}${add}${bVar}`
         let eQDisplay = `(${aVar}${add}${bVar})${cSym}(${cVar})`;
         let cSolu = aVar + bVar +cVar;
         console.log(`Bubble: ${eQNoC} = ${cSolu}`)
-        console.log(`Can you find the missing code?`)
-        console.log(`1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code.`)
-        console.log(`Once you've figured it out, how many equations can you write that equal that number?`)
-        console.log(`Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
-        console.log({eQDisplay, cSolu})
-        $('#bubble').append(`<p #bubEQ>${eQNoC} (?) =  ${cSolu}</p>`);
-        const a = `${aVar}`
-        const b = `${bVar}`
-        const c = `${cVar}`
-        const d = `${cSolu}`
-        console.log(`These are the variables for this round:  ${a} ${b} ${c} ${d}`);
 
+        console.log({eQDisplay, cSolu})
+        $('#bubble').append(`<p id="newEQul">${eQNoC} (?) =  ${cSolu}</p>`);
+        a = `${aVar}`
+        b = `${bVar}`
+        c = `${cVar}`
+        d = `${cSolu}`
+        console.log(`These are the variables for this round:  ${a} ${b} ${c} ${d}`);
 
 
     }else if (symI === 1){
@@ -63,16 +62,13 @@ const makeAdditionEquationAND = function(base=11, symI){
         let eQDisplay = `(${aVar}${add}${bVar})${cSym}(${cVar})`;
         let cSolu = aVar + bVar - cVar;
         console.log(`Bubble: ${eQNoC} = ${cSolu}`)
-        console.log(`Can you find the missing code?`)
-        console.log(`1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code.`)
-        console.log(`Once you've figured it out, how many equations can you write that equal that number?`)
-        console.log(`Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
+
         console.log({eQDisplay, cSolu});
-        $('#bubble').append(`<p #bubEQ>${eQNoC} (?)  = ${cSolu}</p>`);
-        const a = `${aVar}`
-        const b = `${bVar}`
-        const c = `${cVar}`
-        const d = `${cSolu}`
+        $('#bubble').append(`<p id="newEQul">${eQNoC} (?)  = ${cSolu}</p>`);
+        a = `${aVar}`
+        b = `${bVar}`
+        c = `${cVar}`
+        d = `${cSolu}`
         console.log(`These are the variables for this round:  ${a} ${b} ${c} ${d}`);
 
 
@@ -82,16 +78,13 @@ const makeAdditionEquationAND = function(base=11, symI){
         let cSolu = aVar + bVar
         let answer = cSolu * cVar;
         console.log(`Bubble: ${eQNoC} = ${answer}`)
-        console.log(`Can you find the missing code?`)
-        console.log(`1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code.`)
-        console.log(`Once you've figured it out, how many equations can you write that equal that number?`)
-        console.log(`Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
+
         console.log({eQDisplay, answer})
-        $('#bubble').append(`<p #bubEQ>${eQNoC} (?)  = ${answer}</p>`);
-        const a = `${aVar}`
-        const b = `${bVar}`
-        const c = `${cVar}`
-        const d = `${answer}`
+        $('#bubble').append(`<p id="newEQul">${eQNoC} (?)  = ${answer}</p>`);
+        a = `${aVar}`
+        b = `${bVar}`
+        c = `${cVar}`
+        d = `${answer}`
         console.log(`These are the variables for this round:  ${a} ${b} ${c} ${d}`);
     }
 }   
@@ -105,40 +98,52 @@ let compMissions = 0
 
 //find button for YES I want to play
 $('#playbtn').click(function(event){
+
+    health=50;
+    currentStreet = 0;
+    $('#play').hide();
+    $('#return').show();
+    $('#preview').show();
+    generateStreets();
+    enterStreet();
+    $('#abdaPromptBar').empty
+    $('#robotPromptContainer').empty
+    makeAdditionEquationAND(15, 0)     //if compIdChecks ===0 =>()
+});
     // alert( event.currentTarget === this ); // true
     // link this to the start button in the left column
     // create bar on transmitter & change color on click
     
     // MAYBE CREATE LISTENER FOR WIRE CONNECTION?
-    
-    $('#startBar').css("background-color","var(--backgr)")
-    if ($('compIdChecks')===0){
-        const basic1add = makeAdditionEquationAND(15, 0)     //if compIdChecks ===0 =>()
-    } else if ($('compIdChecks')===1){
-        const basic1sub = makeAdditionEquationAND(15, 1)     //if compIdChecks ===1 =>()
-    } else if ($('compIdChecks')===2){
-        const basic1mult = makeAdditionEquationAND(15, 2)    //if compIdChecks ===2 =>()
-    }else if ($('compIdChecks')===3){
-        // const basic1div = makeAdditionEquationAND(15, 3)     //if compIdChecks ===3 =>()
-        const basic1add = makeAdditionEquationAND(20, 0)
-    }else if ($('compIdChecks')===4){
-        const basic1sub = makeAdditionEquationAND(20, 1)
-    }else if ($('compIdChecks')===5){
-        const basic1mult = makeAdditionEquationAND(20, 2)
-    }else if ($('compIdChecks')===6){
-        // const basic1div = makeAdditionEquationAND(15, 3)     //if compIdChecks ===3 =>()
-        const basic1add = makeAdditionEquationAND(25, 0)
-    }else if ($('compIdChecks')===7){
-        const basic1sub = makeAdditionEquationAND(25, 1)
-    }else if ($('compIdChecks')===8){
-        const basic1sub = makeAdditionEquationAND(25, 1)
-        const basic1mult = makeAdditionEquationAND(25, 2)
-        const basic1add = makeAdditionEquationAND(25, 0)
-    }
+    // const basic1add = 
+
+    // $('#startBar')
+    // if ($('compIdChecks')===0){
+    //     const basic1add = makeAdditionEquationAND(15, 0)     //if compIdChecks ===0 =>()
+    // } else if ($('compIdChecks')===1){
+    //     const basic1sub = makeAdditionEquationAND(15, 1)     //if compIdChecks ===1 =>()
+    // } else if ($('compIdChecks')===2){
+    //     const basic1mult = makeAdditionEquationAND(15, 2)    //if compIdChecks ===2 =>()
+    // }else if ($('compIdChecks')===3){
+    //     // const basic1div = makeAdditionEquationAND(15, 3)     //if compIdChecks ===3 =>()
+    //     const basic1add = makeAdditionEquationAND(20, 0)
+    // }else if ($('compIdChecks')===4){
+    //     const basic1sub = makeAdditionEquationAND(20, 1)
+    // }else if ($('compIdChecks')===5){
+    //     const basic1mult = makeAdditionEquationAND(20, 2)
+    // }else if ($('compIdChecks')===6){
+    //     // const basic1div = makeAdditionEquationAND(15, 3)     //if compIdChecks ===3 =>()
+    //     const basic1add = makeAdditionEquationAND(25, 0)
+    // }else if ($('compIdChecks')===7){
+    //     const basic1sub = makeAdditionEquationAND(25, 1)
+    // }else if ($('compIdChecks')===8){
+    //     const basic1sub = makeAdditionEquationAND(25, 1)
+    //     const basic1mult = makeAdditionEquationAND(25, 2)
+    //     const basic1add = makeAdditionEquationAND(25, 0)
+    // }
+
+
     // $('.fa-wave-square').slideToggle();
-});
-
-
 
 
 
@@ -148,8 +153,12 @@ let $displayPEQ = ``
 let evalEq= []
 
 // THIS LISTENS FOR A CLICK ON THE TRANSMITTER- DISPLAYS IT FIRST IN THE INPUT THEN ON THE LINE BELOW THE INPUT WHEN = IS CLICKED
-$( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).click(function( event ) {
+
+
+const getEQValue = $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).click(function( event ) {
     console.log("number & symbol buttons work");
+    let loadingBar = 0
+
 
     if ($(this).attr('id') !== 'btnEquals'){
         const inputvalue = $('input.newEQ').first().val()
@@ -158,21 +167,36 @@ $( ".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).
     }
     else {    
             console.log('equals button works')
-        $newEQs = $('input.newEQ').val()      // grab value of input
+        $newEQs = $('input.newEQ').val()      // gab value of input
         $newPEQ = $('#newEQul').prepend(`<li>${$newEQs}</li>`)        // add the new li to user screen
             console.log($newPEQ);
             // console.log('trying to put eq on line')
         $('input.newEQ').val(``);                                       // reset the input to clear
             // formula to check cVar
-        $displayPEQ = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`)   // add the new li to idchk screen
-            // console.log($displayPEQ);
-            // console.log($newEQs)
+            
+
         evalEq.push($newEQs)
-        console.log(`evalEq is:  ${evalEq}`)
+        // loop for every index and check if symbol
+
+        const storeEQ = $newEQs.split('+')
+        let total = 0
+            total = parseInt(storeEQ[0]) + parseInt(storeEQ[1])
+            console.log(total)
+            console.log(storeEQ)
+                if (c == total){
+                    //turn green
+                correctAnswer = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`).css("color",'green');   // add the new li to idchk screen
+                    
+
+                }
+                else {
+                    incorrectAnswer = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`).css("color",'red');
+                }
+                $('#deviant__complete__idchx')++
         }
 });
     
-console.log(`This is $newEQs.$newEQs`);
+// console.log(`This is $newEQs.$newEQs`);
 // console.log(`This is $newEQs.join():`, $newEQs.join());
 
 //check if c is equal to input

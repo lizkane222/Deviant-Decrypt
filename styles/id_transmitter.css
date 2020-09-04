@@ -17,8 +17,8 @@ body.dark {
   --background-inverse3: #7400b8;
   --background-dark: #073b4c;
   --background-dark-inverse: #ff99c8;
-  --background-sub4: #affc41;
-  --background-inverse4: #b2ff9e;
+  --background-sub4: #bcdfdf;
+  --background-inverse4: #88a580;
   --background-dark2: #3c1642;
   --background-dark3: #0b132b;
   --background-dark4: #042a2b;
@@ -31,7 +31,7 @@ body.dark {
 
 
 .transmitterBothDisplays {
-    background-color: rgba(0,0,0,.5);
+    background-color: none;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -60,6 +60,7 @@ body.dark {
     border-top-left-radius: 110px;
     border-bottom-left-radius: 110px;
     margin-left: 1px;
+    
     /* border-top-right-radius: 90px;
     border-bottom-right-radius: 90px; */
 }
@@ -71,6 +72,7 @@ body.dark {
     /* perfect width w/ animation box*/
     transition: 850ms;
     cursor: crosshair;
+    background-color: rgba(0,0,0,.5);
 }   
 
 .transmitter__user {

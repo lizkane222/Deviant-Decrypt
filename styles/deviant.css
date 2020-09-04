@@ -41,6 +41,7 @@ body {
     min-height: 100vh;
     width: 100vw;
     overflow: hidden;
+    font-family: 'Quantico', sans-serif;;
     /* overflow: hidden; */
     /* height: 100vh; */
 }
@@ -390,7 +391,8 @@ main {
 
 .mapIcon {
     color: green;
-
+    margin-top: 10px;
+    position: flex;
 }
 
 
@@ -401,6 +403,7 @@ main {
     background-color: rgba(0,0,0,.4);
     width: 35vw;
     margin-top: -100px;
+    overflow: scroll;
 }
 
 #promptAbdaContainer {
@@ -411,14 +414,14 @@ main {
     justify-content: flex-end;
     margin-top: -100px;
     margin-right: -100px;
-    
+    overflow: scroll;
 
 }
 
 #abdaImg {
     width: 200px;
     border-radius: 100%;
-
+    margin-right: -700px; 
 }
 
 
@@ -525,7 +528,7 @@ main {
 } 
 
 
-  
+/*   
   button:hover {
     filter: brightness(120%);
   }
@@ -544,7 +547,7 @@ main {
     font-size: 30px;
     position: absolute;
     bottom: 30px;
-  }
+  } */
 
 
 
