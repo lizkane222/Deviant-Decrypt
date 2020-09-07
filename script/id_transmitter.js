@@ -2,7 +2,7 @@
 $('#askProfile').hide()
 $('#askMore').hide()
 $("#goBtn").show()
-$('#showBar').hide()
+// $('#startBar').hide()
 $('#mapBiggerDiv').show()
 $('#bubble').hide
 

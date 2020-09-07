@@ -440,6 +440,7 @@ main {
     align-items: flex-start;
     width: 62vw;
     max-height: 10vh;
+    border-radius: 10%;
 }
 #robotPromptContainer {
     z-index: 5;
@@ -449,6 +450,7 @@ main {
     /* margin-top: -100px; */
     overflow: scroll;
     /* font-size: 5px; */
+    border-radius: 10px;
 
 }
 
@@ -480,6 +482,7 @@ main {
     /* font-size: 15px; */
     display:flex;
     justify-content: flex-end;
+    border-radius: 10px;
 
 }
 
@@ -552,7 +555,7 @@ main {
     justify-content: space-evenly;
     width: 70vw;
     max-height: 15vh;
-    background-color: red;
+    background-color: none;
 }
 
 #mapDiv {
@@ -602,6 +605,7 @@ main {
     margin-top: 10px;
     margin-left: -10px;
     font-size: 16px; 
+    color: gray;
 } 
 
 
