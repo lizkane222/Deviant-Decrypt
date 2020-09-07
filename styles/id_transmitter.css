@@ -411,7 +411,8 @@ body.dark {
 
 .loading {
     background-color: greenyellow;
-    
+    width: 5px;
+    height: 5px;
 
 }
 
