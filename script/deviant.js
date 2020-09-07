@@ -153,19 +153,18 @@ const enterStreet = function(user){
     let street = streets[currentStreet];
 
     if(street.visited){
-        $('#abdaPromptBar').append(`<p .adbaPrompt>We've already been down this street.</p>`)
+        $('#abdaPromptBar').append(`<p class="adbaPrompt">We've already been down this street.</p>`)
     } else {
         
-        $('#abdaPromptBar').prepend(`<p .adbaPrompt>${street.abdaPrompt}</p>`) //add delay somehow/ slide effect
+        $('#abdaPromptBar').prepend(`<p class="adbaPrompt">${street.abdaPrompt}</p>`)
+         //add delay somehow/ slide effect
         if (robotPrompt!== false){
-            $('#robotPromptContainer').append('<p >${robotPrompt}</p>')
+            $('#robotPromptContainer').append(`<p >${street.robotPrompt}</p>`)
+            
             // $('#abdaPromptBar').empty
-            // $('#robotPromptContainer').empty
+            $('#robotPromptContainer').empty
         }
         $('#abdaPromptBar').append(`<p >You'll do great, get your transmitter out and prepare yourself for an identity check.</p>`)
-        
-        
-
         
         health = health-streets.damage+streets.heal;
         street++

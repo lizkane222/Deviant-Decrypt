@@ -30,8 +30,8 @@
     <column class="left-side">
 
     <!-- display backstory & mission -->
+    <!-- <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">hover over me.</span> -->
         <div id="backstory">
- <!-- <span class="hint--top hint--bounce hint--rounded hint--image custom_class" aria-label="image">hover over me.</span> -->
             <p>Ever since the <span class="hint--bottom hint--bounce hint--rounded hint--image phantomWars" aria-label="image" >Phantom Wars </span>the <span class="hint--bottom hint--bounce hint--rounded hint--image federateDomain" aria-label="image">Federate Domain </span>has occupied and controlled nations.<br/><br/>
             There are still subverts among us, whose life priority is to overthrow the Federate Domain by transporting <span class="hint--bottom hint--bounce hint--rounded hint--image backpack" aria-label="image">packages</span> containing extremely classified and sensitive data between its rebel hubs<br/><br/>
             Technology is monitored like never before, rebels can’t use it to communicate but they are trained to be skilled decoders.<br/><br/>   
@@ -46,6 +46,10 @@
             <br/><br/>First let's give you some training to ready you for the field.<br/><br/>
             </p>
         </div>
+
+<!-- UNCOMMENT ABOVE SECTION -->
+
+
 
         <div class="gameChoiceButtons">
         <!--h3's are buttons  --><!--these p's need to appear on click with a delay of what the function is  -->
@@ -70,7 +74,7 @@
                     <h3 id="later">Later</h3>    
                     <h5 id="helpQ" class="grow">Not Sure</h5>
                         <!-- highlight -->
-                    <h5 id="goHelp" class="grow">+ Info</h5>
+                    <!-- <h5 id="goHelp" class="grow">+ Info</h5> -->
                 </section>
             </div>
         </div>
@@ -124,46 +128,42 @@
 
 <!-- animated scroll screen, image placeholder until I learn how to use graphics -->
 
-<div dungeonANDoverflow>
-    <div id="robotPromptContainer">
-        <ul id="robotPrompt"></ul>
-    </div>
-    <div id="promptAbdaContainer">
-        <ul id="abdaPromptBar"></ul>
-        <img id="abdaImg" src="https://i.imgur.com/z091gik.png" alt="computer hacker">
-    </div>
-<div class="dungeon" >
-    <div class="animationScroll">
-        <img class="aniScroll" src="https://i.imgur.com/dAIwZ6v.png"/>
-    </div>
-        
-    <!-- <img id="street" src="" alt=""/>
-        <img id="street" src="" alt=""/>
-        <img id="street" src="" alt=""/>
-        <img id="street" src="" alt=""/>
-        <img id="street" src="" alt=""/>
-        <img id="street" src="" alt=""/>
-        <img id="street" src="" alt=""/>
-        <img id="street" src="" alt=""/>
-    <img id="street" src="" alt=""/>
-    <img id="street" src="" alt=""/>
-    <img id="street" src="" alt=""/> -->
-    
-    
-    
-</div>
-<div id="mapBiggerDiv">
-    <i class="fas fa-map-marked-alt mapIcon fa-4x"></i>
-    <div id="mapDiv">
-        </div>
-    
-    <button id='playbtn' class="walk grow12">PLAY</button>
-    <button id='return' class="walk grow12">RETURN</button>
-    <button id='preview' class="walk grow12">PREVIEW</button>
-    </div>
-
-</div>
-</column>
+            <div id="dungeonANDoverflow">
+                <div id="robotPromptContainer">
+                    <p id="robotPrompt"></p>
+                </div>
+                <div id="promptAbdaContainer">
+                    <p id="abdaPromptBar"></p>
+                    <img id="abdaImg" src="https://i.imgur.com/z091gik.png" alt="computer hacker">
+                </div>
+            </div>
+            <div class="dungeon" >
+                    <div class="animationScroll">
+                        <img class="aniScroll" src="https://i.imgur.com/dAIwZ6v.png"/>
+                    </div>
+                        <!-- <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/>
+                            <img id="street" src="" alt=""/> -->
+            </div>
+            <div id="mapBiggerDiv">
+                <!-- click on icon to open map -->
+                <i class="fas fa-map-marked-alt mapIcon fa-4x"></i>
+                <div id="mapDiv"><!-- where to boxes/streets go -->
+                </div>
+                
+                <button id='playbtn' class="walk grow12">PLAY</button>
+                <button id='return' class="walk grow12">RETURN</button>
+                <button id='preview' class="walk grow12">PREVIEW</button>
+            </div>
+    </column>
 
 
 </main>
@@ -180,7 +180,7 @@
             <i class="far fa-eye fa-3x"></i>
             <div id="displayEQ">
                 <input class="newEQ" placeholder="press buttons to display your equation here">
-                <ul id="newEQul" class="newEQul"></ul>
+                <p id="newEQp" class="newEQp"></p>
             </div>
 
         </article>
@@ -239,7 +239,7 @@
                 <square id="btn-" class="grow12 symButt_right">-</square></column>
             <column>
                 <square id="btn-" class="grow12 symButt_right">-</square>
-                <square id="btn÷" class="grow12 symButt_right">÷</square>
+                <square id="btn/" class="grow12 symButt_right">÷</square>
                 <square id="btnRparen" class="grow12 symButt_right">)</square>
                 <square id="btn√" class="grow12 symButt_right">√</square>
             </column>
@@ -289,7 +289,7 @@
     <i class="fas fa-wave-square fa-9x"></i>
     <section id="idchecker">
         <div id="idchecker__screen">
-            <ul id="idchecker__screen__ul" class="newEQul"></ul>
+            <p id="idchecker__screen__p" class="newEQp"></p>
             <!-- <p>Α</p><br/>
             <p>Β</p><br/>
             <p>Γ</p><br/>
@@ -318,6 +318,8 @@
         </div>
         <article id="idchecker__buttonArea">
             <div id="loadingBar">
+
+                <!-- <square class="loading"></square>
                 <square class="loading"></square>
                 <square class="loading"></square>
                 <square class="loading"></square>
@@ -326,9 +328,8 @@
                 <square class="loading"></square>
                 <square class="loading"></square>
                 <square class="loading"></square>
-                <square class="loading"></square>
-                <square class="loading"></square>
-                %
+                <square class="loading"></square> -->
+                <p class="loadingBarPercentage">0%</p>
             </div>
 
             <div id="idcheck_buttons">
@@ -345,28 +346,18 @@
                     <h3>=</h3>
                     <h3>CITIZEN</h3>
                     <!-- CLEAR = APPROVED CITIZEN -->
-                </div>
-
-
-                <!-- <div id="deny" class="idcheck_buttons">
-                    DENY
-                </div>
-    
-                <div id="clear">
-                    CLEAR
-                </div> -->
-             
+                </div>             
             </section>
          
         </article>
 
     </section>
-    <div id="bubble">
-        <ul id="bubbleUL" class="newEQul">( a  +  b )  ( ? )   =   d</ul>
-    </div>
     
-
+    
 </div>
+        <div id="bubble">
+            <p id="bubblep" class="newEQp ">( a  +  b )  ( ? )   =   d</p>
+        </div>
 
 
 

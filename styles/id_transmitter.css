@@ -34,21 +34,22 @@ body.dark {
     background-color: none;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    margin: 50px 0;
+    margin: 20px 0;
     position: absolute;
     width: 63vw;
     height: 70vh;
-    bottom: 4.7vh;
-    right: -113vh;
+    /* bottom: 12.7vh;
+    right: -113vh; */
     border-top-left-radius: 90px;
     border-bottom-left-radius: 90px;
     border-top-right-radius: 90px;
     border-bottom-right-radius: 90px;
     /* locked mode to edit transmitters */
-    /* bottom: 1.3vh;
-    right: 7vh; */
+    bottom: 12.7vh;
+    right: 27vh;   
+    z-index: 7;
 } 
 
 #startBar {
@@ -66,13 +67,14 @@ body.dark {
 }
 
 .transmitterBothDisplays:hover { 
-    bottom: 4.7vh;
+    bottom: 12.7vh;
     /* perfect height with animation box  */
-    right: 23vh;   
+    right: 27vh;   
     /* perfect width w/ animation box*/
     transition: 850ms;
     cursor: crosshair;
     background-color: rgba(0,0,0,.5);
+    z-index: 7;
 }   
 
 .transmitter__user {
@@ -110,10 +112,11 @@ body.dark {
     flex-flow: column wrap;
     align-content: flex-start;
     border-radius: 10%;
+    overflow: scroll;
 
 }
 
-.newEQul {
+.newEQp {
     overflow: auto;
     font-size: 23px;
     color: var(--background-inverse2);
@@ -124,25 +127,33 @@ body.dark {
 }
 
 .EQ {
-    margin-left: 5px;
+    /* margin-left: 5px; */
 }
 
 .newEQ {
     display: flex-box;
-    justify-content: start;
-    flex-flow: column wrap;
+    top: 0;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
     text-align: right;
-    color: var(--background-inverse3);
+    /* color: var(--background-inverse3); */
     width: 26vw;
     height: 5vh;
-    overflow: auto;
+    /* overflow: auto; */
     margin-top: 0px;
     margin-right: 8px;
     font-size: 23px;
     border-radius: 10%;
-
+    z-index: 9;
 }
 
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
 
 #alpha {
     display: flex;
@@ -310,19 +321,20 @@ body.dark {
 }
 
 #bubble {
-    align-self: flex-start;
-    border-radius: 50%;
+    /* align-self: flex-start; */
+    border-radius: 10%;
     width: 300px;
-    height: 150px;
+    height: 80px;
     background-color: var(--background-inverse4);
     color: var(--background-dark4);
     padding: 5px;
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
     flex-flow: row nowrap;
-    z-index: 1;
-    /* position: fixed; */
-    margin: -15vh;
+    z-index: 15;
+    right: 10px;
+    margin:  -880px 0 80px 80vw;
+
 }
 
 #idchecker {
@@ -338,6 +350,7 @@ body.dark {
     align-items: stretch;
     cursor: not-allowed;
     border-radius: 10%;
+
     /* border-top-left-radius: 90px;
     border-bottom-left-radius: 90px;
     border-top-right-radius: 90px;
@@ -382,14 +395,23 @@ body.dark {
 #loadingBar {
     width: 23vw;
     height: 4vh;
-    background-color: var(--background-sub2);
     margin: 5px;
+    background-color: var(--background-sub4);
     padding: 0 5px;
     align-self: flex-start;
     color: var(--background-sub4);
     align-self: center;
     font-size: 30px;
     text-align: right;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.loading {
+    background-color: greenyellow;
+    
+
 }
 
 #idcheck_buttons {

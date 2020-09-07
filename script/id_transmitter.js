@@ -4,6 +4,7 @@ $('#askMore').hide()
 $("#goBtn").show()
 $('#showBar').hide()
 $('#mapBiggerDiv').show()
+$('#bubble').hide
 
 
 const greekAlpha = ["Α","Β","Γ","Δ","Ε","Ζ","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω",]
@@ -40,7 +41,7 @@ const makeAdditionEquationAND = function(base=11, symI){
     }
 
 
-    console.log(`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`)
+    const instructions = [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`]
 
     if (symI === 0){
         let eQNoC = `${aVar}${add}${bVar}`
@@ -49,7 +50,7 @@ const makeAdditionEquationAND = function(base=11, symI){
         console.log(`Bubble: ${eQNoC} = ${cSolu}`)
 
         console.log({eQDisplay, cSolu})
-        $('#bubble').append(`<p id="newEQul">${eQNoC} (?) =  ${cSolu}</p>`);
+        $('#bubblep').append(`<p id="newEQp">${eQNoC} (?) =  ${cSolu}</p>`);
         a = `${aVar}`
         b = `${bVar}`
         c = `${cVar}`
@@ -64,7 +65,7 @@ const makeAdditionEquationAND = function(base=11, symI){
         console.log(`Bubble: ${eQNoC} = ${cSolu}`)
 
         console.log({eQDisplay, cSolu});
-        $('#bubble').append(`<p id="newEQul">${eQNoC} (?)  = ${cSolu}</p>`);
+        $('#bubblep').append(`<p id="newEQp">${eQNoC} (?)  = ${cSolu}</p>`);
         a = `${aVar}`
         b = `${bVar}`
         c = `${cVar}`
@@ -80,7 +81,7 @@ const makeAdditionEquationAND = function(base=11, symI){
         console.log(`Bubble: ${eQNoC} = ${answer}`)
 
         console.log({eQDisplay, answer})
-        $('#bubble').append(`<p id="newEQul">${eQNoC} (?)  = ${answer}</p>`);
+        $('#bubblep').append(`<p id="newEQp">${eQNoC} (?)  = ${answer}</p>`);
         a = `${aVar}`
         b = `${bVar}`
         c = `${cVar}`
@@ -96,18 +97,33 @@ const makeAdditionEquationAND = function(base=11, symI){
 let compIdChecks = 0;
 let compMissions = 0
 
-//find button for YES I want to play
-$('#playbtn').click(function(event){
-
-    health=50;
-    currentStreet = 0;
+//open map on click
+$('.mapIcon').click(function(event){
     $('#play').hide();
     $('#return').show();
     $('#preview').show();
     generateStreets();
     enterStreet();
-    $('#abdaPromptBar').empty
-    $('#robotPromptContainer').empty
+
+})
+
+// go button prompts player to user to check that coast is clear, click on robot to submit to idcheck
+//show play/return/preview buttons when robot is clicked
+
+
+//find button for YES I want to play
+$('#playbtn').click(function(event){
+//show bubble
+    $('#bubble').show()
+    health=50;
+    currentStreet = 0;
+    // $('#play').hide();
+    // $('#return').show();
+    // $('#preview').show();
+    // generateStreets();
+    // enterStreet();
+    $('#abdaPromptBar').empty()
+    $('#robotPromptContainer').empty()
     makeAdditionEquationAND(15, 0)     //if compIdChecks ===0 =>()
 });
     // alert( event.currentTarget === this ); // true
@@ -155,9 +171,10 @@ let evalEq= []
 // THIS LISTENS FOR A CLICK ON THE TRANSMITTER- DISPLAYS IT FIRST IN THE INPUT THEN ON THE LINE BELOW THE INPUT WHEN = IS CLICKED
 
 
-const getEQValue = $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals" ).click(function( event ) {
+$(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event ) {
     console.log("number & symbol buttons work");
-    let loadingBar = 0
+    
+    let loadingBarPercentage = 0
 
 
     if ($(this).attr('id') !== 'btnEquals'){
@@ -168,32 +185,77 @@ const getEQValue = $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnS
     else {    
             console.log('equals button works')
         $newEQs = $('input.newEQ').val()      // gab value of input
-        $newPEQ = $('#newEQul').prepend(`<li>${$newEQs}</li>`)        // add the new li to user screen
+        $newPEQ = $('#newEQp').prepend(`<p>${$newEQs}</p>`)        // add the new li to user screen
             console.log($newPEQ);
             // console.log('trying to put eq on line')
         $('input.newEQ').val(``);                                       // reset the input to clear
             // formula to check cVar
-            
-
         evalEq.push($newEQs)
         // loop for every index and check if symbol
-
-        const storeEQ = $newEQs.split('+')
-        let total = 0
-            total = parseInt(storeEQ[0]) + parseInt(storeEQ[1])
-            console.log(total)
-            console.log(storeEQ)
-                if (c == total){
+        if ($newEQs.includes('+')){
+            const storeEQonAdd = $newEQs.split('+')
+            let totalAdd = 0
+                totalAdd = parseInt(storeEQonAdd[0]) + parseInt(storeEQonAdd[1])
+                console.log(totalAdd)
+                console.log(storeEQonAdd)
+                    if (c == totalAdd){
+                        //turn green
+                        correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
+                        // add the new li to idchk screen
+                    }
+                    else {
+                        incorrectAnswer = $('#idchecker__screen').prepend(`<p class="newEQ incorrect">${$newEQs}</p>`)
+                    }
+        }
+        else if ($newEQs.includes('-')){
+        const storeEQonSub = $newEQs.split('-')
+        let totalsub = 0
+            totalsub = parseInt(storeEQonSub[0]) - parseInt(storeEQonSub[1])
+            console.log(totalsub)
+            console.log(storeEQonSub)
+                if (c == totalsub){
                     //turn green
-                correctAnswer = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`).css("color",'green');   // add the new li to idchk screen
-                    
-
+                    correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
+                    $('loadingBar').append(`<square class="loading"></square>`);
+                    loadingBarPercentage+20
+                    $('loadingBarPercentage').text(loadingBarPercentage)
+                    // add the new li to idchk screen
                 }
                 else {
-                    incorrectAnswer = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`).css("color",'red');
+                    incorrectAnswer = $('#idchecker__screen').prepend(`<p class="newEQ incorrect">${$newEQs}</p>`)
                 }
-                $('#deviant__complete__idchx')++
         }
+        else if ($newEQs.includes('x')){
+            const storeEQonSub = $newEQs.split('x')
+            let totalsub = 0
+                totalsub = parseInt(storeEQonSub[0]) * parseInt(storeEQonSub[1])
+                console.log(totalsub)
+                console.log(storeEQonSub)
+                    if (c == totalsub){
+                        //turn green
+                        correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
+                        // add the new li to idchk screen
+                    }
+                    else {
+                        incorrectAnswer = $('#idchecker__screen').prepend(`<p class="newEQ incorrect">${$newEQs}</p>`)
+                    }
+            }
+        else if ($newEQs.includes('÷')){
+            const storeEQonSub = $newEQs.split('÷')
+            let totalsub = 0
+                totalsub = parseInt(storeEQonSub[0]) / parseInt(storeEQonSub[1])
+                console.log(totalsub)
+                console.log(storeEQonSub)
+                    if (c == totalsub){
+                        //turn green
+                        correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
+                        // add the new li to idchk screen
+                    }
+                    else {
+                        incorrectAnswer = $('#idchecker__screen').prepend(`<p class="newEQ incorrect">${$newEQs}</p>`)
+                    }
+            }
+            }
 });
     
 // console.log(`This is $newEQs.$newEQs`);
@@ -206,34 +268,49 @@ const getEQValue = $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnS
 // display color change approve/deny
 // add points to both spots on deviant
 // 
-
-
-
-
-// newEQul
-
-
-
-
-
-
     // alert( event.currentTarget === this ); // true
 
 
 
 
+///////////  DALTON'S CODE-- GOES UNDER, ELSE STATEMENT
+//    evalEq.push($newEQs)
+//         // loop for every index and check if symbol
+
+//         const storeEQ = $newEQs.split('+')
+//         let total = 0
+//             total = parseInt(storeEQ[0]) + parseInt(storeEQ[1])
+//             console.log(total)
+//             console.log(storeEQ)
+//                 if (c == total){
+//                     //turn green
+//                 correctAnswer = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`).css("color",'green');   // add the new li to idchk screen
+                    
+
+//                 }
+//                 else {
+//                     incorrectAnswer = $('#idchecker__screen').prepend(`<li .newEQ>${$newEQs}</li>`).css("color",'red');
+//                 }
+//                 // $('#deviant__complete__idchx')++
 
 
 
 
-// 
-// 
-// 
-// 
-// 
 
 
-//     start button display  id="start"
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
