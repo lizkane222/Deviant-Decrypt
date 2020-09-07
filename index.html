@@ -20,11 +20,38 @@
     <title>Deviant</title>
 </head>
 <body class="dark">
-
     <header>
-        <h1 id="pageTitle">Deviant</h1>
-        <h3 id="pageSubtitle">Times(x) Divide(÷) Us, but Together(+) we can Remove(-) the threat of unending inequality (!==)</h3>
+        <section id="left-header">
+        <h1 id="pageTitle" class="headerItems">Deviant</h1>
+        <h3 id="pageSubtitle" class="headerItems">Times(x) Divide(÷) Us, but Together(+) we can Remove(-) the threat of unending inequality (!==)</h3>
+        <nav class="headerItems">
+            <h4 class="navItem">Backstory</h4>
+            <h4 class="navItem">User Profile</h4>
+            <h4 class="navItem">Mission</h4>
+            <h4 class="navItem">How To Play</h4>
+        </nav>
+        </section>
+
+        <section id="right-header" class="headerItems">
+                <i class="fas fa-shoe-prints highlightHelpI fa-2x"></i>
+                <section class="help__missions">
+                    <h4>Deliver a classified package containing highly sensitive information on Deviant plans.</h4>
+                    <h6> Travel on foot to another rebel hub across the city while maintaining an "approved citizen" status by passing all identity checks when encountering id-cop-bot </h6>
+                    </section>
+
+                <i class="far fa-question-circle highlightHelpI fa-2x"></i>
+                <section class="help__transmitter ">
+                    <h4 class="help__transmitter__use">Use ID Transmitter:</h4>
+                    <h6 class="help__transmitter__use__how">using <a id=""  href="#">math functions</a>, press the <a href="#">buttons on your transmitter</a> to fill in the missing code.</h6>
+                    <p class="help__beginner">Beginner: uses only numbers</p>
+                    <p class="help__novice">Novice: references variables from the problem as 'a'->'z'</p>
+                    <p class="help__intermediate">Intermediate: references variables from the solution as 'z'->'a'</p>
+                    <p class="help__advanced">Advanced: references previous answers as variables using greek alphabet</p>
+                </section>
+            
+        </section>
     </header>
+
 
 <main>
     <column class="left-side">
@@ -109,7 +136,7 @@
 
 <!-- display instruction for how to play & use identity transmitter -->
 <column class="right-side">
-    <div id="help">
+    <!-- <div id="help">
         <i class="fas fa-shoe-prints highlightHelpI fa-2x"></i>
         <article class="help__missions">
             <h4>Deliver a classified package containing highly sensitive information on Deviant plans.</h4>
@@ -124,34 +151,37 @@
             <p class="help__intermediate">Intermediate: references variables from the solution as 'z'->'a'</p>
             <p class="help__advanced">Advanced: references previous answers as variables using greek alphabet</p>
         </article>
-    </div>
+    </div> -->
 
 <!-- animated scroll screen, image placeholder until I learn how to use graphics -->
 
-            <div id="dungeonANDoverflow">
+        <div id="dungeonANDoverflow">
+            <div id="promptBox">
                 <div id="robotPromptContainer">
+                    <img src="https://i.imgur.com/ZtsEZ55.png?1" id="robotHead" alt="robot head"/>
                     <p id="robotPrompt"></p>
                 </div>
                 <div id="promptAbdaContainer">
-                    <p id="abdaPromptBar"></p>
+                    <p id="abdaPromptLines"></p>
                     <img id="abdaImg" src="https://i.imgur.com/z091gik.png" alt="computer hacker">
                 </div>
-            </div>
-            <div class="dungeon" >
-                    <div class="animationScroll">
-                        <img class="aniScroll" src="https://i.imgur.com/dAIwZ6v.png"/>
-                    </div>
-                        <!-- <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/>
-                            <img id="street" src="" alt=""/> -->
+            </div>    
+                <div class="dungeon" >
+                        <div class="animationScroll">
+                            <img class="aniScroll" src="https://i.imgur.com/dAIwZ6v.png"/>
+                        </div>
+                            <!-- <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/>
+                                <img id="street" src="" alt=""/> -->
+                </div>
             </div>
             <div id="mapBiggerDiv">
                 <!-- click on icon to open map -->
@@ -163,6 +193,7 @@
                 <button id='return' class="walk grow12">RETURN</button>
                 <button id='preview' class="walk grow12">PREVIEW</button>
             </div>
+        </div>
     </column>
 
 

@@ -122,8 +122,8 @@ $('#playbtn').click(function(event){
     // $('#preview').show();
     // generateStreets();
     // enterStreet();
-    $('#abdaPromptBar').empty()
-    $('#robotPromptContainer').empty()
+    $('#abdaPromptLines').empty()
+    $('#robotPromptLines').empty()
     makeAdditionEquationAND(15, 0)     //if compIdChecks ===0 =>()
 });
     // alert( event.currentTarget === this ); // true

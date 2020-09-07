@@ -52,17 +52,84 @@ span {
 }
 
 header {
-    height: 10vh;
-    height: fit-content;
+    height: 8vh;
+    width: 60vw;
     margin-top: 0px;
-    display: inline-block;
-    position: absolute;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
 }
-header h3 {
-    padding-bottom: 10px;
-    margin-top: -5px;
-    margin-bottom: 10px;
-    font-size: 13px;
+#left-header{
+    max-width: 30vw;
+    background-color: yellow;
+}
+
+.headerItems {
+
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+#pageTitle {
+    font-size: 2em;
+    margin: -5px 0 -5px 0;
+}
+
+#pageSubtitle{
+    font-size: 10px;
+    margin: 0;
+
+}
+
+nav {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrpa;
+    height: 30px;
+    background-color: rgba(0,0,0,.2);
+    width: 100%;
+
+}
+
+.navItem {
+    margin: 0 15px;
+}
+
+#right-header{
+    max-width: 30vw;
+    max-height: 8vh;
+    background-color: orange;
+    display: flex;
+    /* background-color: var(--background-inverse2); */
+    justify-content: center;
+    align-content: space-around;
+    align-items: flex-start;
+    overflow: hidden;
+    padding: 5px;
+    cursor: alias;
+
+}
+
+.help__missions {
+    /* background-color: var(--background-sub2); */
+    color: var(--background-inverse4);
+    width: 50%;
+    line-height: .8em;
+    font-size: 1em;
+    overflow: scroll;
+    cursor: help;
+}
+
+.help__transmitter {
+    /* background-color: var(--background-inverse3); */
+    color: var(--background-sub);
+    width: 50;
+    line-height: .8em;
+    font-size: 1em;
+    overflow: scroll;
+    cursor: help;
 }
 
 main {
@@ -81,17 +148,17 @@ main {
     flex:1;
     max-width: 30vw;
     min-width: 20px;
-    margin: 1vh 1vw 5vh -1vw;
+    margin: 0px 1vw 5vh -1vw;
     padding: 5px;
     height: 90vh;
 }
 
 .right-side {
     flex: 2.5;
-    margin: 13vh 2vw 2vh 3vw;
+    margin: -5vh 2vw 2vh 0;
     max-width: 70vw;
     min-width: 200px;
-    height: 90vh;
+    max-height: 88vh;
     /* margin-top: 100px; */
 
 }
@@ -112,7 +179,7 @@ main {
     height: 30vh;
     max-width: 70vw;
     padding: 10px 20px;
-    margin: 90px 5px 10px 15px;
+    margin: 0px 5px 0px 15px;
     text-align: center;
     cursor: s-resize;
     line-height: 1.2em;
@@ -124,18 +191,20 @@ main {
     display: flex;
     align-items: center;
     flex-flow: column nowrap;
-    /* margin-top: -135 0 z-20px 30px; */
+    margin: 0px 0 20px 30px;
     cursor: pointer;
     align-content: flex-start;
+    max-width: 30vw;
+    max-height: 10vh;
 }
 
 .gameChoiceButtons section {
-    margin-top: 5px 0 10px 10px;
+    /* margin-top: 5px 0 10px 10px; */
 }
 
 #challenge,#askQs {
     text-align: center;
-    margin: -5px 20px 20px 20px;
+    /* margin: -5px 20px 20px 20px; */
     font-size: 10px;
     max-width: 240px;
     max-height: 140px;
@@ -284,16 +353,18 @@ main {
 
 /* ///////// DEVIANT USER INFO /////////// */
 #deviant {
-    flex: 1;
-    background-color: none;
+    /* flex: 1; */
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     align-content: space-around;
+    
+    background-color: none;
     height: 45vh;
     margin-top: 10px;
     padding: 5px;
     border-radius: 10%;
+    margin: 0px 5px 10px 15px;
     /* padding: 5px; */
     /* width: 200px; */
 }
@@ -303,6 +374,7 @@ main {
     min-width: 100px;
     border: 8px inset var(--background-dark);
     border-radius: 100%;
+    margin: 0 0 0 2vw ;
 }
 
 #deviant__name {
@@ -314,59 +386,17 @@ main {
 }
 
 #deviant__data {
-    line-height: .8em;
+    line-height: .2em;
     font-size: 1.2em;
-    margin-bottom: 0px;
-    border: 0 ;
+    margin-bottom: -15px;
+    border: 0;
     /* padding: -5px; */
     text-align: center;
 }
 
 /* ///////////// RIGHT COLUMN /////////////// */
 
-#help {
-    display: flex;
-    /* background-color: var(--background-inverse2); */
-    justify-content: center;
-    align-content: space-around;
-    align-items: flex-start;
-    overflow: scroll;
-    height: 5vh;
-    padding: 5px;
-    margin:  -90px 0 20px 30px;
-    width: 63vw;
-    cursor: alias;
-}
 
-.help__missions {
-    /* background-color: var(--background-sub2); */
-    color: var(--background-inverse4);
-    width: 600px;
-    line-height: .8em;
-    font-size: 1em;
-    margin: 5 8%;
-    overflow: inherit;
-    cursor: help;
-
-    /* height: 15vh; */
-    /* padding: 5px; */
-    /* align-self: center; */
-}
-
-.help__transmitter {
-    /* background-color: var(--background-inverse3); */
-    color: var(--background-sub);
-    width: 40%;
-    line-height: .8em;
-    font-size: 1em;
-    overflow: inherit;
-    cursor: help;
-
-    /* margin: 0 8%; */
-    /* padding: 5px; */
-    /* margin-left: 5%; */
-    /* align-self: right; */
-}
 
 /* /////////  ON HOVER expand with transition  ////////// */
 
@@ -399,51 +429,80 @@ main {
 
 /* ///////////// prompt divs /////////////// */
 #dungeonANDoverflow {
+    max-height: 85vh;
+}
+
+#promptBox{
     display: flex;
     justify-content: center;
     flex-flow: row nowrap;
-    align-content: space-between;
-    align-items: flex-end;
-    width: 70vw;
+    align-content: center;
+    align-items: flex-start;
+    width: 62vw;
+    max-height: 10vh;
 }
-
-
 #robotPromptContainer {
     z-index: 5;
     background-color: rgba(0,0,0,.4);
-    width: 35%;
-    margin-top: -100px;
+    width: 50%;
+    display: inline-block;
+    /* margin-top: -100px; */
     overflow: scroll;
-    font-size: 5px;
+    /* font-size: 5px; */
 
+}
+
+#robotHead {
+    width: 70px;
+    padding: 15px 0 15px 15px;
+    display: inline-block;
+    /* border-radius: 100%;
+    margin-left: 100px; 
+    z-index: 17;  */
+}
+
+#robotPromptLines{
+    color: white;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px black;
+    overflow: scroll;
 }
 
 #promptAbdaContainer {
     z-index: 5;
     background-color: rgba(0,0,0,.4);
-    width: 35%;
+    width: 50%;
+    display: inline-block;
+
+    /* margin-top: -100px;
+    margin-right: -100px; */
+    overflow: scroll;
+    /* font-size: 15px; */
     display:flex;
     justify-content: flex-end;
-    margin-top: -100px;
-    margin-right: -100px;
-    overflow: scroll;
-    font-size: 5px;
 
 }
 
 #abdaImg {
-    width: 200px;
+    min-width: 100px;
+    max-width: 100px;
     border-radius: 100%;
-    margin-right: 100px; 
-    z-index: 1;
+    display: inline-block;
+    overflow: scroll;
+    z-index: 17;
 }
 
-
+#abdaPromptLines {
+    color: white;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px black;
+}
 
 
 
 
 /* ///////////// STREETS & GAME /////////////// */
+
 
 .dungeon {
     flex: 2.5;
@@ -451,7 +510,7 @@ main {
     /* height: 500px; */
     height: 70vh;
     background-color: var(--background-linear-gradient0);
-    margin-top: 1vh;
+    /* margin-top: 1; */
         /* url("") */
     /* background-size: 63vw 70vh; */
     overflow: scroll;

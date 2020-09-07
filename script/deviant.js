@@ -153,18 +153,18 @@ const enterStreet = function(user){
     let street = streets[currentStreet];
 
     if(street.visited){
-        $('#abdaPromptBar').append(`<p class="adbaPrompt">We've already been down this street.</p>`)
+        $('#abdaPromptLines').append(`<p class="adbaPrompt">We've already been down this street.</p>`)
     } else {
         
-        $('#abdaPromptBar').prepend(`<p class="adbaPrompt">${street.abdaPrompt}</p>`)
+        $('#abdaPromptLines').prepend(`<p class="adbaPrompt">${street.abdaPrompt}</p>`)
          //add delay somehow/ slide effect
         if (robotPrompt!== false){
-            $('#robotPromptContainer').append(`<p >${street.robotPrompt}</p>`)
-            
+            $('#robotPromptLines').append(`<p >${street.robotPrompt}</p>`)
+
             // $('#abdaPromptBar').empty
-            $('#robotPromptContainer').empty
+            $('#robotPromptLines').empty
         }
-        $('#abdaPromptBar').append(`<p >You'll do great, get your transmitter out and prepare yourself for an identity check.</p>`)
+        $('#abdaPromptLines').append(`<p >You'll do great, get your transmitter out and prepare yourself for an identity check.</p>`)
         
         health = health-streets.damage+streets.heal;
         street++
@@ -194,8 +194,8 @@ const nextStreet = function(){
     generateStreets();
     enterStreet();
     console.log(currentStreet);
-    $('#abdaPromptBar').empty()
-    $('#robotPromptContainer').empty()
+    $('#abdaPromptLines').empty()
+    $('#robotPromptLines').empty()
 }
 
 const previousStreet = function(){
@@ -203,8 +203,8 @@ const previousStreet = function(){
     generateStreets();
     enterStreet();
     console.log(currentStreet);
-    $('#abdaPromptBar').empty()
-    $('#robotPromptContainer').empty()
+    $('#abdaPromptLines').empty()
+    $('#robotPromptLines').empty()
 }
 
 
