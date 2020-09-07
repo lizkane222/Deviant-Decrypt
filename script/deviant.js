@@ -161,6 +161,7 @@ const generateStreets = function(){
 $('#playbtn').click(function(event){
     $('#bubbleIntake').empty()
     $('#bubble').show()
+    $('#loadingBar').empty
     health = streets.health
     currentStreet = 0;
     // $('#abdaPromptLines').empty()

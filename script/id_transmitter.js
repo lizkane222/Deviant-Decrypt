@@ -165,8 +165,8 @@ let evalEq= []
 
 // THIS LISTENS FOR A CLICK ON THE TRANSMITTER- DISPLAYS IT FIRST IN THE INPUT THEN ON THE LINE BELOW THE INPUT WHEN = IS CLICKED
 
-let loadingBarPercentage = 0
 
+let loadingBarPercentage = 0
 $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event ) {
     
     
@@ -194,9 +194,11 @@ $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").cl
                     if (c == total){
                         //turn green
                         correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
-                        $('#makeBoxes').append(`<square class="loading"></square>`);
-                        loadingBarPercentage+20
-                        $('.loadingBarPercentage').text(`${loadingBarPercentage}%`)
+                        // createSquares(1)
+                        $('#makeBoxes').append(`<square class="loading">5</square>`);
+                        loadingBarPercentage+=5
+                        console.log(loadingBarPercentage)
+                        $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
                         // add the new li to idchk screen
                     }
                     else {
@@ -213,9 +215,10 @@ $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").cl
                     //turn green
                     correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
                     
-                    $('#makeBoxes').append(`<square class="loading"></square>`);
-                    loadingBarPercentage+20
-                    $('.loadingBarPercentage').text(`${loadingBarPercentage}%`)
+                    $('#makeBoxes').append(`<square class="loading">8</square>`);
+                    loadingBarPercentage+=8
+                    console.log(loadingBarPercentage)
+                    $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
                     // add the new li to idchk screen
                 }
                 else {
@@ -231,9 +234,11 @@ $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").cl
                     if (c == total){
                         //turn green
                         correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
-                        $('#makeBoxes').append(`<square class="loading"></square>`);
-                        loadingBarPercentage+20
-                        $('.loadingBarPercentage').text(`${loadingBarPercentage}%`)
+
+                        $('#makeBoxes').append(`<square class="loading">12</square>`);
+                        loadingBarPercentage+=12
+                        console.log(loadingBarPercentage)
+                        $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
                         // add the new li to idchk screen
                     }
                     else {
@@ -249,9 +254,11 @@ $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").cl
                     if (c == total){
                         //turn green
                         correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
-                        $('#makeBoxes').append(`<square class="loading"></square>`);
-                        loadingBarPercentage+20
-                        $('.loadingBarPercentage').text(`${loadingBarPercentage}%`)
+
+                        $('#makeBoxes').append(`<square class="loading">17</square>`);
+                        loadingBarPercentage+=17
+                        console.log(loadingBarPercentage)
+                        $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
                         // add the new li to idchk screen
                     }
                     else {
@@ -267,9 +274,11 @@ $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").cl
                     if (c == total){
                         //turn green
                         correctAnswer = $('#idchecker__screen').prepend(`<p class="newEQ correct">${$newEQs}</p>`);
-                        $('#makeBoxes').append(`<square class="loading"></square>`);
-                        loadingBarPercentage+20
-                        $('.loadingBarPercentage').text(`${loadingBarPercentage}%`)
+                        // add box in loadingBar
+                        $('#makeBoxes').append(`<square class="loading">20</square>`);
+                        loadingBarPercentage+=20
+                        console.log(loadingBarPercentage)
+                        $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
                         // add the new li to idchk screen
                     }
                     else {
@@ -278,7 +287,42 @@ $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").cl
             }
     }
 });
-    
+
+// $('#makeBoxes').append(`<square class="loading"></square>`);
+// loadingBarPercentage = 0
+// $('.loadingBarPercentage').text(`${loadingBarPercentage}%`)
+// add the new li to idchk screen
+
+// const createSquares = function(numberOfSquares =10){
+//     if (loadingBarPercentage <=59){
+//         console.log("creating squares 1 square");
+//         const $squaresContainer = $('#loadingBar');
+//         for (let i=1; i<= numberOfSquares; i++){
+//             const $square = $("<div class='square' />").css("background-color", 'greenyellow')
+//             $squaresContainer.append($square);
+//             loadingBarPercentage+20
+//             $('.loadingBarPercentage').text(`${loadingBarPercentage}%`)
+//         }
+//     }
+// }
+
+
+
+
+// click map to open map
+// click idcheck for transmitter to slide over
+// CREATE SET UP ROUND  onclick PLAY btn
+// set timer
+// set loading bar = 0
+// if round === 1
+// 
+
+
+
+
+
+
+
 // console.log(`This is $newEQs.$newEQs`);
 // console.log(`This is $newEQs.join():`, $newEQs.join());
 

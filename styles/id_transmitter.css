@@ -395,15 +395,15 @@ body.dark {
 
 #loadingBar {
     width: 23vw;
-    height: 4vh;
+    height: 5vh;
     margin: 5px;
     background-color: var(--background-sub4);
     padding: 0 5px;
     align-self: flex-start;
     color: var(--background-sub4);
-    align-self: center;
-    font-size: 30px;
-    text-align: right;
+    /* align-self: center; */
+    font-size: 15px;
+    text-align: center;
     display: flex;
     justify-content: flex-start;
     align-content: center;
@@ -411,10 +411,18 @@ body.dark {
 
 .loading {
     background-color: greenyellow;
-    width: 5px;
-    height: 5px;
+    width: 4vh;
+    height: 4vh;
+    margin: 4px 0 2px 2px;
+    display: inline-block;
 
 }
+
+.loadingBarPercentage {
+    color: white;
+    font-size: 20px;
+}
+
 
 #idcheck_buttons {
     display: flex;
