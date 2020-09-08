@@ -205,10 +205,10 @@
 <!-- transmitter slide up -->
 
 <div class="transmitterBothDisplays">
-    <div id="startBar" class="startBar"></div>
+    <div id="startBar" class="startBar displayNone"></div>
     <section class="transmitter__user">
         <!-- <p class="problem-display">problem display</p> -->
-        <i class="far fa-eye fa-3x"></i>
+        <i class="far fa-eye fa-2x"></i>
         <article class="transmitter__screen">
             <div id="displayEQ">
                 <input class="newEQ" placeholder="press buttons to display your equation here">
@@ -249,31 +249,31 @@
     </section>    
         <article class="transmitter__buttonArea"> <!-- set background photo to wire connecting trasmitterside idchecker slide  -->
                 <!-- <section class="transmitter__screen__probButts"> -->
-            <column>
-                <square id="btn+" class="grow12 symButt_left">+</square>
-                <square id="btnx" class="grow12 symButt_left">x</square>
-                <square id="btnLparen" class="grow12 symButt_left">(</square>
-                <square id="btn^" class="grow12 symButt_left">^</square></column>
-            <column>
+            <column class="columnBTN">
+                <square id="btn+" class="grow12 symButt sym_lft">+</square>
+                <square id="btnx" class="grow12 symButt sym_lft">x</square>
+                <square id="btnLparen" class="grow12 symButt sym_lft">(</square>
+                <square id="btn^" class="grow12 symButt sym_lft">^</square></column>
+            <column class="columnBTN">
                 <square id="btn1" class="grow12 numButt">1</square>
                 <square id="btn4" class="grow12 numButt">4</square>
                 <square id="btn7" class="grow12 numButt">7</square>
-                <square id="btn." class="grow12 symButt_left">.</square></column>
-            <column>
+                <square id="btn." class="grow12 symButt ">.</square></column>
+            <column class="columnBTN">
                 <square id="btn2" class="grow12 numButt">2</square>
                 <square id="btn5" class="grow12 numButt">5</square>
                 <square id="btn8" class="grow12 numButt">8</square>
                 <square id="btn0" class="grow12 numButt">0</square></column>
-            <column>
+            <column class="columnBTN">
                 <square id="btn3" class="grow12 numButt">3</square>
                 <square id="btn6" class="grow12 numButt">6</square>
                 <square id="btn9" class="grow12 numButt">9</square>
-                <square id="btn-" class="grow12 symButt_right">-</square></column>
-            <column>
-                <square id="btn-" class="grow12 symButt_right">-</square>
-                <square id="btn/" class="grow12 symButt_right">÷</square>
-                <square id="btnRparen" class="grow12 symButt_right">)</square>
-                <square id="btn√" class="grow12 symButt_right">√</square>
+                <square id="btn-" class="grow12 symButt sym_rt">-</square></column>
+            <column class="columnBTN">
+                <square id="btn-" class="grow12 symButt ">-</square>
+                <square id="btn/" class="grow12 symButt sym_rt">÷</square>
+                <square id="btnRparen" class="grow12 symButt sym_rt">)</square>
+                <square id="btn√" class="grow12 symButt sym_rt">√</square>
             </column>
         </article>
             <section class="bigButtons">
@@ -315,10 +315,17 @@
             </section>
 
     </section>
+    <section id="mid-connect-bubble" class="displayNone">
+    <div id="bubble">
+        <div id="bubblep" class="newEQp ">( a  +  b )  ( ? )   =   d</div>
+        <div id="bubbleIntake"></div>
+    </div>
+    <i class="fas fa-wave-square fa-9x displayNone"></i>
+    </section>
+
     <!-- <div id="bubble">
         <h4>( a  +  b )  ( ? )   =   d</h4>
     </div> -->
-    <i class="fas fa-wave-square fa-9x"></i>
     <section id="idchecker">
         <div id="idchecker__screen">
             <p id="idchecker__screen__p" class="newEQp"></p>
@@ -361,7 +368,7 @@
                 <square class="loading"></square>
                 <square class="loading"></square>
                 <square class="loading"></square> -->
-                <p class="loadingBarPercentage">%</p>
+                <p class="loadingBarPercentage">0%</p>
             </div>
 
             <div id="idcheck_buttons">
@@ -387,10 +394,7 @@
     
     
 </div>
-        <div id="bubble">
-            <p id="bubblep" class="newEQp ">( a  +  b )  ( ? )   =   d</p>
-            <div id="bubbleIntake"></div>
-        </div>
+        
 
 
 

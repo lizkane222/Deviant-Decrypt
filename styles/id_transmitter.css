@@ -36,7 +36,7 @@ body.dark {
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    margin: 0px 0;
+    margin: 0px 0 0 -90px ;
     position: absolute;
     width: 63vw;
     height: 70vh;
@@ -47,12 +47,12 @@ body.dark {
     border-top-right-radius: 90px;
     border-bottom-right-radius: 90px;
     /* locked mode to edit transmitters */
-    bottom: 12.7vh;
+    bottom: 11.7vh;
     right: 27vh;   
-    z-index: 7;
+    z-index: 27;
 } 
 
-#startBar {
+/* #startBar {
     background-color: var(--background-dark4);
     opacity: .5;
     height: 80%;
@@ -64,27 +64,27 @@ body.dark {
     
     /* border-top-right-radius: 90px;
     border-bottom-right-radius: 90px; */
-}
+/* } */ */
 
 .transmitterBothDisplays:hover { 
-    bottom: 12.7vh;
+    bottom: 11.7vh;
+    right: 27vh;       
     /* perfect height with animation box  */
-    right: 27vh;   
     /* perfect width w/ animation box*/
     transition: 850ms;
     cursor: crosshair;
     background-color: rgba(0,0,0,.5);
-    z-index: 7;
+    z-index: 27;
 }   
 
 .transmitter__user {
     background-color: var(--background-dark3);
     height: 65vh;
-    width: 29vw;
-    margin: 15px;
+    width: 28vw;
     margin-top: 25px;
-    margin-left: 100px;
-    margin-right: 50px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 30px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -99,8 +99,11 @@ body.dark {
     text-align: center;
     color: yellow;
     outline-color: blue;
+    width: 10px;
+    margin: -35px auto -15px auto;
     /* width: 25px; */
 }
+
 
 .transmitter__screen{
     background-color: var(--background);
@@ -112,20 +115,18 @@ body.dark {
     justify-content: flex-start;
     flex-flow: column wrap;
     align-content: flex-start;
-    border-radius: 10%;
+    border-radius: 15px;
     overflow: scroll;
 
 }
 
 .newEQp {
     overflow: auto;
-    font-size: 23px;
+    font-size: 20px;
     color: var(--background-inverse2);
 }
 
-.far fa-eye {
-    width: 10px;
-}
+
 
 .EQ {
     /* margin-left: 5px; */
@@ -143,8 +144,8 @@ body.dark {
     /* overflow: auto; */
     margin-top: 0px;
     margin-right: 8px;
-    font-size: 23px;
-    border-radius: 10%;
+    font-size: 20px;
+    border-radius: 10px;
     z-index: 9;
 }
 
@@ -192,8 +193,15 @@ body.dark {
     padding: 0px;
     align-items: stretch;
     border-radius: 10%;
-
 }
+
+.columnBTN {
+    margin-top: 10px;
+}
+
+/* .columnBTN square {
+    margin-bottom: 5px;
+} */
 
 .numButt {
     background-color: var(--background-dark-inverse);
@@ -209,7 +217,7 @@ body.dark {
     cursor: pointer;
 }
 
-.symButt_left {
+.symButt {
     background-color: var(--background);
     flex-flow: column nowrap;
     align-items: center;
@@ -218,30 +226,22 @@ body.dark {
     padding-right: 10px;
     padding-left: 10px;
     margin: 10px;
-    margin-bottom: 4px;
     border-radius: 40%;
     width: 30px;
     width: 0px;
     align-items: stretch;
     cursor: pointer;
-
 }
 
-.symButt_right {
-    background-color: var(--background);
-    flex-flow: column nowrap;
-    align-items: center;
-    color: var(--background-dark4);
-    font-size: 1.5em;
-    padding-right: 10px;
-    padding-left: 10px;
+
+.sym_lft {
+    margin-left: 35px;
+    margin-bottom: 4px;
+}
+
+.sym_rt {
     margin: 10px;
     margin-top: 4px;
-    border-radius: 40%;
-    width: 30px;
-    width: 0px;
-    align-items: stretch;
-    cursor: pointer;
 }
 
 .bigButtons {
@@ -321,29 +321,63 @@ body.dark {
     cursor: pointer;
 }
 
+#mid-connect-bubble {
+    display: flex;
+    flex-flow: column nowrap;
+    margin:  5px -15px 5px -30px;
+}
+
+
 #bubble {
-    /* align-self: flex-start; */
-    border-radius: 10%;
-    width: 300px;
-    height: 80px;
-    background-color: var(--background-inverse4);
-    color: var(--background-dark4);
+    border-radius: 10px;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 150px;
+    background-color: var(--background-dark4);
+    color: var(--background-inverse);
     padding: 5px;
+    line-height: 20px;
     font-size: 15px;
     text-align: center;
-    flex-flow: row nowrap;
-    z-index: 15;
+    z-index: 25;
     right: 10px;
-    margin:  -880px 0 80px 80vw;
-
+    border: 2px inset var(--background-inverse);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
+
+#bubblep {
+    text-align: center;
+    font-size: 20px;
+}
+
+#bubbleIntake {
+    font-size: 18px;
+}
+
+
+.fa-wave-square {
+    color: green;
+    opacity: 0.7;
+    z-index: 9;
+}
+
+
 
 #idchecker {
     background-color: var(--background-dark2);
     height: 65vh;
     width: 29vw;
-    margin: 15px;
     margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    
+    
+    /* margin: 15px;
+    margin-top: 25px; */
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -396,7 +430,7 @@ body.dark {
 #loadingBar {
     width: 23vw;
     height: 5vh;
-    margin: 5px;
+    margin: 15px 0px 5px 20px;
     background-color: var(--background-sub4);
     padding: 0 5px;
     align-self: flex-start;
@@ -407,6 +441,7 @@ body.dark {
     display: flex;
     justify-content: flex-start;
     align-content: center;
+    border-radius: 10px;
 }
 
 .loading {
@@ -415,12 +450,16 @@ body.dark {
     height: 4vh;
     margin: 4px 0 2px 2px;
     display: inline-block;
+    border-radius: 5px;
+    padding-top: 7px;
 
 }
 
 .loadingBarPercentage {
     color: white;
-    font-size: 20px;
+    font-size: 35px;
+    margin-top: -5px;
+    margin-left: 2px;
 }
 
 
@@ -475,7 +514,13 @@ body.dark {
 
 }
 
+.highlightClick {
+    background-color: var(--background-sub3);
+    border: 1px solid #ccc;
+    padding: 10px 30px;
+    border-radius: 3px;
 
+}
 
 
 

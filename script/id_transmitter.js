@@ -2,9 +2,10 @@
 $('#askProfile').hide()
 $('#askMore').hide()
 $("#goBtn").show()
- $('#startBar').hide()
+// $('#startBar').hide()
 $('#mapBiggerDiv').show()
-$('#bubble').hide()
+$('#mid-connect-bubble').hide()
+$('.fa-eye').hide()
 
 
 const greekAlpha = ["Α","Β","Γ","Δ","Ε","Ζ","Η","Θ","Ι","Κ","Λ","Μ","Ν","Ξ","Ο","Π","Ρ","Σ","Τ","Υ","Φ","Χ","Ψ","Ω",]
@@ -165,8 +166,25 @@ let evalEq= []
 
 // THIS LISTENS FOR A CLICK ON THE TRANSMITTER- DISPLAYS IT FIRST IN THE INPUT THEN ON THE LINE BELOW THE INPUT WHEN = IS CLICKED
 
-
 let loadingBarPercentage = 0
+
+const approvedCitizen = function(loadingBarPercentage){
+
+    if (loadingBarPercentage >=60){
+        // highlight clearbtn to look like it's been clicked, 1/2 opacity deny
+        $('#deny').css('opacity','50%');
+        $('#clear').addClass('.highlightClick');
+        //slide away transmitter screen & bubble
+        // prompt by Abda & robot   (create messages to be prior to play attempt, and after play attempt)
+        // have prompts include new scores being added
+        // add scores to completed missions both on screen and in global variables
+        // give instruction to go to preview next street
+        
+        
+    }
+}
+
+
 $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event ) {
     
     
@@ -286,7 +304,17 @@ $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").cl
                     }
             }
     }
+    approvedCitizen()
 });
+
+
+
+
+
+
+
+
+
 
 // $('#makeBoxes').append(`<square class="loading"></square>`);
 // loadingBarPercentage = 0
