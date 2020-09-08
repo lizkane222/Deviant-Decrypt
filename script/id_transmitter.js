@@ -185,7 +185,7 @@ const approvedCitizen = function(loadingBarPercentage){
 }
 
 
-$(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event ) {
+$(".symButt,.numButt,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event ) {
     
     
     if ($(this).attr('id') !== 'btnEquals'){
@@ -613,61 +613,3 @@ $(".symButt_left,.numButt,.symButt_right,.bigBtnProb,.bigBtnSolu,#btnEquals").cl
 
 
 /* These are grouped click events */
-
-// player clicks Yes- to 'Do you want to play?'
-$('#goBtn').click(function(){
-    $('#goBtn').hide(); 
-    $('#startBar').show();
-    $('#dontPlay').hide();
-    $('#askProfile').show(); // show buttons to set up profile
-    $('#challengeQs').hide();
-    $('#askProfile').prepend(`<h4 #askQs>Great let's go! But first...Would you like to set up your profile?</h4>`).show();
- })
-
-// player clicks No- to 'Do you want to play?'
-$('#dontPlay').click(function(){
-    $("#gif1").effect("shake", {direction: "up", times:4, distance: 10}, 300)
-    $('#askPlay').append(`<h4 #askQs>Would you like to set up your profile?</h4>`)
-    $('#askProfile').show() // show buttons to set up profile
-    $('#askPlay').hide()
-    // $('#challenge').hide()
-})
-// $("gameChoiceButtons")
-// player clicks Yes to setUpProfile & profile section border lights up
-$('#setUpProfile').click(function(){
-    setInterval(function(){$("#deviant").css('border','3px groove cyan')}, 3000)
-    $('#more').show()
-    clearInterval(setInterval(function(){$("#deviant").css('border','none')}, 3000))
-    $('#askProfile').hide()
-})
-// player clicks No to profile, shows gif, shows more options
-$('#gif2').click(function(){
-    // $("#gif1").effect("shake", {direction: "up", times:4, distance: 10}, 100)
-
-    setInterval(function(){$("#deviant").css('border','3px groove cyan')}, 3000)
-    $('#more').show()
-    clearInterval(setInterval(function(){$("#deviant").css('border','none')}, 3000))    // highlights borders of info buttons
-    $('#askProfile').hide()
-})
-// player clicks Later, entire section disappears
-$('#later').click(function(){
-    $('#askPlay').append(`<h4 #askQs>Would you like to set up your profile?</h4>`)
-})
-// player clicks Not Sure and is prompted & foot print icon highlights
-$('#helpQ').click(function(){
-    setInterval(function(){$('.highlightHelpI').css('border','3px groove cyan')}, 3000)
-    clearInterval(setInterval(function(){$('.highlightHelpI').css('border','none')}, 3000));
-    $('#askPlay').append(`<h4 #askQs>Look for the footprints for help.</h4>`)
-})
-// + Info was clicked, h5 is appended to clarify
-$('#goHelp').click(function(){
-    $('#askMore').append(`<h5 #moreInfo .askQs>I'd like further clarification on <u>how to play?</u></h5>`);
-    
-})
-// Player clicks new prompt and ? icon highlights
-$('#moreInfo').click(function(){
-    setInterval(function(){$('.highlightHelpI').css('border','3px groove cyan')}, 3000)
-    clearInterval(setInterval(function(){$('.highlightHelpI').css('border','none')}, 3000));
-    $('#gameChoiceButtons').hide()
-    $('#askPlay').append(`<h4 #askQs>Look for the ? for more info.</h4>`)
-})

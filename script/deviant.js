@@ -2,6 +2,7 @@
 // OTHER SCREEN FUNCTIONS (BACKSTORY/ PROFILE/ HELP)
 ////////////////////////////////////////////////////////////////////
 
+//highlights words with the span on hover
 $('#backstory span').hover(function(){
     $(this).css("color", "#90e0ef");
     $(this).css("background-color","gray");
@@ -10,6 +11,78 @@ $('#backstory span').hover(function(){
     $(this).css("background-color", "rgba(20,20,20,1)");
   });
 
+// player clicks Yes- to 'Do you want to play?'
+$('#goBtn').click(function(){
+    $('#goBtn').hide(); 
+    $('#startBar').show();
+    $('#dontPlay').hide();
+    $('#askProfile').show(); // show buttons to set up profile
+    $('#challengeQs').hide();
+    $('#askProfile').prepend(`<h4 #askQs>Great let's go! But first...Would you like to set up your profile?</h4>`).show();
+ })
+// player clicks No- to 'Do you want to play?'
+$('#dontPlay').click(function(){
+    $("#gif1").effect("shake", {direction: "up", times:4, distance: 10}, 300)
+    $('#askPlay').append(`<h4 #askQs>Would you like to set up your profile?</h4>`)
+    $('#askProfile').show() // show buttons to set up profile
+    $('#askPlay').hide()
+    // $('#challenge').hide()
+})
+// player clicks Yes to setUpProfile & profile section border lights up
+$('#setUpProfile').click(function(){
+    setInterval(function(){$("#deviant").css('border','3px groove cyan')}, 3000)
+    $('#more').show()
+    clearInterval(setInterval(function(){$("#deviant").css('border','none')}, 3000))
+    $('#askProfile').hide()
+})
+// player clicks No to profile, shows gif, shows more options
+$('#gif2').click(function(){
+    // $("#gif1").effect("shake", {direction: "up", times:4, distance: 10}, 100)
+
+    setInterval(function(){$("#deviant").css('border','3px groove cyan')}, 3000)
+    $('#more').show()
+    clearInterval(setInterval(function(){$("#deviant").css('border','none')}, 3000))    // highlights borders of info buttons
+    $('#askProfile').hide()
+})
+// player clicks Later, entire section disappears
+$('#later').click(function(){
+    $('#askPlay').append(`<h4 #askQs>Would you like to set up your profile?</h4>`)
+})
+// player clicks Not Sure and is prompted & foot print icon highlights
+$('#helpQ').click(function(){
+    setInterval(function(){$('.highlightHelpI').css('border','3px groove cyan')}, 3000)
+    clearInterval(setInterval(function(){$('.highlightHelpI').css('border','none')}, 3000));
+    $('#askPlay').append(`<h4 #askQs>Look for the footprints for help.</h4>`)
+})
+// + Info was clicked, h5 is appended to clarify
+$('#goHelp').click(function(){
+    $('#askMore').append(`<h5 #moreInfo .askQs>I'd like further clarification on <u>how to play?</u></h5>`);
+    
+})
+// Player clicks new prompt and ? icon highlights
+$('#moreInfo').click(function(){
+    setInterval(function(){$('.highlightHelpI').css('border','3px groove cyan')}, 3000)
+    clearInterval(setInterval(function(){$('.highlightHelpI').css('border','none')}, 3000));
+    $('#gameChoiceButtons').hide()
+    $('#askPlay').append(`<h4 #askQs>Look for the ? for more info.</h4>`)
+})
+
+$('.help__missions').hide()
+$('.fa-shoe-prints').click(function(event){
+    $('.help__missions').show()
+})
+$('.help__transmitter').hide()
+$('.fa-question-circle').click(function(event){
+    $('.help__transmitter').show()
+})
+
+
+$('#openTransmitter').click(function(event){
+    $('.transmitterBothDisplays').css("bottom", "11.7vh").css("right","27vh")
+    //  { 
+    //     bottom: 11.7vh;
+    //     right: 27vh;  
+})
 
 
 ////////////////////////////////////////////////////////////////////

@@ -61,8 +61,9 @@ header {
     flex-flow: row nowrap;
 }
 #left-header{
-    max-width: 30vw;
-    background-color: yellow;
+    max-width: 40vw;
+    min-width: 40vw;
+    /* background-color: yellow; */
 }
 
 .headerItems {
@@ -78,7 +79,7 @@ header {
 }
 
 #pageSubtitle{
-    font-size: 10px;
+    font-size: 14px;
     margin: 0;
 
 }
@@ -87,7 +88,9 @@ nav {
     position: relative;
     display: flex;
     flex-flow: row nowrpa;
+    justify-content: space-between;
     height: 30px;
+    color: var(--background-inverse3);
     background-color: rgba(0,0,0,.2);
     width: 100%;
 
@@ -98,18 +101,27 @@ nav {
 }
 
 #right-header{
-    max-width: 30vw;
+    max-width: 60vw;
+    min-width: 60vw;
     max-height: 8vh;
-    background-color: orange;
+    /* background-color: orange; */
     display: flex;
     /* background-color: var(--background-inverse2); */
     justify-content: center;
     align-content: space-around;
     align-items: flex-start;
-    overflow: hidden;
+    overflow: auto;
     padding: 5px;
     cursor: alias;
 
+}
+
+.fa-shoe-prints {
+    
+    /* align-self: flex-start; */
+    border: 6px solid var(--background-sub);
+    padding: 8px 6px;
+    border-radius: 50%;
 }
 
 .help__missions {
@@ -118,8 +130,12 @@ nav {
     width: 50%;
     line-height: .8em;
     font-size: 1em;
-    overflow: scroll;
+    overflow: inherit;
     cursor: help;
+}
+
+.fa-question-circle {
+    align-self: center;
 }
 
 .help__transmitter {
@@ -128,7 +144,7 @@ nav {
     width: 50;
     line-height: .8em;
     font-size: 1em;
-    overflow: scroll;
+    overflow: inherit;
     cursor: help;
 }
 
@@ -155,7 +171,7 @@ main {
 
 .right-side {
     flex: 2.5;
-    margin: -5vh 2vw 2vh 0;
+    margin: -3vh 2vw 2vh 0;
     max-width: 70vw;
     min-width: 200px;
     max-height: 88vh;
@@ -455,12 +471,11 @@ main {
 }
 
 #robotHead {
-    width: 70px;
-    padding: 15px 0 15px 15px;
+    min-width: 70px;
+    max-width: 70px;
+    max-height: 90px;
+    padding: 8px 0 0px 15px;
     display: inline-block;
-    /* border-radius: 100%;
-    margin-left: 100px; 
-    z-index: 17;  */
 }
 
 #robotPromptLines{
@@ -475,11 +490,8 @@ main {
     background-color: rgba(0,0,0,.4);
     width: 50%;
     display: inline-block;
-
-    /* margin-top: -100px;
-    margin-right: -100px; */
     overflow: scroll;
-    /* font-size: 15px; */
+    font-size: 15px;
     display:flex;
     justify-content: flex-end;
     border-radius: 10px;
