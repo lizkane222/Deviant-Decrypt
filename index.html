@@ -20,6 +20,8 @@
     <title>Deviant</title>
 </head>
 <body class="dark">
+    <!-- <img id="backgroundIMAGE" src="https://i.imgur.com/svOTh6X.png" alt="city with lake"/> -->
+
     <header>
         <section id="left-header">
         <h1 id="pageTitle" class="headerItems">Deviant</h1>
@@ -66,7 +68,7 @@
             Every time a rebel comes across a police-bot they must do an identity check.<br/><br/>
             Only the <span class="hint--top hint--bounce hint--rounded hint--image approvedCitizens" aria-label="image">“approved citizens”</span> are given the correct hourly code<span class="hint--bottom hint--bounce hint--rounded hint--image encryption" aria-label="image">(encryption)</span> sent to their identity transmitters.<br/><br/>
             The rebels have been at work to crack these codes ever since they’ve been enforced. <br/><br/>
-            The bot-cops will link their <span class="hint--top hint--bounce hint--rounded hint-ide idcheckerpic" aria-label="image">id-checker</span> to your <span class="hint--top hint--bounce hint--rounded hint--image idTransmitterPic" aria-label="image">identity-transmitter.</span> When they do, they don't know the difference between an "approved citizen's" trasmitter spewing out correct lines of code or if the code is simply just being typed out quickly.<br/><br/>
+            The bot-cops will link their <span class="hint--top hint--bounce hint--rounded hint-image idcheckerpic" aria-label="image">id-checker</span> to your <span class="hint--top hint--bounce hint--rounded hint--image idTransmitterPic" aria-label="image">identity-transmitter.</span> When they do, they don't know the difference between an "approved citizen's" trasmitter spewing out correct lines of code or if the code is simply just being typed out quickly.<br/><br/>
             This is as some would say 'pulling the wool over the sheeps eyes', or the "rebel's" small window of opportunity to pass off as an "approved citizen".<br/><br/>
             A field-rebel must be able to input the correct code at a speed comprable to the bot-cops id-checker, so quickly. <br/><br/>
             The more codes someone can produce the more likely they have the real code and are an “approved citizen”
@@ -112,7 +114,8 @@
         <article id="deviant_user">
             <img id="deviant__img" src="styles/Images/anonymous_user.png"/></a>
             <form onsubmit="myFunction()">
-                <input type="text" placeholder="Deviant Name" id="deviant__name"><input type="submit">
+                <h2 id="newName"></h2>
+                <input type="text" placeholder="Deviant Name" id="nameInput"><button id="nameSubmit">Submit</button>
             </form>
             
 
@@ -168,10 +171,12 @@
             </div>    
                 <div class="dungeon" >
                         <div class="animationScroll">
-                            <img class="aniScroll" src="https://i.imgur.com/dAIwZ6v.png"/>
+                            <!-- <img class="aniScroll" src="https://i.imgur.com/dAIwZ6v.png"/> -->
+                            <img id="street" class="aniScroll" src="https://i.imgur.com/1j9xZzj.jpg" alt="rebel base 1"/>
+                            
+                            <img id="abdaCloseup" class="popUpimage" src="https://i.imgur.com/2Ir5FZM.png" alt="Abda hacker"/>
                         </div>
-                            <!-- <img id="street" src="" alt=""/>
-                                <img id="street" src="" alt=""/>
+                            <!--     <img id="street" src="" alt=""/>
                                 <img id="street" src="" alt=""/>
                                 <img id="street" src="" alt=""/>
                                 <img id="street" src="" alt=""/>
@@ -184,15 +189,16 @@
                 </div>
             </div>
             <div id="mapBiggerDiv">
-                <!-- click on icon to open map -->
                 <i class="fas fa-map-marked-alt mapIcon fa-4x"></i>
+                <button id="openTransmitter" class="walk grow12">ID-Check</button>
+                <button id='playbtn' class="walk grow12">PLAY</button>
+
+                <!-- click on icon to open map -->
+                <button id='return' class="walk grow12">← BACK</button>
+                <button id='preview' class="walk grow12">NEXT →</button>
                 <div id="mapDiv"><!-- where to boxes/streets go -->
                 </div>
                 
-                <button id='playbtn' class="walk grow12">PLAY</button>
-                <button id='return' class="walk grow12">RETURN</button>
-                <button id='preview' class="walk grow12">PREVIEW</button>
-                <button id="openTransmitter" class="walk grow12">ID-Check</button>
             </div>
         </div>
     </column>

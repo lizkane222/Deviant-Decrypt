@@ -35,8 +35,11 @@ body.dark {
 }
 
 
+
 body {
-    background-color: var(--background-dark3);
+    background-image: url("https://i.imgur.com/Nw2Uvqt.jpg");
+    background-size: 150vw 100vh;
+    /* background-color: var(--background-dark3); */
     color: var(--background-sub);
     min-height: 100vh;
     width: 100vw;
@@ -171,7 +174,7 @@ main {
 
 .right-side {
     flex: 2.5;
-    margin: -3vh 2vw 2vh 0;
+    margin: -3vh 2vw 2vh 3vw;
     max-width: 70vw;
     min-width: 200px;
     max-height: 88vh;
@@ -184,7 +187,7 @@ main {
 
 #backstory {
     flex: 1;
-    background-color: rgba(0,0,0,.2);
+    background-color: rgba(0,0,0,.6);
     border-radius: 3px 30px 3px;
     display: inline-block;
     flex-flow: row wrap;
@@ -279,62 +282,65 @@ main {
     background-size: cover;
     background-position: center;
     position: absolute;
+    background-color: black;
+    opacity: 1;
 }
 
 .phantomWars :after {
-    background-image: url("https://i.imgur.com/uSwz4dF.png");
+    background-image: url("https://i.imgur.com/N2U1sYz.png");
     height: 40px;
     width: 100px;
     opacity: 0.7;
 }
 
 .federateDomain:after {
-    background-image: url("https://i.imgur.com/K6SEvJa.png?1");
-    height: 40px;
+    background-image: url("https://i.imgur.com/8AKSSPX.jpg?1");
+    height: 70px;
     width: 100px;
     opacity: 0.7;
 }
 
 .backpack:after {
-    background-image: url("https://i.imgur.com/5gSctma.png?1");
-    height: 40px;
-    width: 100px;
+    background-image: url("https://i.imgur.com/X1VAkcy.jpg");
+    height: 100px;
+    width: 55px;
     opacity: 0.7;
 }
 
 .botCops:after {
-    background-image: url("https://i.imgur.com/7fXGjQm.png?1");
-    height: 40px;
-    width: 100px;
-    opacity: 0.7;
+    background-image: url("https://i.imgur.com/tjmv52c.png?1");
+    height: 170px;
+    width: 50px;
+    opacity: 1;
 }
 
 .approvedCitizens:after {
-    background-image: url("#");
-    height: 40px;
+    background-image: url("https://i.imgur.com/aIqLMvD.png");
+    height: 100px;
     width: 100px;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 .encryption:after {
-    background-image: url("https://i.imgur.com/DoAdMPN.jpg");
-    height: 40px;
+    background-image: url("https://i.imgur.com/nmFZsc0.jpg");
+    height: 80px;
     width: 100px;
-    opacity: 0.7;
+    opacity: 1;
 }
 
-.idcheckerpic:after {
-    background-image: url("https://i.imgur.com/6XYB30z.png?1");
-    height: 40px;
+/* .idcheckerpic:after {
+    background-image: url("https://i.imgur.com/M0rXXzm.png?1");
+    height: 80px;
     width: 100px;
-    opacity: 0.7;
-}
+    opacity: 1;
+}  */
+
 
 .idTransmitterPic:after {
-    background-image: url("#");
-    height: 40px;
+    background-image: url("https://i.imgur.com/njlmegf.png?1");
+    height: 80px;
     width: 100px;
-    opacity: 0.7;
+    opacity: 1;
 } 
 
 .deviantForces:after {
@@ -345,14 +351,14 @@ main {
 } 
 
 #gif1:after {
-    background-image: url("#");
+    background-image: url("https://i.imgur.com/xWUzGte.gifv");
     height: 40px;
     width: 100px;
     opacity: 0.7;
 }
 
 #gif2:after {
-    background-image: url("#");
+    background-image: url("https://i.imgur.com/o0l2WtL.jpg");
     height: 40px;
     width: 100px;
     opacity: 0.7;
@@ -393,11 +399,13 @@ main {
     margin: 0 0 0 2vw ;
 }
 
-#deviant__name {
+#nameInput,#nameSubmit {
     flex: flex-grow;
     text-align: center;
     justify-content: center;
     font-size: 1.5em;
+    border-radius: 10px;
+
     /* margin: 0 auto; */
 }
 
@@ -409,6 +417,8 @@ main {
     /* padding: -5px; */
     text-align: center;
 }
+
+
 
 /* ///////////// RIGHT COLUMN /////////////// */
 
@@ -461,19 +471,19 @@ main {
 #robotPromptContainer {
     z-index: 5;
     background-color: rgba(0,0,0,.4);
-    width: 50%;
+    width: 49.5%;
     display: inline-block;
     /* margin-top: -100px; */
     overflow: scroll;
     /* font-size: 5px; */
     border-radius: 10px;
-
+    margin-right: 1px;
 }
 
 #robotHead {
     min-width: 70px;
     max-width: 70px;
-    max-height: 90px;
+    max-height: 84px;
     padding: 8px 0 0px 15px;
     display: inline-block;
 }
@@ -488,14 +498,14 @@ main {
 #promptAbdaContainer {
     z-index: 5;
     background-color: rgba(0,0,0,.4);
-    width: 50%;
+    width: 49.5%;
     display: inline-block;
     overflow: scroll;
     font-size: 15px;
     display:flex;
     justify-content: flex-end;
     border-radius: 10px;
-
+    margin-left: 1px;
 }
 
 #abdaImg {
@@ -555,9 +565,20 @@ main {
     width: 100%;
     height: 100%;
     cursor: all-scroll;
-
+    z-index: 5;
 }
 
+.popUpimage {
+    /* after so many seconds appear */
+}
+
+#abdaCloseup {
+    position: fixed;
+    margin-left: 0;
+    width: 5vw;
+    height: 10vh;
+    z-index: 7;
+}
 
 
 #mapBiggerDiv {
@@ -569,6 +590,7 @@ main {
     width: 70vw;
     max-height: 15vh;
     background-color: none;
+    color: white;
 }
 
 #mapDiv {
@@ -583,18 +605,24 @@ main {
 .street {
     width: 90px;
     height: 60px;
+    opacity: 0.6;
+    /* background-image: ${streets.image}; */
     background: var(--background-sub4);
     border: 2px dashed cyan;
 }
 
 .street.highlight {
+    opacity: 1;
     background: var(--background-inverse3);
     /*   border: 5px solid var(--sub-dark); */
 }
 
 .street.visited {
+    opacity: .3;
     background: teal;
 }
+
+
 
 .walk {
     --button-width: 85px;
@@ -618,7 +646,7 @@ main {
     margin-top: 10px;
     margin-left: -10px;
     font-size: 16px; 
-    color: gray;
+    color: white;
 } 
 
 

@@ -11,6 +11,17 @@ $('#backstory span').hover(function(){
     $(this).css("background-color", "rgba(20,20,20,1)");
   });
 
+  $('#nameSubmit').click(function(){
+      let $inputName = $('#nameInput').val()
+    //   console.log($inputName);
+      $('#newName').text($inputName);
+      $('#nameInput').hide();
+      $('#nameSubmit').hide()
+    //   $('#deviant__name').remove();
+  })
+
+
+// CLICK MIDDLE SECTION TO CHOOSE TO PLAY OR SET UP PROFILE
 // player clicks Yes- to 'Do you want to play?'
 $('#goBtn').click(function(){
     $('#goBtn').hide(); 
@@ -77,12 +88,7 @@ $('.fa-question-circle').click(function(event){
 })
 
 
-$('#openTransmitter').click(function(event){
-    $('.transmitterBothDisplays').css("bottom", "11.7vh").css("right","27vh")
-    //  { 
-    //     bottom: 11.7vh;
-    //     right: 27vh;  
-})
+
 
 
 ////////////////////////////////////////////////////////////////////
@@ -104,7 +110,7 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 50,
-
+        image: src="https://i.imgur.com/bxqYPzP.jpg"
 
     },
     {
@@ -229,18 +235,27 @@ $('.mapIcon').click(function(event){
     $('#preview').show();
     generateStreets();
     enterStreet();
+    $('#openTransmitter').css("border","3px solid white");  // remove css after 5 seconds
 })
+
+//  ID CHECK BUTTON OPENS TRANSMITTER
+$('#openTransmitter').click(function(event){
+    $('.transmitterBothDisplays').css("bottom", "11.7vh").css("right","27vh")
+    $('#openTransmitter').css("border","2px inset var(--button-radius)");  // ref .mapIcon click => to remove css
+    $('#playbtn').css("border","3px solid white");
+})
+
 
 const generateStreets = function(){
     $('#mapDiv').empty();
 
     for (let index=0; index < streets.length-1; index++){
         if(index === currentStreet){
-            $('#mapDiv').append('<div class="street highlight"></div>');
+            $('#mapDiv').append(`<div id="${streets.image}" class="street highlight"></div>`);
         }else if (streets[index].visited){
-            $('#mapDiv').append('<div class="street visited"></div>');
+            $('#mapDiv').append(`<div id="${streets.image}" class="street visited"></div>`);
         }else {
-            $('#mapDiv').append('<div class="street"></div>')
+            $('#mapDiv').append(`<div id="${streets.image}" class="street"></div>`)
         }
     }
 }
@@ -253,6 +268,8 @@ $('#playbtn').click(function(event){
     $('#loadingBar').empty
     health = streets.health
     currentStreet = 0;
+    $('#playbtn').css("border","2px inset var(--button-radius");
+
     
     $("#mid-connect-bubble").show()
     $('.fa-wave-square').fadeToggle("slow","swing",)

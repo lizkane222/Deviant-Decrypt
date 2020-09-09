@@ -45,8 +45,10 @@ body.dark {
     border-top-right-radius: 90px;
     border-bottom-right-radius: 90px;
     z-index: 27;
+
     bottom: 12.7vh;
-    right: -113vh;
+    right: -113vh;  /* changed from 113->123 where it's on screen, on refresh there's a bug */ 
+
     /* locked mode to edit transmitters */
     /* bottom: 11.7vh;
     right: 27vh;    */
@@ -64,7 +66,7 @@ body.dark {
     
     /* border-top-right-radius: 90px;
     border-bottom-right-radius: 90px; */
-/* } */ */
+/* } */ 
 
 .transmitterBothDisplays:hover { 
     bottom: 11.7vh;
