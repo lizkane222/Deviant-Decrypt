@@ -447,7 +447,7 @@ main {
 
 
 .mapIcon {
-    color: green;
+    color: var(--background-inverse);
     margin-top: 10px;
     position: flex;
 }
@@ -631,7 +631,7 @@ main {
     
     width: var(--button-width);
     height: var(--button-height);
-    background: var(--background-dark4);
+    background: var(--background-inverse);
     border-radius: var(--button-radius);
     
     display: flex;
@@ -646,7 +646,7 @@ main {
     margin-top: 10px;
     margin-left: -10px;
     font-size: 16px; 
-    color: white;
+    color: var(--background-dark3);
 } 
 
 

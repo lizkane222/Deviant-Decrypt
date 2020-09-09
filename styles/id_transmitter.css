@@ -182,7 +182,7 @@ body.dark {
 }
 
 .transmitter__buttonArea {
-    background-color: var(--background-sub2);
+    /* background-color: var(--background-sub2); */
     /* use this to position buttons */
     margin: 3px auto; 
     width: 85%;
@@ -439,7 +439,7 @@ body.dark {
     align-content: center;
     height: 80%;
     width: 25vw;
-    background-color: var(--background-inverse2);
+    /* background-color: var(--background-inverse2); */
     margin: 10px auto;
     border-radius: 10%;
 }
@@ -492,7 +492,7 @@ body.dark {
     align-content: stretch;
     line-height: 1em;
     font-size: 1em;
-    background-color: var(--background-dark-inverse);
+    /* background-color: var(--background-dark-inverse); */
     width: 23vw;
     height: 15vh;
     margin-bottom: 25%;
@@ -522,13 +522,14 @@ body.dark {
 }
 
 #clear {
-    background-color: var(--background-inverse4);
+    background-color: var(--background-dark-inverse);
     height: 14vh;
     width: 11vw;
     margin-left: 15px;
     align-self: center;
     text-align: center;
     padding: 10px;
+    color: var(--background-dark2);
     border-top-right-radius: 90px;
     border-bottom-right-radius: 90px;
     border-top-left-radius: 7px;
