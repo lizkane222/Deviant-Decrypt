@@ -49,8 +49,7 @@
 	https://pngtree.com/freepng/city-night-view-lookout-girl_4113872.html
 
 
-	LETTER D IN PURPLE WITH CITY BUILDINGS
-	https://pngtree.com/freepng/letter-encounterd-gradient-city-night-scene-high-end-atmosphere-technology-purple-poster_4207875.html
+
 
 	BLUE CITY SKYLINE
 	https://pngtree.com/freepng/city-silhouette-original-illustration_4204050.html
@@ -95,8 +94,6 @@
         TRAFFIC CONE ROBOT
         https://pngtree.com/freepng/3d-render-of-blue-robot-character_4770144.html
 
-        ROBOT WAVE
-        https://pngtree.com/freepng/3d-render-of-blue-robot-character_4769976.html
 
         ROBOT I CAN'T HEAR YOU
         https://pngtree.com/freepng/3d-render-of-blue-robot-character_4770100.html
@@ -198,5 +195,20 @@
 
 	<a href='https://pngtree.com/so/evening'>evening png from pngtree.com</a>
 
+
+
+	LETTER D IN PURPLE WITH CITY BUILDINGS
+
+	https://pngtree.com/freepng/letter-encounterd-gradient-city-night-scene-high-end-atmosphere-technology-purple-poster_4207875.html
+
+        <a href='https://pngtree.com/so/banner'>banner png from pngtree.com</a>
+
+
+
+        ROBOT WAVE
+
+        https://pngtree.com/freepng/3d-render-of-blue-robot-character_4769976.html
+
+        <a href='https://pngtree.com/so/robot'>robot png from pngtree.com</a>
 
 

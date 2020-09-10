@@ -11,7 +11,8 @@ $('#backstory span').hover(function(){
     $(this).css("background-color", "rgba(20,20,20,1)");
   });
 
-  $('#nameSubmit').click(function(){
+  $('#nameSubmit').click(function(event){
+      event.preventDefault()
       let $inputName = $('#nameInput').val()
     //   console.log($inputName);
       $('#newName').text($inputName);
@@ -110,8 +111,8 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 50,
-        image: src="https://i.imgur.com/bxqYPzP.jpg"
-
+        image: "https://i.imgur.com/bxqYPzP.jpg",
+        floaterImg : "https://i.imgur.com/2Ir5FZM.png",
     },
     {
         streetType: "quiz",
@@ -127,6 +128,8 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 50,
+        image: "https://i.imgur.com/1j9xZzj.jpg",
+        floaterImg : "",
     },
     {
         streetType: "street",
@@ -142,6 +145,8 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 30,
+        image: "https://i.imgur.com/nDJKXMP.jpg",
+        floaterImg : "",
     },
     {
         streetType: "street",
@@ -157,6 +162,8 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 30,
+        image: "https://i.imgur.com/i6Irk38.jpg",
+        floaterImg : "",
     },
     {
         streetType: "street",
@@ -172,6 +179,8 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 30,
+        image: "https://i.imgur.com/OomGERm.jpg",
+        floaterImg : "",
     },
     {
         streetType: "street",
@@ -187,6 +196,8 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 30,
+        image: "https://i.imgur.com/P8ZihT8.jpg",
+        floaterImg : "",
     },
     {
         streetType: "street",
@@ -202,6 +213,9 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 30,
+        image: "https://i.imgur.com/FP8hMvR.jpg",
+        floaterImg : "",
+
     },
     {
         streetType: "rebelBase",
@@ -217,10 +231,11 @@ const streets = [
         instructions : [`Can you find the missing code? 1st: type the symbol. 2nd: try using parenthesis. 3rd: input equation for the missing code. Once you've figured it out, how many equations can you write that equal that number? Hurry! The time is running. Remember the quicker you execute the missing code the quicker you'll be approved. The more equations you write before the time runs out the higher your score.`],
         visited : false,
         heal : 30,
+        image: "https://i.imgur.com/RWz6I4u.jpg",
+        floaterImg : "",
     },
     
 ]
-
 
 
 let health = 0;
@@ -245,17 +260,17 @@ $('#openTransmitter').click(function(event){
     $('#playbtn').css("border","3px solid white");
 })
 
-
+// creates streets with their images, ability to click between streets using return next
 const generateStreets = function(){
     $('#mapDiv').empty();
 
     for (let index=0; index < streets.length-1; index++){
         if(index === currentStreet){
-            $('#mapDiv').append(`<div id="${streets.image}" class="street highlight"></div>`);
+            $('#mapDiv').append($(`<div class="street highlight"></div>`).css('background-image',`url(${streets[index].image})`));
         }else if (streets[index].visited){
-            $('#mapDiv').append(`<div id="${streets.image}" class="street visited"></div>`);
+            $('#mapDiv').append($(`<div class="street visited"></div>`).css('background-image',`url(${streets[index].image})`));
         }else {
-            $('#mapDiv').append(`<div id="${streets.image}" class="street"></div>`)
+            $('#mapDiv').append($(`<div class="street"></div>`).css('background-image',`url(${streets[index].image})`));
         }
     }
 }

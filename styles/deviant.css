@@ -187,7 +187,7 @@ main {
 
 #backstory {
     flex: 1;
-    background-color: rgba(0,0,0,.6);
+    background-color: #060821;
     border-radius: 3px 30px 3px;
     display: inline-block;
     flex-flow: row wrap;
@@ -608,18 +608,19 @@ main {
     opacity: 0.6;
     /* background-image: ${streets.image}; */
     background: var(--background-sub4);
+    background-size: cover;
     border: 2px dashed cyan;
 }
 
 .street.highlight {
     opacity: 1;
-    background: var(--background-inverse3);
+    /* background: var(--background-inverse3); */
     /*   border: 5px solid var(--sub-dark); */
 }
 
 .street.visited {
     opacity: .3;
-    background: teal;
+    /* background: teal; */
 }
 
 

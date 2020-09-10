@@ -168,12 +168,12 @@ let evalEq= []
 
 let loadingBarPercentage = 0
 
-const approvedCitizen = function(loadingBarPercentage){
+const approvedCitizen = function(){
 
     if (loadingBarPercentage >=60){
         // highlight clearbtn to look like it's been clicked, 1/2 opacity deny
-        $('#deny').css('opacity','50%');
-        $('#clear').addClass('.highlightClick');
+        $('.deny').css('opacity','50%');
+        $('.clear').addClass('highlightClick');
         //slide away transmitter screen & bubble
         // prompt by Abda & robot   (create messages to be prior to play attempt, and after play attempt)
         // have prompts include new scores being added
@@ -217,6 +217,7 @@ $(".symButt,.numButt,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event 
                         loadingBarPercentage+=5
                         console.log(loadingBarPercentage)
                         $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
+                        approvedCitizen()
                         // add the new li to idchk screen
                     }
                     else {
@@ -237,6 +238,7 @@ $(".symButt,.numButt,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event 
                     loadingBarPercentage+=8
                     console.log(loadingBarPercentage)
                     $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
+                    approvedCitizen()
                     // add the new li to idchk screen
                 }
                 else {
@@ -257,6 +259,7 @@ $(".symButt,.numButt,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event 
                         loadingBarPercentage+=12
                         console.log(loadingBarPercentage)
                         $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
+                        approvedCitizen()
                         // add the new li to idchk screen
                     }
                     else {
@@ -277,6 +280,7 @@ $(".symButt,.numButt,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event 
                         loadingBarPercentage+=17
                         console.log(loadingBarPercentage)
                         $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
+                        approvedCitizen()
                         // add the new li to idchk screen
                     }
                     else {
@@ -297,6 +301,7 @@ $(".symButt,.numButt,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event 
                         loadingBarPercentage+=20
                         console.log(loadingBarPercentage)
                         $('.loadingBarPercentage').text(`${loadingBarPercentage}%`).css('color','white');
+                        approvedCitizen()
                         // add the new li to idchk screen
                     }
                     else {
@@ -304,7 +309,7 @@ $(".symButt,.numButt,.bigBtnProb,.bigBtnSolu,#btnEquals").click(function( event 
                     }
             }
     }
-    approvedCitizen()
+    
 });
 
 

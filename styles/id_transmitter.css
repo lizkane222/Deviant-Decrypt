@@ -500,7 +500,7 @@ body.dark {
 
 
 
-#deny {
+.deny {
     background-color: var(--background-inverse3);
     height: 14vh;
     width: 11vw;
@@ -521,7 +521,7 @@ body.dark {
     font-size: 25px;
 }
 
-#clear {
+.clear {
     background-color: var(--background-dark-inverse);
     height: 14vh;
     width: 11vw;
