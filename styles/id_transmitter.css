@@ -9,16 +9,16 @@
 body.dark {
     /* colors   */
   --background: #72efdd;
-  --background-sub: #56cfe1;
-  --background-inverse: #48bfe3;
+  --background-sub: #90b4b9;
+  --background-inverse: #93d8ec;
   --background-sub2: #5390d9;
   --background-inverse2: #5e60ce;
-  --background-sub3: #6930c3;
-  --background-inverse3: #7400b8;
+  --background-sub3: #a38cc7;
+  --background-inverse3: #c650dd;
   --background-dark: #073b4c;
   --background-dark-inverse: #ff99c8;
   --background-sub4: #bcdfdf;
-  --background-inverse4: #88a580;
+  --background-inverse4: #9b1553;
   --background-dark2: #3c1642;
   --background-dark3: #0b132b;
   --background-dark4: #042a2b;
@@ -513,6 +513,8 @@ body.dark {
     text-align: center;
     padding: 10px;
     border: 2px outset gray;
+    transition: all 200ms ease-in-out;
+
 } 
 
 .idcheck_buttons h3 {
@@ -535,15 +537,13 @@ body.dark {
     border-top-left-radius: 7px;
     border-bottom-left-radius: 7px;
     border: 2px outset gray;
+    transition: all 200ms ease-in-out;
+
 }
 
 .highlightClick {
     background-color: var(--background-sub3);
-    border: 1px solid #ccc;
+    border: 6px solid #ccc;
     padding: 10px 30px;
-    border-radius: 3px;
-
+    transform: scale(1.4)
 }
-
-
-

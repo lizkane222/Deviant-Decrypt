@@ -13,16 +13,16 @@ box-sizing: border-box;
 body.dark {
     /* colors   */
   --background: #72efdd;
-  --background-sub: #56cfe1;
-  --background-inverse: #48bfe3;
+  --background-sub: #90b4b9;
+  --background-inverse: #93d8ec;
   --background-sub2: #031926;
   --background-inverse2: #;
-  --background-sub3: #6930c3;
-  --background-inverse3: #7400b8;
+  --background-sub3: #a38cc7;
+  --background-inverse3: #c650dd;
   --background-dark: #073b4c;
   --background-dark-inverse: #ff99c8;
   --background-sub4: #affc41;
-  --background-inverse4: #b2ff9e;
+  --background-inverse4: #9b1553;
   --background-dark2: #3c1642;
   --background-dark3: #0b132b;
   --background-dark4: #042a2b;
@@ -50,7 +50,7 @@ body {
 }
 
 span {
-    text-decoration: underline solid white;
+    text-decoration: underline solid var(--background-dark-inverse);
     cursor: context-menu;
 }
 
@@ -82,7 +82,7 @@ header {
 }
 
 #pageSubtitle{
-    font-size: 14px;
+    font-size: 12px;
     margin: 0;
 
 }
@@ -93,11 +93,13 @@ nav {
     flex-flow: row nowrpa;
     justify-content: space-between;
     height: 30px;
-    color: var(--background-inverse3);
+    color: var(--background-sub3);
     background-color: rgba(0,0,0,.2);
     width: 100%;
-
+    cursor: pointer;
 }
+
+
 
 .navItem {
     margin: 0 15px;
@@ -110,7 +112,7 @@ nav {
     /* background-color: orange; */
     display: flex;
     /* background-color: var(--background-inverse2); */
-    justify-content: center;
+    justify-content: flex-start;
     align-content: space-around;
     align-items: flex-start;
     overflow: auto;
@@ -123,32 +125,52 @@ nav {
     
     /* align-self: flex-start; */
     border: 6px solid var(--background-sub);
+    color: var(--background-sub);
     padding: 8px 6px;
     border-radius: 50%;
+    margin-right:2vw;
+
+}
+
+#missionNav {
+    color: var(--background-sub)
 }
 
 .help__missions {
     /* background-color: var(--background-sub2); */
-    color: var(--background-inverse4);
-    width: 50%;
+    color: var(--background-sub);
+    width: 48%;
     line-height: .8em;
     font-size: 1em;
     overflow: inherit;
     cursor: help;
+    margin-right:2vw;
+}
+
+#howToPlayNav {
+    color: var(--background-inverse);
 }
 
 .fa-question-circle {
+    color: var(--background-inverse);
     align-self: center;
+    margin-top: -3px;
+    margin-left:2vw;
+
 }
 
 .help__transmitter {
-    /* background-color: var(--background-inverse3); */
-    color: var(--background-sub);
-    width: 50;
+    /* background-color: var(--background-sub3); */
+    color: var(--background-inverse);
+    width: 48%;
     line-height: .8em;
     font-size: 1em;
     overflow: inherit;
     cursor: help;
+    margin-top: -8px;
+    margin-bottom: -10px;
+    margin-left:2vw;
+
 }
 
 main {
@@ -184,11 +206,24 @@ main {
 
 /* ///////////// LEFT COLUMN /////////////// */
 
+#backstoryNav {
+    color: var(--background-inverse4)
+}
 
 #backstory {
     flex: 1;
     background-color: #060821;
+    color: var(--background-inverse4);
+    /* text-shadow: -.5px 0px 1px #ff99c8; */
+    line-height: 1.2em;
+    width: fit-content;
+    font-size: 14px;
+    font-weight: 100;
+    padding: 10px 20px;
+    margin: 0px 5px 0px 15px;
+    text-align: center;
     border-radius: 3px 30px 3px;
+
     display: inline-block;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -197,13 +232,7 @@ main {
     overflow: auto; 
     height: 30vh;
     max-width: 70vw;
-    padding: 10px 20px;
-    margin: 0px 5px 0px 15px;
-    text-align: center;
     cursor: s-resize;
-    line-height: 1.2em;
-    width: fit-content;
-    font-size: 14px;
 }
 
 .gameChoiceButtons {
@@ -255,7 +284,7 @@ main {
 }
 
 #helpQ,#goHelp {
-    color: var(--background-inverse3);
+    color: var(--background-sub3);
     background-color: var(--background-inverse4);
     margin:0;
     font-size: 10px;
@@ -264,7 +293,7 @@ main {
 }
 
  /* {
-    color: var(--background-inverse3);
+    color: var(--background-sub3);
     background-color: var(--background-inverse4);
     margin:10 0 0 30px;;
     line-height: 0px;
@@ -286,7 +315,7 @@ main {
     opacity: 1;
 }
 
-.phantomWars :after {
+.phantomWars:after {
     background-image: url("https://i.imgur.com/N2U1sYz.png");
     height: 40px;
     width: 100px;
@@ -328,12 +357,12 @@ main {
     opacity: 1;
 }
 
-/* .idcheckerpic:after {
+.idcheckerpic:after {
     background-image: url("https://i.imgur.com/M0rXXzm.png?1");
     height: 80px;
     width: 100px;
     opacity: 1;
-}  */
+} 
 
 
 .idTransmitterPic:after {
@@ -387,26 +416,47 @@ main {
     padding: 5px;
     border-radius: 10%;
     margin: 0px 5px 10px 15px;
+    background-color: rgba(0,0,0,.5);
     /* padding: 5px; */
     /* width: 200px; */
 }
 
 #deviant__img {
+    position: flex;
     max-width: 230px;
     min-width: 100px;
     border: 8px inset var(--background-dark);
     border-radius: 100%;
-    margin: 0 0 0 2vw ;
+    margin: 0 auto 15px auto ;
 }
 
-#nameInput,#nameSubmit {
+#nameInput {
     flex: flex-grow;
     text-align: center;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 1em;
     border-radius: 10px;
-
+    background-color: var(--background-inverse);
+    color: var(--background-dark2)
     /* margin: 0 auto; */
+}
+
+#newName {
+    text-align: center;
+    margin: 0px auto -15px auto;
+    font-size: 35px;
+    color: var(--background-sub3);
+    text-shadow: 1px 1px var(--background);
+}
+
+#nameSubmit {
+    flex: flex-grow;
+    text-align: center;
+    justify-content: center;
+    font-size: 1em;
+    border-radius: 10px;
+    background-color: var(--background-inverse);
+    color: var(--background-dark2)
 }
 
 #deviant__data {
@@ -416,6 +466,27 @@ main {
     border: 0;
     /* padding: -5px; */
     text-align: center;
+    color: var(--background-sub3);
+    text-shadow: -1px 0px 2px rgba(0,0,0,.4);
+}
+
+#deviant__complete__idchecks {
+    /* display: inline; */
+    margin-bottom: 25px;
+
+}
+
+#deviant__complete__idchx {
+    color: var(--background);
+}
+
+#deviant__complete__missions {
+    /* display: inline; */
+    margin-top: 25px;
+}
+
+#deviant__complete__msh {
+    color: var(--background);
 }
 
 
@@ -440,18 +511,6 @@ main {
     transition: all 200ms ease-in-out;}
 .grow16{
     transform: scale(1.4);}
-
-/* ///// ICONS  /////// */
-
-
-
-
-.mapIcon {
-    color: var(--background-inverse);
-    margin-top: 10px;
-    position: flex;
-}
-
 
 /* ///////////// prompt divs /////////////// */
 #dungeonANDoverflow {
@@ -568,9 +627,7 @@ main {
     z-index: 5;
 }
 
-.popUpimage {
-    /* after so many seconds appear */
-}
+
 
 #abdaCloseup {
     position: fixed;
@@ -578,6 +635,13 @@ main {
     width: 5vw;
     height: 10vh;
     z-index: 7;
+}
+
+
+.mapIcon {
+    color: var(--background);
+    margin-top: 10px;
+    position: flex;
 }
 
 
@@ -607,19 +671,21 @@ main {
     height: 60px;
     opacity: 0.6;
     /* background-image: ${streets.image}; */
-    background: var(--background-sub4);
+    background: var(--background);
     background-size: cover;
-    border: 2px dashed cyan;
+    border: 2px ridge var(--background-dark-inverse);
 }
 
 .street.highlight {
     opacity: 1;
-    /* background: var(--background-inverse3); */
+    border: 2px dashed var(--background) 
+    /* background: var(--background-sub3); */
     /*   border: 5px solid var(--sub-dark); */
 }
 
 .street.visited {
-    opacity: .3;
+    opacity: .5;
+    border: 2px ridge var(--background-dark-inverse)
     /* background: teal; */
 }
 
@@ -632,7 +698,7 @@ main {
     
     width: var(--button-width);
     height: var(--button-height);
-    background: var(--background-inverse);
+    background: var(--background);
     border-radius: var(--button-radius);
     
     display: flex;
@@ -690,9 +756,9 @@ main {
 
 
 footer {
-    margin:90vh 0;
-
-    color: gray;     
+    margin: -6vh 0;
+    font-size: 15px;
+    color: var(--background-dark2);     
 }
 
 
