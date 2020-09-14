@@ -16,12 +16,12 @@ body.dark {
   --background-sub: #90b4b9;
   --background-inverse: #93d8ec;
   --background-sub2: #031926;
-  --background-inverse2: #;
+  --background-inverse2: #5e60ce;
   --background-sub3: #a38cc7;
   --background-inverse3: #c650dd;
   --background-dark: #073b4c;
   --background-dark-inverse: #ff99c8;
-  --background-sub4: #affc41;
+  --background-sub4: #bcdfdf;
   --background-inverse4: #9b1553;
   --background-dark2: #3c1642;
   --background-dark3: #0b132b;
@@ -77,8 +77,10 @@ header {
 }
 
 #pageTitle {
-    font-size: 2em;
+    font-size: 2.2em;
     margin: -5px 0 -5px 0;
+    color: #073b4c;
+    text-shadow: -2px 0px 4px var(--background-dark3);
 }
 
 #pageSubtitle{
