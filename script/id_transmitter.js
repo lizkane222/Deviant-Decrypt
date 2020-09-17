@@ -601,7 +601,4 @@
 
 
 
-
-
-
 // /* These are grouped click events */

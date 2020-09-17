@@ -200,10 +200,6 @@ body.dark {
     margin-top: 10px;
 }
 
-/* .columnBTN square {
-    margin-bottom: 5px;
-} */
-
 .numButt {
     background-color: var(--background-dark-inverse);
     color: var(--background-dark3);

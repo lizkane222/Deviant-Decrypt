@@ -320,7 +320,7 @@ const generateStreets = function(){
     }
 }
 
-// go button prompts player to user to check that coast is clear, click on robot to submit to idcheck
+// A PROMPT showing how to use the scroll box (to check that coast is clear), click on robot to submit to id-check
 // ADD FUNCTION & PROMPTS TO LOOK THROUGH THE SCREEN
 
 $('#playbtn').click(function(event){
