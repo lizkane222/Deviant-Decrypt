@@ -36,7 +36,7 @@ body.dark {
     flex-flow: row nowrap;
     justify-content: space-around;
     align-items: center;
-    margin: 0px 0 0 -90px ;
+    /* margin: 0px 0 0 -90px ; */
     position: absolute;
     width: 63vw;
     height: 70vh;
@@ -46,8 +46,9 @@ body.dark {
     border-bottom-right-radius: 90px;
     z-index: 27;
 
-    bottom: 12.7vh;
-    right: -113vh;  /* changed from 113->123 where it's on screen, on refresh there's a bug */ 
+    /* bottom: 12.7vh;
+    right: -113vh;
+      changed from 113->123 where it's on screen, on refresh there's a bug  */
 
     /* locked mode to edit transmitters */
     /* bottom: 11.7vh;

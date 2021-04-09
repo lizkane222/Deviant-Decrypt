@@ -19,6 +19,9 @@ $('#street1-5').hide()
 $('#street1-6').hide()
 $('#street1-7').hide()
 $('#street2-0').hide()
+$('#return').hide()
+$('#preview').hide()
+
 
 ////////////////////////////////////////////////////////////////////
 // OTHER SCREEN FUNCTIONS (BACKSTORY/ PROFILE/ HELP)
@@ -31,21 +34,26 @@ $('#backstory span').hover(function(){
     }, 
     function(){
     $(this).css("background-color", "rgba(20,20,20,1)");
-  });
+});
 
+let userName;
 
-  
-  $('#nameSubmit').click(function(event){
-      event.preventDefault()
-      let $inputName = $('#nameInput').val()
-    //   console.log($inputName);
-      $('#newName').text($inputName);
-      $('#nameInput').hide();
-      $('#nameSubmit').hide()
-      $('#deviant__img').css('margin','0 auto')
+const getUserName = (userName) => {
+    return userName
+};
+
+$('#nameSubmit').click(function(event){
+    event.preventDefault()
+    let $inputName = $('#nameInput').val()
+    console.log($inputName);
+    $('#newName').text($inputName);
+    userName = $inputName;
+    console.log($inputName);
+    $('#nameInput').hide();
+    $('#nameSubmit').hide();
+    $('#deviant__img').css('margin','0 auto');
     //   $('#deviant__name').remove();
-  })
-
+})
 
 // CLICK MIDDLE SECTION TO CHOOSE TO PLAY OR SET UP PROFILE
 // player clicks Yes- to 'Do you want to play?'
@@ -85,16 +93,8 @@ $('#gif2').click(function(){
 $('#later').click(function(){
     $('#askPlay').append(`<h4 #askQs>Would you like to set up your profile?</h4>`)
 })
-// player clicks Not Sure and is prompted & foot print icon highlights
-$('#helpQ').click(function(){
-    $('.help__missions').toggle("slow", function() {
 
-    })
-    
-    setInterval(function(){$('.highlightHelpI').css('border','3px groove cyan')}, 3000)
-    clearInterval(setInterval(function(){$('.highlightHelpI').css('border','none')}, 3000));
-    $('#askPlay').append(`<h4 #askQs>Look for the footprints for help.</h4>`)
-})
+
 // + Info was clicked, h5 is appended to clarify
 $('#goHelp').click(function(){
     $('#askMore').append(`<h5 #moreInfo .askQs>I'd like further clarification on <u>how to play?</u></h5>`);
@@ -108,38 +108,92 @@ $('#moreInfo').click(function(){
     $('#askPlay').append(`<h4 #askQs>Look for the ? for more info.</h4>`)
 })
 
-$('.help__missions').hide()
-$('.fa-shoe-prints').click(function(event){
-    $('.help__missions').show()
-})
-$('.help__transmitter').hide()
-$('.fa-question-circle').click(function(event){
-    $('.help__transmitter').show()
-})
+
+
+////////////////////////////////////////////////////////////////////
 //////// NAV BUTTONS //////////////
+////////////////////////////////////////////////////////////////////
+
+// ======================================
+// --- BACKSTORY NAV --- 
 $('#backstoryNav').click(function(event){
     $('#backstory').toggle("slow", function(){
         $('#backstory').css('border','2px 2px white')
     })
     $('#deviant__data').css('text-shadow','-1px 0px 2px var(--background)')
+    // CLOSE PLAY INSTRUCTIONS
+    $('.help__transmitter').hide("slow", function() {})
+    // CLOSE MISSION INSTRUCTIONS
+    $('.help__missions').hide("slow", function() {})
 })
 
+// ======================================
+//  --- PROFILE NAV --- 
 $('#userProfileNav').click(function(event){
-    $('#deviant').css('border','1px solid teal')
+    $('#deviant').css('border','1px solid teal');
+    $('#deviant').css('background-color','rgba(0,0,5,.2)');
 })
 
+// =======================================
+//  --- MISSIONS NAV & FOOTPRINTS ICON --- 
+$('.help__missions').hide()
+// MISSIONS NAV //
 $('#missionNav').click(function(event){
     // $('.highlightHelpI').css('border','cyan')
+    // TOGGLE MISSIONS INSTRUCTIONS
     $('.help__missions').toggle("slow", function() {})
+    // CLOSE PLAY INSTRUCTIONS
+    $('.help__transmitter').hide("slow", function() {})
+    // CLOSE BACKSTORY INSTRUCTIONS
+    $('#backstory').hide("slow", function(){
+        $('#backstory').css('border','2px 2px white')
+    })
+})
+// FOOTPRINTS ICON //
+$('.fa-shoe-prints').click(function(event){
+    // TOGGLE MISSION INSTRUCTIONS
+    $('.help__missions').toggle("slow", function() {})
+    // CLOSE PLAY INSTRUCTIONS
+    $('.help__transmitter').hide("slow", function() {})
+    // CLOSE BACKSTORY INSTRUCTIONS
+    $('#backstory').hide("slow", function(){
+        $('#backstory').css('border','2px 2px white')
+    })
 })
 
-$('#howToPlayNav').click(function(event){
-    $('.help__transmitter').toggle('slow', function(){})
+// ======================================
+// --- PLAY? NAV & QUESTION MARK ICON ---
+$('.help__transmitter').hide()
+// PLAY? NAV //
+$('#playNav').click(function(event){
+    // TOGGLE PLAY INSTRUCTIONS
+    $('.help__transmitter').toggle("slow", function() {});
+    // CLOSE MISSION INSTRUCTIONS
+    $('.help__missions').hide("slow", function() {})
+    // CLOSE BACKSTORY INSTRUCTIONS
+    $('#backstory').hide("slow", function(){
+        $('#backstory').css('border','2px 2px white')
+    })
 })
+// QUESTION MARK ICON //
+$('.fa-question-circle').click(function(event){
+    // TOGGLE PLAY INSTRUCTIONS
+    $('.help__transmitter').toggle("slow", function() {});
+    // CLOSE MISSION INSTRUCTIONS
+    $('.help__missions').hide("slow", function() {})
+    // CLOSE BACKSTORY INSTRUCTIONS
+    $('#backstory').hide("slow", function(){
+        $('#backstory').css('border','2px 2px white')
+    })
+})
+// ======================================
+
+
 
 ////////////////////////////////////////////////////////////////////
 // GAME PLAY FUNCTIONS  
 ////////////////////////////////////////////////////////////////////
+
 
 const streets = [
     {
@@ -149,7 +203,7 @@ const streets = [
         eachEQvalue : 0,
         accuracy : 0,
         damage : 0,
-        abdaPromptPRE : [`You've arrived, great! My name is Abda, I'm a tracker and decrypter.Put this earpiece on so you can hear me throughout training and your mission...`, `check... check... okay let's do this thing. Our transmitters are updated daily but there is still a portion of the code we have to manually input to pass identity checks in the street. Don't worry I'll show you how.`],
+        abdaPromptPRE : [`${getUserName()}You've arrived, great! My name is Abda, I'm a tracker and decrypter. Put this earpiece on so you can hear me throughout training and your mission...`,`check... check... okay let's do this thing. Our transmitters are updated daily but there is still a portion of the code we have to manually input to pass identity checks in the street. Don't worry I'll show you how.`],
         robotPromptPRE : false,
         abdaPromptPOST : [``],
         robotPromptPOST : false,
@@ -295,15 +349,23 @@ $('.mapIcon').click(function(event){
     $('#preview').show();
     generateStreets();
     enterStreet();
-    $('#openTransmitter').css("border","3px solid white");  // remove css after 5 seconds
+    $('#openTransmitter').css("color","rgba(245, 235, 38, 1)");  // remove css after 5 seconds
 })
 
 //  ID CHECK BUTTON OPENS TRANSMITTER
 $('#openTransmitter').click(function(event){
-    $('.transmitterBothDisplays').css("bottom", "11.7vh").css("right","27vh")
-    $('#openTransmitter').css("border","2px inset var(--button-radius)");  // ref .mapIcon click => to remove css
-    $('#playbtn').css("border","3px solid white");
-})
+        $('.transmitterBothDisplays').css("bottom", "11.7vh").css("right","27vh")
+        $('#openTransmitter').css("color","rgba(245, 235, 38, 1)");  // ref .mapIcon click => to remove css
+        $('#playbtn').css("border","3px solid rgba(245, 235, 38, .5)");
+    },
+    function(event){
+        $('.transmitterBothDisplays').css("bottom", "11.7vh").css("right","27vh")
+        $('#openTransmitter').css("color","#93d8ec");  // ref .mapIcon click => to remove css
+        
+        // MAKE PLAY BUTTON PULSE
+        $('#playbtn').css("border","3px solid rgba(245, 235, 38, .5)");
+    }
+)
 
 // creates streets with their images, ability to click between streets using return next
 const generateStreets = function(){
@@ -328,7 +390,7 @@ $('#playbtn').click(function(event){
     $('#loadingBar').empty
     health = streets.health
     currentStreet = 0;
-    $('#playbtn').css("border","2px inset var(--button-radius");
+    $('#playbtn').css("color","rgba(245, 235, 38, 1)");
 
     
     $("#mid-connect-bubble").show()
@@ -399,7 +461,6 @@ const nextStreet = function(){
     $('#abdaPromptLines').empty()
     $('#robotPromptLines').empty()
     // $('.animationScroll').append((<img class="aniScroll" src="`${streets[index].image}`"/>))
-
 }
 
 const previousStreet = function(){
@@ -410,8 +471,6 @@ const previousStreet = function(){
     $('#abdaPromptLines').empty()
     $('#robotPromptLines').empty()
 }
-
-
 
 
 $('#preview').on('click',nextStreet);
